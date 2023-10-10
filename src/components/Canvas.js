@@ -14,7 +14,7 @@ const CanvasPage = () => {
 
     //VELIKOST CANVAS 2
     //const cell = 10;
-    const [cell, setCell] = useState(7);
+    const [cell, setCell] = useState(2);
     const [scale, setScale] = useState(1.5);
     const cols = Math.floor(width / cell);
     const rows = Math.floor(height / cell);
@@ -30,33 +30,27 @@ const CanvasPage = () => {
     fotoImage.src = foto
 
     //mouse events
+    
     const [eventHandler, setEventHandler] = useState(false);
     function mouseEnter() {
+        /*
         setCell(2);
         setEventHandler(true);
+        */
     }
 
     function mouseLeave() {
+        /*
         setCell(7);
         setEventHandler(false);
+        */
     }
-
-    //one tik
-    const [tik, setTik] = useState(0);
-    const fps = 2;
-    const time = 1000 / fps;
+    
 
     useEffect(() => {
 
         let interval;
         if(eventHandler === false){
-
-            /*
-            interval = setInterval(() => {
-                setTik(tik + 1);
-    
-            }, time)
-            */
 
         }else{
             interval = null;

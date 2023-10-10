@@ -19,7 +19,7 @@ export default function ConsoleText({ textInput, textFontWeight, timing, textFon
         textInterval = null;
 
         timeout = setTimeout(() => {
-          setStrednikOpacity("");
+          setStrednikOpacity(" ");
         }, 500)
       }
 

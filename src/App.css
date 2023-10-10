@@ -23,3 +23,27 @@ align-items: center;
   gap: 10px;
   font-family: 'Courier New', Courier, monospace;
 }
+
+.topic1 {
+  height: 200px;
+  opacity: 1;
+}
+
+.text {
+  font-size: 30px;
+  opacity: 0;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.textAnimation {
+  animation: textAnim 1s forwards ease-in;
+}
+
+@keyframes textAnim {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}

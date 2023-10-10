@@ -5,6 +5,7 @@ import './App.css';
 import CanvasPage from './components/Canvas';
 import ConsoleText from './components/ConsoleText';
 import MatrixBackground from './components/MatrixBackground';
+import ScrollText from './components/ScrollText';
 
 function App() {
 
@@ -28,11 +29,14 @@ function App() {
       <div 
       style={{
         background: "rgba(0,0,0,0.9)",
-        width: "600px"
+        width: "700px",
+        padding: "50px"
       }}>
 
       <div className="header">
         <CanvasPage />
+
+
         <ConsoleText textInput={text1} textFontSize={text1FontSize} textFontWeight={text1Weight} timing={timing1}/>
       </div>
 
@@ -44,6 +48,9 @@ function App() {
 
       <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
       <ConsoleText textInput={text2} textFontSize={text2FontSize} textFontWeight={text2Weight} timing={timing2}/>
+      
+      <br/><br/><br/>
+      <ScrollText text={text2} />
 
       <br/><br/><br/><br/><br/><br/>
       </div>
