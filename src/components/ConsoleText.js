@@ -2,22 +2,14 @@ import { useEffect, useState } from "react"
 
 export default function ConsoleText({ textInput, textFontWeight, timing, textFontSize }) {
 
-    const [strednikOpacity, setStrednikOpacity] = useState("1");
+    const [strednikOpacity, setStrednikOpacity] = useState("█");
     const [textCounter, setTextCounter] = useState(0);
     const [welcomeText, setWelcomeText] = useState("");
     const text = textInput;
 
     useEffect(() => {
-  
-      const strednik = setInterval(() => {
-        if(strednikOpacity === "1"){
-          setStrednikOpacity("0");
-        }else{
-          setStrednikOpacity("1");
-        }
-      }, 600);
-  
       let textInterval;
+      let timeout;
       if(textCounter <= (text.length - 1)){
           textInterval = setInterval(() => {
               setTextCounter(textCounter + 1);
@@ -25,11 +17,15 @@ export default function ConsoleText({ textInput, textFontWeight, timing, textFon
           }, timing); 
       }else{
         textInterval = null;
+
+        timeout = setTimeout(() => {
+          setStrednikOpacity("");
+        }, 500)
       }
 
       return () => {
-          clearInterval(strednik);
           clearInterval(textInterval);
+          clearTimeout(timeout);
       }
     })
 
@@ -46,20 +42,11 @@ export default function ConsoleText({ textInput, textFontWeight, timing, textFon
               fontSize: textFontSize,
               fontWeight: textFontWeight,
               marginTop: "auto",
+              fontFamily: "'Courier New', Courier, monospace",
           }}>
-              {welcomeText}
+              {welcomeText + strednikOpacity}
           </p>
 
-          <div 
-          style={{
-            width: (textFontSize / 2),
-            height: (textFontSize * 1.2),
-            background: "rgba(255,255,255,0.9)",
-            opacity: strednikOpacity,
-            marginTop: "auto",
-            transition: "0.2s",
-          }}>
-          </div>
         </div>
         </>
     )

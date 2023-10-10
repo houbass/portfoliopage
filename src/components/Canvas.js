@@ -48,18 +48,19 @@ const CanvasPage = () => {
 
     useEffect(() => {
 
-
         let interval;
         if(eventHandler === false){
+
+            /*
             interval = setInterval(() => {
                 setTik(tik + 1);
     
             }, time)
+            */
 
         }else{
             interval = null;
         }
-        
 
         return () => {
             clearInterval(interval);
@@ -81,20 +82,12 @@ const CanvasPage = () => {
 
         fotoImage.onload = () => {
 
-
         //animation function
         const render = () => { 
-            
-            //animation request
-            //timerIdHolder.timerId = window.requestAnimationFrame(render);
 
             //CLERING OPERACE
             context2.clearRect(0, 0, width2, height2);
             context.clearRect(0, 0, width, height);
-
-            //BACKGROUND 1
-            //context.fillStyle = "black";
-            //context.fillRect(0, 0, width, height);
 
             //BACKGROUND 2
             context2.fillStyle = "black";
