@@ -36,7 +36,7 @@ align-items: center;
 }
 
 .textAnimation {
-  animation: textAnim 1s forwards ease-in;
+  animation: textAnim 0.2s forwards ease-in;
 }
 
 @keyframes textAnim {

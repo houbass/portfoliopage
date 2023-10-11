@@ -6,6 +6,7 @@ import CanvasPage from './components/Canvas';
 import ConsoleText from './components/ConsoleText';
 import MatrixBackground from './components/MatrixBackground';
 import ScrollText from './components/ScrollText';
+import ScrollConsoleText from './components/ScrollConsoleText';
 
 function App() {
 
@@ -40,17 +41,47 @@ function App() {
         <ConsoleText textInput={text1} textFontSize={text1FontSize} textFontWeight={text1Weight} timing={timing1}/>
       </div>
 
-      <ConsoleText textInput={text2} textFontSize={text2FontSize} textFontWeight={text2Weight} timing={timing2}/>
+      <ScrollConsoleText 
+      textInput={text2} 
+      textFontSize={text2FontSize} 
+      textFontWeight={text2Weight} 
+      timing={timing2} 
+      delay = {0}
+      />
 
       <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-      <ConsoleText textInput={text2} textFontSize={text2FontSize} textFontWeight={text2Weight} timing={timing2}/>
-
+      <ScrollConsoleText 
+      textInput={text2} 
+      textFontSize={text2FontSize} 
+      textFontWeight={text2Weight} 
+      timing={timing2} 
+      delay = {0}
+      />
 
       <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-      <ConsoleText textInput={text2} textFontSize={text2FontSize} textFontWeight={text2Weight} timing={timing2}/>
-      
+      <ScrollConsoleText 
+      textInput={text2} 
+      textFontSize={text2FontSize} 
+      textFontWeight={text2Weight} 
+      timing={timing2}
+      delay = {0}
+      />
+
       <br/><br/><br/>
-      <ScrollText text={text2} />
+      <ScrollConsoleText 
+      textInput={text2} 
+      textFontSize={30} 
+      textFontWeight={"bold"} 
+      timing={timing2} 
+      delay = {0}
+      />
+      <ScrollConsoleText 
+      textInput={text2} 
+      textFontSize={text2FontSize} 
+      textFontWeight={text2Weight} 
+      timing={timing2} 
+      delay = {500}
+      />
 
       <br/><br/><br/><br/><br/><br/>
       </div>
