@@ -7,6 +7,10 @@ import ConsoleText from './components/ConsoleText';
 import MatrixBackground from './components/MatrixBackground';
 import ScrollText from './components/ScrollText';
 import ScrollConsoleText from './components/ScrollConsoleText';
+import ScrollContainer from './components/ScrollContainer';
+
+//pic
+import foto from "./pic/foto.jpg";
 
 function App() {
 
@@ -29,19 +33,27 @@ function App() {
 
       <div 
       style={{
-        background: "rgba(0,0,0,0.9)",
-        width: "700px",
-        padding: "50px"
+        background: "rgba(0,0,0,0.6)",
+        width: "80%",
+        maxWidth: "800px",
+        //padding: "50px",
       }}>
 
       <div className="header">
-        <CanvasPage />
+        <CanvasPage foto={foto}/>
 
-
-        <ConsoleText textInput={text1} textFontSize={text1FontSize} textFontWeight={text1Weight} timing={timing1}/>
+        <ScrollConsoleText 
+        foto={foto}
+        textInput={text1} 
+        textFontSize={text1FontSize} 
+        textFontWeight={text1Weight} 
+        timing={timing1} 
+        delay = {0}
+        />
       </div>
 
-      <ScrollConsoleText 
+      <ScrollContainer 
+      foto={foto}
       textInput={text2} 
       textFontSize={text2FontSize} 
       textFontWeight={text2Weight} 
@@ -59,11 +71,12 @@ function App() {
       />
 
       <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-      <ScrollConsoleText 
+      <ScrollContainer 
+      foto={foto}
       textInput={text2} 
       textFontSize={text2FontSize} 
       textFontWeight={text2Weight} 
-      timing={timing2}
+      timing={timing2} 
       delay = {0}
       />
 

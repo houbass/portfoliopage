@@ -1,6 +1,9 @@
 import { useLayoutEffect, useRef, useState } from 'react'
 
-export default function ScrollConsoleText({ foto, textInput, textFontWeight, timing, textFontSize, delay }) {
+//components
+import ConsoleText from './ConsoleText';
+
+export default function ScrollContainer({ foto, textInput, textFontWeight, timing, textFontSize, delay }) {
 
     //canvas img
     const fotoImage = new Image();
@@ -8,7 +11,7 @@ export default function ScrollConsoleText({ foto, textInput, textFontWeight, tim
 
     //WRITING
     const [writingHandler, setWritingHandler] = useState(false);
-    const [strednikOpacity, setStrednikOpacity] = useState(" █");
+    const [strednikOpacity, setStrednikOpacity] = useState("█");
     const [textCounter, setTextCounter] = useState(0);
     const [welcomeText, setWelcomeText] = useState("");
     const text = textInput;
@@ -60,33 +63,6 @@ export default function ScrollConsoleText({ foto, textInput, textFontWeight, tim
       }
     }, []);
 
-    //WRITING
-    useLayoutEffect(() => {
-        if(writingHandler === true){
-            let textInterval;
-            let timeout;
-            if(textCounter <= (text.length - 1)){
-                textInterval = setInterval(() => {
-                    setTextCounter(textCounter + 1);
-                    setWelcomeText(welcomeText + text[textCounter]);
-                }, timing); 
-            }else{
-                textInterval = null;
-        
-                timeout = setTimeout(() => {
-                    setStrednikOpacity(" ");
-                }, 500)
-            }
-    
-            return () => {
-                clearInterval(textInterval);
-                clearTimeout(timeout);
-            }
-        }else{
-
-        }
-    });
-
   return (
     <>
         <div 
@@ -96,33 +72,28 @@ export default function ScrollConsoleText({ foto, textInput, textFontWeight, tim
             <div 
             style={{
             display: "flex",
-            flexDirection: "row",
-            gap: "5px",
-            //background: "orange",
+            flexDirection: "column",
+            gap: "10px",
+            //background: "pink",
             position: "relative"
             }}>
-              <p
-              style={{
-                  fontSize: textFontSize,
-                  fontWeight: textFontWeight,
-                  marginTop: "auto",
-                  fontFamily: "'Courier New', Courier, monospace",
-                  position: "absolute"
-              }}>
-                  {welcomeText + strednikOpacity}
-              </p>
-
-              <p
-              style={{
-                  fontSize: textFontSize,
-                  fontWeight: textFontWeight,
-                  marginTop: "auto",
-                  fontFamily: "'Courier New', Courier, monospace",
-                  color: "rgba(0,0,0,0)"
-              }}>
-                  {text}
-              </p>
-
+              <ConsoleText 
+              writingHandler={writingHandler}
+              textInput={textInput} 
+              textFontSize={textFontSize} 
+              textFontWeight={textFontWeight} 
+              timing={timing} 
+              delay = {0}
+              />         
+              
+              <ConsoleText 
+              writingHandler={writingHandler}
+              textInput={textInput} 
+              textFontSize={textFontSize} 
+              textFontWeight={textFontWeight} 
+              timing={timing} 
+              delay = {1500}
+              />        
             </div>            
         </div>
     </>

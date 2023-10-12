@@ -1,53 +1,98 @@
-import { useEffect, useState } from "react"
+import { useLayoutEffect, useRef, useState } from 'react'
 
-export default function ConsoleText({ textInput, textFontWeight, timing, textFontSize }) {
+export default function ConsoleText({writingHandler, textInput, textFontWeight, timing, textFontSize, delay }) {
 
-    const [strednikOpacity, setStrednikOpacity] = useState("█");
-    const [textCounter, setTextCounter] = useState(0);
-    const [welcomeText, setWelcomeText] = useState("");
-    const text = textInput;
+  //WRITING
+  const [thisWritingHandler, setThisWritingHandler] = useState(false);
+  const [strednikOpacity, setStrednikOpacity] = useState("");
+  const [textCounter, setTextCounter] = useState(0);
+  const [welcomeText, setWelcomeText] = useState("");
+  const text = textInput;
 
-    useEffect(() => {
-      let textInterval;
-      let timeout;
-      if(textCounter <= (text.length - 1)){
-          textInterval = setInterval(() => {
-              setTextCounter(textCounter + 1);
-              setWelcomeText(welcomeText + text[textCounter]);
-          }, timing); 
+  //SCROLLING
+  const elementRef = useRef();
+
+  useLayoutEffect(() => {
+    const thisTimeout = setTimeout(() => {
+      if(writingHandler === true) {
+        setThisWritingHandler(true);
       }else{
-        textInterval = null;
 
-        timeout = setTimeout(() => {
-          setStrednikOpacity(" ");
-        }, 500)
       }
+    }, delay);
 
-      return () => {
-          clearInterval(textInterval);
-          clearTimeout(timeout);
-      }
-    })
+    return () => {
+      clearTimeout(thisTimeout);
+    }
+  }, [writingHandler]);
 
-    return(
-        <>
+  //WRITING
+  useLayoutEffect(() => {
+    if(thisWritingHandler === true){
+        let textInterval;
+        let timeout;
+
+        if(textCounter <= (text.length - 1)){
+            textInterval = setInterval(() => {
+                setTextCounter(textCounter + 1);
+                setWelcomeText(welcomeText + text[textCounter]);
+                setStrednikOpacity("█");
+            }, timing); 
+        }else{
+            textInterval = null;
+    
+            timeout = setTimeout(() => {
+                setStrednikOpacity(" ");
+            }, 500)
+        }
+
+        return () => {
+            clearInterval(textInterval);
+            clearTimeout(timeout);
+        }
+    }else{
+
+    }
+  });
+
+  return (
+    <>
         <div 
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          gap: "5px",
-        }}>
-          <p
-          style={{
-              fontSize: textFontSize,
-              fontWeight: textFontWeight,
-              marginTop: "auto",
-              fontFamily: "'Courier New', Courier, monospace",
-          }}>
-              {welcomeText + strednikOpacity}
-          </p>
+        ref={elementRef} 
 
+        >
+            <div 
+            style={{
+            display: "flex",
+            flexDirection: "row",
+            gap: "5px",
+            //background: "orange",
+            position: "relative"
+            }}>
+              <p
+              style={{
+                  fontSize: textFontSize,
+                  fontWeight: textFontWeight,
+                  marginTop: "auto",
+                  fontFamily: "'Courier New', Courier, monospace",
+                  position: "absolute"
+              }}>
+                  {welcomeText + strednikOpacity}
+              </p>
+
+              <p
+              style={{
+                  fontSize: textFontSize,
+                  fontWeight: textFontWeight,
+                  marginTop: "auto",
+                  fontFamily: "'Courier New', Courier, monospace",
+                  color: "rgba(0,0,0,0)"
+              }}>
+                  {text}
+              </p>
+
+            </div>            
         </div>
-        </>
-    )
+    </>
+  )
 }

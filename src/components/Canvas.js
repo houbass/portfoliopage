@@ -1,21 +1,19 @@
 import React, { useEffect, useRef, useState } from "react";
 
-//pic
-import foto from "../pic/foto.jpg";
 
-const CanvasPage = () => {
+const CanvasPage = ({ foto }) => {
     //canvas ref
     const canvasRef = useRef(null);
     const canvas2Ref = useRef(null);
 
     //VELIKOST CANVAS 1
-    const width = 300;
-    const height = 300;
+    const width = 200;
+    const height = 200;
 
     //VELIKOST CANVAS 2
     //const cell = 10;
-    const [cell, setCell] = useState(2);
-    const [scale, setScale] = useState(1.5);
+    const [cell, setCell] = useState(1);
+    const [scale, setScale] = useState(1);
     const cols = Math.floor(width / cell);
     const rows = Math.floor(height / cell);
     const numCells = cols * rows;
@@ -26,11 +24,10 @@ const CanvasPage = () => {
     const fontFamily = "arial"
 
     //canvas img
-    var fotoImage = new Image();
+    const fotoImage = new Image();
     fotoImage.src = foto
 
     //mouse events
-    
     const [eventHandler, setEventHandler] = useState(false);
     function mouseEnter() {
         /*
@@ -72,12 +69,12 @@ const CanvasPage = () => {
         const context2 = canvas2.getContext("2d");
 
         //animation handler (zabranuje aby se animace zrychlovala po kazdem updatu)
-        const timerIdHolder = {timerId: null};
+        //const timerIdHolder = {timerId: null};
 
         fotoImage.onload = () => {
 
         //animation function
-        const render = () => { 
+        //const render = () => { 
 
             //CLERING OPERACE
             context2.clearRect(0, 0, width2, height2);
@@ -118,25 +115,25 @@ const CanvasPage = () => {
                 context.translate(x, y);
                 context.beginPath();
                 //context.fillStyle = `rgba(${r}, ${g}, ${b}, ${a} `;
-                context.fillStyle = `rgba(${r}, ${130}, ${b}, ${a} `;
+                context.fillStyle = `rgba(${r}, ${170}, ${b}, ${a} `;
                 context.font = `${cell * scale}px ${fontFamily}`;
                 context.textBaseline = "top";
                 context.fillText(symbols[randomNumber], 0, 0);
                 context.textAlign = "center";
                 context.restore();
             }
-        };
-        render();
-    }
+        //};
+        //render();
+        }
 
         //animation cancel
-        return () => cancelAnimationFrame(timerIdHolder.timerId);
+        //return () => cancelAnimationFrame(timerIdHolder.timerId);
     });  
 
     return (
-        <div className="canvas" >
+        <div style={{filter: "saturate(2)", position: "relative"}}>
             <canvas onMouseEnter={mouseEnter} onMouseLeave={mouseLeave} id="canvas" ref={canvasRef} height={height} width={width} style={{borderRadius: "50px"}}  />
-            <canvas id="canvas2" ref={canvas2Ref} height={height2} width={width2} style={{position: "absolute", zIndex: "1", visibility: "hidden"}}  />      
+            <canvas id="canvas2" ref={canvas2Ref} height={height2} width={width2} style={{position: "absolute", zIndex: "1", visibility: "hidden", left: "0"}}  />      
         </div>
     )
 }
