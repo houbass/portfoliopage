@@ -34,46 +34,29 @@ export default function SecondTopic({ foto, mainOpacity }) {
 
 
     return(
-        <section style={{opacity: mainOpacity}} className="container intro color1">
+        <div className="container intro color1">
+        <section style={{opacity: mainOpacity}}>
             <div className="container1 color1">
 
                     <div className="col col-1-2 intro-left">
-                        <h1 >My skillset</h1>
+                        <h1 >My skills</h1>
 
                         <br/>
                         <h3>React / Next.js</h3>
-                        <ScrollContainer 
-                        foto={foto} 
-                        textInput={text1} 
-                        textFontWeight={text1Weight} 
-                        timing={timing1} 
-                        textFontSize={text1FontSize} 
-                        delay={delay1}
-                        />
+                        <p className="big-text">{text1} </p>
+                        <br/>
 
                         <h3>UI</h3>
-                        <ScrollContainer 
-                        foto={foto} 
-                        textInput={text2} 
-                        textFontWeight={text1Weight} 
-                        timing={timing1} 
-                        textFontSize={text1FontSize} 
-                        delay={delay1}
-                        />
+                        <p className="big-text">{text2} </p>
+                        <br/>
 
                         <h3>Three.js</h3>
-                        <ScrollContainer 
-                        foto={foto} 
-                        textInput={text3} 
-                        textFontWeight={text1Weight} 
-                        timing={timing1} 
-                        textFontSize={text1FontSize} 
-                        delay={delay1}
-                        />
+                        <p className="big-text">{text3} </p>
                         
                     </div>
                     <br/><br/><br/><br/><br/><br/><br/><br/><br/>
             </div>
         </section> 
+        </div>
     )
 }

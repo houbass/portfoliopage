@@ -101,7 +101,7 @@ export default function MatrixBackground({ height }) {
                                         <div 
                                         key={index2}
                                         style={{
-                                        color: "rgb(0,0,0)",
+                                        color: "rgba(0,0,0,0.5)",
                                         width: fieldWidth,
                                         height: fieldHeight,
                                         display: "flex",

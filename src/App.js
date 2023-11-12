@@ -51,6 +51,7 @@ function App() {
       <FirstTopic foto={foto} mainOpacity={mainOpacity}/>
       <SecondTopic foto={foto} mainOpacity={mainOpacity}/>
       <ThirdTopic foto={foto} mainOpacity={mainOpacity}/>
+      <SecondTopic foto={foto} mainOpacity={mainOpacity}/>
 
     </div>
   );

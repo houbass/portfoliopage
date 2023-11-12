@@ -14,18 +14,26 @@ export default function ThirdTopic({ foto, mainOpacity }) {
     const animatiaon = [1, 2, 3, 4, 5]
 
     //TEXT 1
-    const text1 = "Mastering the language of React and dancing on the edge with Next.js, I sculpt dynamic web experiences that transcend the ordinary. With each component, I breathe life into interfaces, seamlessly blending creativity with the power of cutting-edge technology.";
+    const text1 = "text about Lofi music chord progression randomizer text about Lofi music chord progression randomizer";
     const text1FontSize = 22;
     const text1Weight = "default"; 
     const timing1 = 20;
     const delay1 = 0;
 
     //TEXT 2
-    const text2 =  "With a keen eye for detail and a passion for intuitive design, I shape interfaces that not only captivate but also elevate the user journey. In the realm of UI and UX, I turn pixels into poetry, creating a symphony of seamless interactions that leave a lasting impression.";
-
+    const text2 =  "Text about gravitaion simulation using Three.js";
 
     //TEXT3
-    const text3 = "Stepping into the immersive world of Three.js, I transcend the boundaries of traditional web development. With every line of code, I sculpt captivating 3D experiences, pushing the limits of what's possible in the browser. Armed with the power of Three.js, I turn concepts into visually stunning realities, where the intersection of creativity and technology becomes a mesmerizing playground.";
+    const text3 = "Text about mindfuck game";
+
+    //TEXT4
+    const text4 = "Text about mining game";
+
+    //TEXT5
+    const text5 = "Spaceship game";
+
+    //TEXT5
+    const text6 = "Text about tank game";
     
     
     //ON LOAD
@@ -42,17 +50,17 @@ export default function ThirdTopic({ foto, mainOpacity }) {
     return(
         <div ref={pageRef} className="container color2">
 
-<MatrixBackground height={divHeight}/>
+
 
             <section style={{opacity: mainOpacity}} >
 
                 <div className="container1 color2">
 
                         <div className="col col-1-2 intro-left">
-                            <h1 >Recent projects</h1>
+                            <h1 >My projects</h1>
 
                             <br/>
-                            <h3>React / Next.js</h3>
+                            <h3>Lofi music chord progression randomizer</h3>
                             <ScrollContainer 
                             foto={foto} 
                             textInput={text1} 
@@ -62,18 +70,58 @@ export default function ThirdTopic({ foto, mainOpacity }) {
                             delay={delay1}
                             />
 
-<br/>
-                            <h3>React / Next.js</h3>
+                            <br/>
+                            <h3>Gravitation simulation</h3>
                             <ScrollContainer 
                             foto={foto} 
-                            textInput={text1} 
+                            textInput={text2} 
                             textFontWeight={text1Weight} 
                             timing={timing1} 
                             textFontSize={text1FontSize} 
                             delay={delay1}
                             />
 
+                            <br/>
+                            <h3>Mindfuck game</h3>
+                            <ScrollContainer 
+                            foto={foto} 
+                            textInput={text3} 
+                            textFontWeight={text1Weight} 
+                            timing={timing1} 
+                            textFontSize={text1FontSize} 
+                            delay={delay1}
+                            />
                             
+                            <br/>
+                            <h3>Mining game</h3>
+                            <ScrollContainer 
+                            foto={foto} 
+                            textInput={text4} 
+                            textFontWeight={text1Weight} 
+                            timing={timing1} 
+                            textFontSize={text1FontSize} 
+                            delay={delay1}
+                            />
+                                                        <br/>
+                            <h3>Spaceship game</h3>
+                            <ScrollContainer 
+                            foto={foto} 
+                            textInput={text5} 
+                            textFontWeight={text1Weight} 
+                            timing={timing1} 
+                            textFontSize={text1FontSize} 
+                            delay={delay1}
+                            />
+
+                            <h3>Tank game</h3>
+                            <ScrollContainer 
+                            foto={foto} 
+                            textInput={text6} 
+                            textFontWeight={text1Weight} 
+                            timing={timing1} 
+                            textFontSize={text1FontSize} 
+                            delay={delay1}
+                            />
 
                         </div>
                         <br/><br/><br/><br/><br/><br/><br/><br/><br/>

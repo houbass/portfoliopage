@@ -25,63 +25,65 @@ export default function FirstTopic({ foto, mainOpacity }) {
 
 
     return(
-        <section style={{opacity: mainOpacity}} className="container intro color2">
-            <div className="container1 color2">
-                <div className="row">
-                    <div className="col col-1-2 intro-left">
-                        <span className="label">failure is not an option</span>
-                        <h1 >Ondrej Laube</h1>
-                        <h3>frontend developer for your next project</h3>
-                        <ScrollContainer 
-                        foto={foto} 
-                        textInput={text1} 
-                        textFontWeight={text1Weight} 
-                        timing={timing1} 
-                        textFontSize={text1FontSize} 
-                        delay={delay1}
-                        />
-                        
-                    </div>
-                    <div className="col col-1-2 intro-right text-right"
-                    style={{position: "relative", transition: "2s", opacity: mainOpacity}}>
-                        <img src={foto} style={{borderRadius: "50px"}} alt="profilephoto"/>
+        <div className="container intro color2">
+            <section style={{opacity: mainOpacity}}>
+                <div className="container1 color2">
+                    <div className="row">
+                        <div className="col col-1-2 intro-left">
+                            <span className="label">failure is not an option</span>
+                            <h1 >Ondrej Laube</h1>
+                            <h3>frontend developer for your next project</h3>
+                            <ScrollContainer 
+                            foto={foto} 
+                            textInput={text1} 
+                            textFontWeight={text1Weight} 
+                            timing={timing1} 
+                            textFontSize={text1FontSize} 
+                            delay={delay1}
+                            />
+                            
+                        </div>
+                        <div className="col col-1-2 intro-right text-right"
+                        style={{position: "relative", transition: "2s", opacity: mainOpacity}}>
+                            <img src={foto} style={{borderRadius: "50px"}} alt="profilephoto"/>
 
 
-                        <div
-                        style={{
-                            width: "100%",
-                            //background: "black",
-                            height: "100%",
-                            position: "absolute",
-                            top: "0",
-                            display: "flex",
-                            flexDirection: "row"
-                        }}>
+                            <div
+                            style={{
+                                width: "100%",
+                                //background: "black",
+                                height: "100%",
+                                position: "absolute",
+                                top: "0",
+                                display: "flex",
+                                flexDirection: "row"
+                            }}>
 
-                            {animatiaon.map((item, index) => {
+                                {animatiaon.map((item, index) => {
 
-                                const thisLeft = index * (100 / animatiaon.length)
+                                    const thisLeft = index * (100 / animatiaon.length)
 
-                                console.log(thisLeft  + "%")
-                                return(
-                                    <div 
-                                    className="color1"
-                                    style={{
-                                        width: showFotoWidth,
-                                        //background: "black",
-                                        height: "100%",
-                                        position: "absolute",
-                                        transition: "1s linear",
-                                        left: thisLeft + "%"
-                                    }}></div>
-                                )
-                            })}
+                                    console.log(thisLeft  + "%")
+                                    return(
+                                        <div 
+                                        className="color2"
+                                        style={{
+                                            width: showFotoWidth,
+                                            //background: "black",
+                                            height: "100%",
+                                            position: "absolute",
+                                            transition: "1s linear",
+                                            left: thisLeft + "%"
+                                        }}></div>
+                                    )
+                                })}
+
+                            </div>
 
                         </div>
-
                     </div>
                 </div>
-            </div>
-        </section> 
+            </section> 
+        </div>
     )
 }
