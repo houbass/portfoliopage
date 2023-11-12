@@ -69,23 +69,25 @@ export default function ConsoleText({writingHandler, textInput, textFontWeight, 
             //background: "orange",
             position: "relative"
             }}>
-              <p
+              <p 
+              className="big-text"
               style={{
-                  fontSize: textFontSize,
-                  fontWeight: textFontWeight,
-                  marginTop: "auto",
-                  fontFamily: "'Courier New', Courier, monospace",
+                  //fontSize: textFontSize,
+                  //fontWeight: textFontWeight,
+                  //marginTop: "auto",
+                  fontFamily: "Poppins, sans-serif",
                   position: "absolute"
               }}>
                   {welcomeText + strednikOpacity}
               </p>
 
-              <p
+              <p 
+              className="big-text"
               style={{
-                  fontSize: textFontSize,
-                  fontWeight: textFontWeight,
-                  marginTop: "auto",
-                  fontFamily: "'Courier New', Courier, monospace",
+                  //fontSize: textFontSize,
+                  //fontWeight: textFontWeight,
+                  //marginTop: "auto",
+                  fontFamily: "Poppins, sans-serif", 
                   color: "rgba(0,0,0,0)"
               }}>
                   {text}

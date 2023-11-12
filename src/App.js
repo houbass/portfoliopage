@@ -1,3 +1,5 @@
+import { useLayoutEffect, useState } from 'react';
+
 //CSS
 import './App.css';
 
@@ -9,10 +11,18 @@ import ScrollText from './components/ScrollText';
 import ScrollConsoleText from './components/ScrollConsoleText';
 import ScrollContainer from './components/ScrollContainer';
 
+import FirstTopic from './components/FirstTopic';
+import SecondTopic from './components/SecondTopic';
+import ThirdTopic from './components/ThirdTopic';
+
 //pic
 import foto from "./pic/foto.jpg";
 
+
 function App() {
+
+  //TOPIC OPACITY (when img loaded)
+  const [mainOpacity, setMainOpacity] = useState(0);
 
   //TEXT 1
   const text1 = "Welcome to my page";
@@ -26,78 +36,22 @@ function App() {
   const text2Weight = "500"; 
   const timing2 = 30;
 
+  //WHEN IMG LOADED
+  const fotoImage = new Image();
+  fotoImage.src = foto
+
+  useLayoutEffect(() => {
+      fotoImage.onload = () => {
+          setMainOpacity(1);
+      }
+  },[])
+
   return (
     <div  className="App">
+      <FirstTopic foto={foto} mainOpacity={mainOpacity}/>
+      <SecondTopic foto={foto} mainOpacity={mainOpacity}/>
+      <ThirdTopic foto={foto} mainOpacity={mainOpacity}/>
 
-      <MatrixBackground />
-
-      <div 
-      style={{
-        background: "rgba(0,0,0,0.6)",
-        width: "80%",
-        maxWidth: "800px",
-        //padding: "50px",
-      }}>
-
-      <div className="header">
-        <CanvasPage foto={foto}/>
-
-        <ScrollConsoleText 
-        foto={foto}
-        textInput={text1} 
-        textFontSize={text1FontSize} 
-        textFontWeight={text1Weight} 
-        timing={timing1} 
-        delay = {0}
-        />
-      </div>
-
-      <ScrollContainer 
-      foto={foto}
-      textInput={text2} 
-      textFontSize={text2FontSize} 
-      textFontWeight={text2Weight} 
-      timing={timing2} 
-      delay = {0}
-      />
-
-      <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-      <ScrollConsoleText 
-      textInput={text2} 
-      textFontSize={text2FontSize} 
-      textFontWeight={text2Weight} 
-      timing={timing2} 
-      delay = {0}
-      />
-
-      <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-      <ScrollContainer 
-      foto={foto}
-      textInput={text2} 
-      textFontSize={text2FontSize} 
-      textFontWeight={text2Weight} 
-      timing={timing2} 
-      delay = {0}
-      />
-
-      <br/><br/><br/>
-      <ScrollConsoleText 
-      textInput={text2} 
-      textFontSize={30} 
-      textFontWeight={"bold"} 
-      timing={timing2} 
-      delay = {0}
-      />
-      <ScrollConsoleText 
-      textInput={text2} 
-      textFontSize={text2FontSize} 
-      textFontWeight={text2Weight} 
-      timing={timing2} 
-      delay = {500}
-      />
-
-      <br/><br/><br/><br/><br/><br/>
-      </div>
     </div>
   );
 }

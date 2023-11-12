@@ -1,6 +1,6 @@
 import { useLayoutEffect, useState } from 'react';
 
-export default function MatrixBackground() {
+export default function MatrixBackground({ height }) {
 
     //INTERVAL TIMING
     const timing = 500 //ms
@@ -13,8 +13,8 @@ export default function MatrixBackground() {
     //GET NUMBER OF SEGMENTS
     function getSegments() {
         //get actual window width
-        const thisWidth = window.innerWidth;
-        const thisHeight = window.innerHeight;
+        const thisWidth = window.innerWidth - fieldWidth;
+        const thisHeight = height - fieldHeight;
     
         //number of horizontal and vertical segments
         const thisHorizontalSegments = Math.ceil(thisWidth / fieldWidth);
@@ -59,31 +59,33 @@ export default function MatrixBackground() {
             getSegments();
         }, timing)
 
+
         return () => {
             window.removeEventListener("resize", resizeFun);
             clearInterval(interval);
         }
-    }, []);
-
+    }, [height]);
 
     return(
         <div 
         style={{
-            position: "fixed",
+            position: "absolute",
             width: "100%",
-            height: "100vh",
-            zIndex: "-1",
+            height: height,
+            zIndex: "0",
             opacity: "0.2",
             filter: "blur(0.5px)",
+            //top: "0"
         }}>
 
             <div 
             style={{
                 display: "flex",
                 flexDirection: "column",
-                position: "absolute"
+                position: "relative"
             }}>
                 {segments.map((item1, index1) => {
+
 
                     return(
                         <div 
@@ -91,6 +93,7 @@ export default function MatrixBackground() {
                         style={{
                         display: "flex",
                         flexDirection: "row",
+                        
                         }}>
                             {
                                 segments[index1].map((item2, index2) => {
@@ -98,7 +101,7 @@ export default function MatrixBackground() {
                                         <div 
                                         key={index2}
                                         style={{
-                                        color: "rgb(0,200,0)",
+                                        color: "rgb(0,0,0)",
                                         width: fieldWidth,
                                         height: fieldHeight,
                                         display: "flex",

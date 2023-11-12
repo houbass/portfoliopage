@@ -83,17 +83,8 @@ export default function ScrollContainer({ foto, textInput, textFontWeight, timin
               textFontSize={textFontSize} 
               textFontWeight={textFontWeight} 
               timing={timing} 
-              delay = {0}
-              />         
-              
-              <ConsoleText 
-              writingHandler={writingHandler}
-              textInput={textInput} 
-              textFontSize={textFontSize} 
-              textFontWeight={textFontWeight} 
-              timing={timing} 
-              delay = {1500}
-              />        
+              delay = {delay}
+              />               
             </div>            
         </div>
     </>
