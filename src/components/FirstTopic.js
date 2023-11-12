@@ -45,7 +45,7 @@ export default function FirstTopic({ foto, mainOpacity }) {
                         </div>
                         <div className="col col-1-2 intro-right text-right"
                         style={{position: "relative", transition: "2s", opacity: mainOpacity}}>
-                            <img src={foto} style={{borderRadius: "50px"}} alt="profilephoto"/>
+                            <img src={foto} className="mainPic" alt="profilephoto"/>
 
 
                             <div
@@ -63,7 +63,6 @@ export default function FirstTopic({ foto, mainOpacity }) {
 
                                     const thisLeft = index * (100 / animatiaon.length)
 
-                                    console.log(thisLeft  + "%")
                                     return(
                                         <div 
                                         className="color2"

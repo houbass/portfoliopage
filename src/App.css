@@ -14,12 +14,7 @@ img {
   color: white;
 }
 
-html {
-  scroll-behavior: smooth;
-  overflow-y: scroll;
-scroll-snap-type: y mandatory;
-height: 100vh;
-}
+
 .App {
 display: flex;
 flex-direction: column;
@@ -30,10 +25,6 @@ color: rgb(18, 36, 50);
 
 }
 
-.App div{
-  scroll-snap-align: center;
-  scroll-behavior: smooth;
-}
 
 .container {
   width: 100%;
@@ -41,6 +32,11 @@ color: rgb(18, 36, 50);
   flex-direction: column;
   align-items: center;
 
+}
+
+.mainPic {
+  max-width: 400px;
+  width: 100%;
 }
 
 .header {
@@ -135,12 +131,15 @@ p {
 }
 
 .intro-right {
-  padding-top: 55px;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
 }
 
 @media (min-width: 800px) {
   .intro-right {
       padding-top: 0;
+      justify-content: right;
   }
 }
 
@@ -153,7 +152,7 @@ p {
 
 .row {
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
 
   padding-right: 0px;
   gap: 20px;
