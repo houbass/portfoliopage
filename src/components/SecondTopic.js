@@ -41,7 +41,7 @@ export default function SecondTopic({ foto, mainOpacity }) {
             <div >
 
                     <div className="col col-1-2 intro-left">
-                        <h1 className="title" >🧑🏾‍🎓My skills</h1>
+                        <h1 className="title" ><span>🧑🏾‍🎓</span>My skills</h1>
                         
 
                         <br/>
