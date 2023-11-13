@@ -68,7 +68,7 @@ export default function SecondTopic({ foto, mainOpacity }) {
 
         resizeFun()
     })
-    //<Watcher titleX={titleX} titleY={titleY} titleWidth={titleWidth} titleHeight={titleHeight}/>
+
 
     return(
         <div className="container intro color1">
@@ -77,7 +77,7 @@ export default function SecondTopic({ foto, mainOpacity }) {
 
                     <div className="col col-1-2 intro-left">
                         <h1 ref={titleRef} className="title" ><span>🧑🏾‍🎓</span>My skills</h1>
-
+                        <Watcher titleX={titleX} titleY={titleY} titleWidth={titleWidth} titleHeight={titleHeight}/>
                         
 
                         <br/>
