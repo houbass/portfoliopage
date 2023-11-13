@@ -70,7 +70,7 @@ export default function ConsoleText({writingHandler, textInput, textFontWeight, 
             position: "relative"
             }}>
               <p 
-              className="big-text"
+              className="label"
               style={{
                   //fontSize: textFontSize,
                   //fontWeight: textFontWeight,
@@ -82,7 +82,7 @@ export default function ConsoleText({writingHandler, textInput, textFontWeight, 
               </p>
 
               <p 
-              className="big-text"
+              className="label"
               style={{
                   //fontSize: textFontSize,
                   //fontWeight: textFontWeight,

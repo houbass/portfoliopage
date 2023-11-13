@@ -4,7 +4,7 @@ import ScrollContainer from "./ScrollContainer";
 import MatrixBackground from "./MatrixBackground";
 
 
-export default function ThirdTopic({ foto, mainOpacity }) {
+export default function ComercialProjects({ foto, mainOpacity }) {
 
     //div ref
     const pageRef = useRef();
@@ -14,7 +14,7 @@ export default function ThirdTopic({ foto, mainOpacity }) {
     const animatiaon = [1, 2, 3, 4, 5]
 
     //TEXT 1
-    const text1 = "text about Lofi music chord progression randomizer text about Lofi music chord progression randomizer";
+    const text1 = "full stack website project, bla bla bla bla bla blabla bla blabla bla bla bla bla blabla bla blabla bla bla bla bla bla";
     const text1FontSize = 22;
     const text1Weight = "default"; 
     const timing1 = 20;
@@ -48,19 +48,17 @@ export default function ThirdTopic({ foto, mainOpacity }) {
 
 
     return(
-        <div ref={pageRef} className="container color2">
-
-    <MatrixBackground height={divHeight}/>
+        <div ref={pageRef} className="container color1">
 
             <section className="container1" style={{opacity: mainOpacity}} >
 
-                <div  >
+                <div >
 
                         <div className="col col-1-2 intro-left">
-                            <h1 className="title"> 🛠️My projects</h1>
+                            <h1 className="title"><span style={{border: "5px solid rgb(24, 24, 24)", borderRadius: "25%", fontSize: "60px"}}>💲</span>Comercial projects</h1>
 
                             <br/>
-                            <h3>Lofi music chord progression randomizer</h3>
+                            <h3>Sofa Lofi websites</h3>
                             <ScrollContainer 
                             foto={foto} 
                             textInput={text1} 
@@ -84,48 +82,10 @@ export default function ThirdTopic({ foto, mainOpacity }) {
                             <a className="button button-dark" href="https://threejsgravitation.netlify.app/" target="blank">let's see</a>
                             <br/><br/><br/><br/><br/><br/>
 
-                            <h3>Mindfuck game</h3>
-                            <ScrollContainer 
-                            foto={foto} 
-                            textInput={text3} 
-                            textFontWeight={text1Weight} 
-                            timing={timing1} 
-                            textFontSize={text1FontSize} 
-                            delay={delay1}
-                            />
-                            
-                            <br/>
-                            <h3>Mining game</h3>
-                            <ScrollContainer 
-                            foto={foto} 
-                            textInput={text4} 
-                            textFontWeight={text1Weight} 
-                            timing={timing1} 
-                            textFontSize={text1FontSize} 
-                            delay={delay1}
-                            />
-                                                        <br/>
-                            <h3>Spaceship game</h3>
-                            <ScrollContainer 
-                            foto={foto} 
-                            textInput={text5} 
-                            textFontWeight={text1Weight} 
-                            timing={timing1} 
-                            textFontSize={text1FontSize} 
-                            delay={delay1}
-                            />
 
-                            <h3>Tank game</h3>
-                            <ScrollContainer 
-                            foto={foto} 
-                            textInput={text6} 
-                            textFontWeight={text1Weight} 
-                            timing={timing1} 
-                            textFontSize={text1FontSize} 
-                            delay={delay1}
-                            />
 
                         </div>
+                        <br/><br/><br/><br/><br/><br/><br/><br/><br/>
                 </div>
 
             </section> 

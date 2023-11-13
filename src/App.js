@@ -14,6 +14,7 @@ import ScrollContainer from './components/ScrollContainer';
 import FirstTopic from './components/FirstTopic';
 import SecondTopic from './components/SecondTopic';
 import ThirdTopic from './components/ThirdTopic';
+import ComercialProjects from './components/ComercialProjects';
 
 //pic
 import foto from "./pic/foto.jpg";
@@ -51,7 +52,7 @@ function App() {
       <FirstTopic foto={foto} mainOpacity={mainOpacity}/>
       <SecondTopic foto={foto} mainOpacity={mainOpacity}/>
       <ThirdTopic foto={foto} mainOpacity={mainOpacity}/>
-      <SecondTopic foto={foto} mainOpacity={mainOpacity}/>
+      <ComercialProjects foto={foto} mainOpacity={mainOpacity}/>
 
     </div>
   );

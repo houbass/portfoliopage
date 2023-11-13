@@ -35,26 +35,29 @@ export default function SecondTopic({ foto, mainOpacity }) {
 
     return(
         <div className="container intro color1">
-        <section style={{opacity: mainOpacity}}>
-            <div className="container1 color1">
+        <section className="container1 color1" style={{opacity: mainOpacity}}>
+            <div >
 
                     <div className="col col-1-2 intro-left">
-                        <h1 className="title" >🛠️ My skills</h1>
+                        <h1 className="title" >🧠My skills</h1>
+                        
 
                         <br/>
                         <h3>React / Next.js</h3>
-                        <p className="big-text">{text1} </p>
+
+                        <span className="label">{text1} </span>
+                        <br/>
                         <br/>
 
                         <h3>UI</h3>
-                        <p className="big-text">{text2} </p>
+                        <span className="label">{text2} </span>
+                        <br/>
                         <br/>
 
                         <h3>Three.js</h3>
-                        <p className="big-text">{text3} </p>
+                        <span className="label">{text3} </span>
                         
                     </div>
-                    <br/><br/><br/><br/><br/><br/><br/><br/><br/>
             </div>
         </section> 
         </div>

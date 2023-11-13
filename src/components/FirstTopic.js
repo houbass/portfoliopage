@@ -30,7 +30,6 @@ export default function FirstTopic({ foto, mainOpacity }) {
                 <div className="container1 color2">
                     <div className="row">
                         <div className="col col-1-2 intro-left">
-                            <span className="label">failure is not an option</span>
                             <h1 >Ondrej Laube</h1>
                             <h3>frontend developer for your next project</h3>
                             <ScrollContainer 
