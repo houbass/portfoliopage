@@ -1,4 +1,4 @@
-import { useLayoutEffect, useState } from 'react';
+import { useLayoutEffect, useState, useEffect } from 'react';
 
 //CSS
 import './App.css';
@@ -22,6 +22,8 @@ import foto from "./pic/foto.jpg";
 
 function App() {
 
+
+  
   //TOPIC OPACITY (when img loaded)
   const [mainOpacity, setMainOpacity] = useState(0);
 
@@ -46,6 +48,8 @@ function App() {
           setMainOpacity(1);
       }
   },[])
+
+
 
   return (
     <div  className="App">

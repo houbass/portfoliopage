@@ -1,13 +1,21 @@
-import { useLayoutEffect, useState } from "react";
+import { useLayoutEffect, useState, useRef } from "react";
 
 import ScrollContainer from "./ScrollContainer";
-
+import Watcher from "./Watcher";
 
 
 export default function SecondTopic({ foto, mainOpacity }) {
 
+    //WAITING FOR LOADING A PIC AND ANIMATION SATES
     const [showFotoWidth, setShowFotoWidth] = useState("20%")
     const animatiaon = [1, 2, 3, 4, 5]
+    
+    //WATCHER
+    const titleRef = useRef();
+    const [titleY, setTitleY] = useState(580);
+    const [titleX, setTitleX] = useState(0);
+    const [titleWidth, setTitleWidth] = useState(1080);
+    const [titleHeight, setTitleHeight] = useState(50);
 
     //TEXT 1
     const text1 = "Mastering the language of React and dancing on the edge with Next.js, I sculpt dynamic web experiences that transcend the ordinary. With each component, I breathe life into interfaces, seamlessly blending creativity with the power of cutting-edge technology.";
@@ -35,13 +43,41 @@ export default function SecondTopic({ foto, mainOpacity }) {
     },[mainOpacity])
 
 
+    //ON RESIZE
+    function resizeFun() {
+        const thisTitle = titleRef.current.getBoundingClientRect();
+
+        setTitleY(titleRef.current.offsetTop);
+        setTitleX(thisTitle.x)
+        setTitleWidth(thisTitle.width)
+        setTitleHeight(thisTitle.height)
+    }
+
+    
+    useLayoutEffect(() => {
+
+
+        window.addEventListener("resize", resizeFun);
+        return() => {
+            window.removeEventListener("resize", resizeFun);
+        }
+    }, [])
+    
+
+    useLayoutEffect(() => {
+
+        resizeFun()
+    })
+
+
     return(
         <div className="container intro color1">
         <section className="container1 color1" style={{opacity: mainOpacity}}>
             <div >
 
                     <div className="col col-1-2 intro-left">
-                        <h1 className="title" ><span>🧑🏾‍🎓</span>My skills</h1>
+                        <h1 ref={titleRef} className="title" ><span>🧑🏾‍🎓</span>My skills</h1>
+                        <Watcher titleX={titleX} titleY={titleY} titleWidth={titleWidth} titleHeight={titleHeight}/>
                         
 
                         <br/>

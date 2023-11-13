@@ -104,7 +104,12 @@ h1, h2 {
   background: rgb(18, 36, 50);
 }
 
-
+#canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
 
 @media (min-width: 800px) {
   h1, h2 {
@@ -261,4 +266,130 @@ p {
   background: rgb(84, 185, 171);
   padding: 12px 25px;
   border-radius: 22px;
+}
+
+
+.openEyes {
+  height: 25px;
+  animation: open-animation1 1s ease-in-out 3s forwards;
+}
+
+@keyframes open-animation1 {
+  0%{
+    height: 25px;
+  }
+  100%{
+    height: 0px;
+  }
+  
+}
+
+
+
+
+.mrkani {
+  animation: mrkani-animation1 1s ease-in-out  forwards;
+}
+
+@keyframes mrkani-animation1 {
+  0%{
+    height: 0px;
+  }
+  50%{
+    height: 20px;
+  }
+  100%{
+    height: 0px;
+  }
+  
+}
+
+.normal {
+  animation: normal-animation1 4s ease-in-out  forwards;
+}
+
+@keyframes normal-animation1 {
+  0%{
+    height: 0px;
+  }
+  10%{
+    height: 15px;
+  }
+  90%{
+    height: 15px;
+  }
+  100%{
+    height: 0px;
+  }
+  
+}
+
+.interest {
+  animation: interest-animation1 4s ease-in-out  forwards;
+}
+
+@keyframes interest-animation1 {
+  0%{
+    height: 0px;
+  }
+  10%{
+    height: 10px;
+  }
+  90%{
+    height: 10px;
+  }
+  100%{
+    height: 0px;
+  }
+  
+}
+
+
+
+.sadL {
+  animation: sadL-animation1 4s ease-in-out  forwards;
+}
+
+@keyframes sadL-animation1 {
+  0%{
+    height: 0px;
+    rotate: 0deg;
+  }
+  10%{
+    height: 15px;
+    rotate: -20deg;
+  }
+  90%{
+    height: 15px;
+    rotate: -20deg;
+  }
+  100%{
+    height: 0px;
+    rotate: 0deg;
+  }
+  
+}
+
+.sadR {
+  animation: sadR-animation1 4s ease-in-out  forwards;
+}
+
+@keyframes sadR-animation1 {
+  0%{
+    height: 0px;
+    rotate: 0deg;
+  }
+  10%{
+    height: 15px;
+    rotate: 20deg;
+  }
+  90%{
+    height: 15px;
+    rotate: 20deg;
+  }
+  100%{
+    height: 0px;
+    rotate: 0deg;
+  }
+  
 }
