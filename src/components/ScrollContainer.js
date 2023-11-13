@@ -32,8 +32,10 @@ export default function ScrollContainer({ foto, textInput, textFontWeight, timin
     //on scroll function
     function scrollFun() {
       const y = getTotalHeight();
-
+      //console.log(elementRef.current.offsetTop)
+      //console.log(y)
       if(y > elementRef.current.offsetTop){
+        
 
         //DELAY
         const timeout = setTimeout(() => {

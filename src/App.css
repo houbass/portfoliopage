@@ -241,9 +241,8 @@ p {
   display: inline-block;
   text-align: center;
   font-size: 15px;
-  line-height: 20px;
   font-weight: 700;
-  padding: 20px 25px;
+  padding: 15px 20px;
   border-radius: 30px;
   border: 3px dotted transparent;
   position: relative;
@@ -397,4 +396,31 @@ p {
     rotate: 0deg;
   }
   
+}
+
+.projectCard {
+  transition: 0.3s;
+}
+
+.projectCard:hover {
+  filter: brightness(1.05);
+}
+
+.projectCardContent {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+@media (min-width: 800px) {
+  .projectCardContent {
+    flex-direction: row;
+
+  }
+}
+
+.projectCardLink{
+  color: transparent;  
+  text-shadow: 0 0 0 rgb(18, 36, 50);
+  font-size: 30px;
 }

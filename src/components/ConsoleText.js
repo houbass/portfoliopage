@@ -59,7 +59,6 @@ export default function ConsoleText({writingHandler, textInput, textFontWeight, 
     <>
         <div 
         ref={elementRef} 
-
         >
             <div 
             style={{
