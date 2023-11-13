@@ -84,7 +84,7 @@ export default function Watcher({ titleX, titleY, titleWidth, titleHeight }) {
         const thisWindowHeight = window.innerHeight
         const thisTotalHeight = scrollTop + thisWindowHeight;
         //display when its on 0.6 height
-        const thisRate =  thisTotalHeight - (thisWindowHeight * 0.6)
+        const thisRate =  thisTotalHeight - (thisWindowHeight * 0.7)
 
         //start animation
         if(thisRate > titleY){

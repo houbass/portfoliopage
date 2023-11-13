@@ -65,7 +65,8 @@ export default function FirstTopic({ foto, mainOpacity }) {
 
                                     return(
                                         <div 
-                                        className="color2"
+                                        className="color2" 
+                                        key={index}
                                         style={{
                                             width: showFotoWidth,
                                             //background: "black",
