@@ -14,6 +14,10 @@ img {
   color: white;
 }
 
+html{
+  overflow-x: hidden;
+}
+
 
 .App {
 display: flex;
@@ -267,9 +271,13 @@ p {
 }
 
 
+.closedEyes{
+  height: 25px;
+}
+
 .openEyes {
   height: 25px;
-  animation: open-animation1 1s ease-in-out 3s forwards;
+  animation: open-animation1 1s ease-in-out forwards;
 }
 
 @keyframes open-animation1 {
@@ -281,7 +289,6 @@ p {
   }
   
 }
-
 
 
 

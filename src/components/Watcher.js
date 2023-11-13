@@ -1,14 +1,23 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useLayoutEffect } from "react";
 
 export default function Watcher({ titleX, titleY, titleWidth, titleHeight }) {
     const canvasRef = useRef(null);
 
-    const width = window.innerWidth - 20;
+    const width = window.innerWidth;
     const height = 2000;
+
+    //DEVICE CHECK STATES
+    const [mobile, setMobile] = useState(null);
 
     //MOUSE COORDINATES
     const [mouseX, setMouseX] = useState(0);
     const [mouseY, setMouseY] = useState(0);
+
+    //EYEBROW STATES
+    const [topLeftEyesClass, setTopLeftEyesClass] = useState("closedEyes");
+    const [topRightEyesClass, setTopRightEyesClass] = useState("closedEyes");
+    const [bottomEyesClass, setBottomEyesClass] = useState("closedEyes");
+    const [startAnimation, setStartAnimation] = useState(false);
 
     //BULVA DEF
     const vzdalenost = 15;
@@ -31,10 +40,112 @@ export default function Watcher({ titleX, titleY, titleWidth, titleHeight }) {
 
         setMouseX(e.clientX);
         setMouseY(e.clientY + thisScrollY);
-
     }
 
+    //EYEBROW
+    const moods = [
+        {
+            name: "normal",
+            topLeftEye: "normal",
+            topRightEye: "normal",
+            bottomEyes: ""
+        }, 
+        {
+            name: "mrkani",
+            topLeftEye: "mrkani",
+            topRightEye: "mrkani",
+            bottomEyes: "mrkani"
+        },
+        {
+            name: "sad",
+            topLeftEye: "sadL",
+            topRightEye: "sadR",
+            bottomEyes: ""
+        },
+        {
+            name: "interest",
+            topLeftEye: "interest",
+            topRightEye: "interest",
+            bottomEyes: "interest"
+        },
+        {
+            name: "angry",
+            topLeftEye: "sadR",
+            topRightEye: "sadL",
+            bottomEyes: "interest"
+        },
 
+    ]
+
+
+    //ON SCROLL
+    function scrollCheck() {
+        const scrollTop = window.scrollY;
+        const thisWindowHeight = window.innerHeight
+        const thisTotalHeight = scrollTop + thisWindowHeight;
+        //display when its on 0.6 height
+        const thisRate =  thisTotalHeight - (thisWindowHeight * 0.6)
+
+        //start animation
+        if(thisRate > titleY){
+            setStartAnimation(true)
+        }
+    }
+
+    useEffect(() => {
+        scrollCheck();
+        //ON SCROLL EVENTS
+        window.addEventListener("scroll", scrollCheck);
+
+        return() => {
+            window.removeEventListener("scroll", scrollCheck);
+        }
+    },[titleY])
+
+    //EYEBROW ANIMATION
+    useEffect(() => {
+        if(startAnimation === true && mobile === false){
+            //OPEN EYES FIRST
+            setTopLeftEyesClass("openEyes");
+            setTopRightEyesClass("openEyes");
+            setBottomEyesClass("openEyes");
+
+            //RANDOM MOOD INTERVAL
+            const thisInterval = setInterval(() => {
+                //get random mood index between 0 and 4
+                const randomNumber = Math.round(Math.random() * 4);
+
+
+                setTopLeftEyesClass(moods[randomNumber].topLeftEye);
+                setTopRightEyesClass(moods[randomNumber].topRightEye);
+                setBottomEyesClass(moods[randomNumber].bottomEyes);
+
+                //clear class before next one
+                const thisTimeout = setTimeout(() => {
+
+                    setTopLeftEyesClass("");
+                    setTopRightEyesClass("");
+                    setBottomEyesClass("");
+
+                }, 4800)
+
+                return() => {
+                    clearTimeout(thisTimeout);
+                }
+
+            }, 5000)
+
+
+            return() => {
+                clearInterval(thisInterval);
+            }
+        }else{
+
+        }
+    }, [startAnimation])
+
+
+    //EYES ANIMATION
     useEffect(() => {
 
         const canvas = canvasRef.current;
@@ -144,96 +255,21 @@ export default function Watcher({ titleX, titleY, titleWidth, titleHeight }) {
         }
     });
 
-    const obociHeight = 20;
-    const rotation = 0;
 
-    const classTopEyes = "openEyes"
-    const classBottomEyes = "openEyes"
-
-    const [topLeftEyesClass, setTopLeftEyesClass] = useState("");
-    const [topRightEyesClass, setTopRightEyesClass] = useState("");
-    const [bottomEyesClass, setBottomEyesClass] = useState("");
-
-    const moods = [
-        {
-            name: "normal",
-            topLeftEye: "normal",
-            topRightEye: "normal",
-            bottomEyes: ""
-        }, 
-        {
-            name: "mrkani",
-            topLeftEye: "mrkani",
-            topRightEye: "mrkani",
-            bottomEyes: "mrkani"
-        },
-        {
-            name: "sad",
-            topLeftEye: "sadL",
-            topRightEye: "sadR",
-            bottomEyes: ""
-        },
-        {
-            name: "interest",
-            topLeftEye: "interest",
-            topRightEye: "interest",
-            bottomEyes: "interest"
-        },
-        {
-            name: "angry",
-            topLeftEye: "sadR",
-            topRightEye: "sadL",
-            bottomEyes: "interest"
-        },
-
-    ]
-
-    const thisMood = moods[0];
-
-    useEffect(() => {
-
-        //OPEN EYES FIRST
-        setTopLeftEyesClass("openEyes");
-        setTopRightEyesClass("openEyes");
-        setBottomEyesClass("openEyes");
-        //setTopLeftEyesClass("sadL");
-        //setTopRightEyesClass("sadR");
-
-        ///*
-        //RANDOM MOOD INTERVAL
-        const thisInterval = setInterval(() => {
-            //get random mood index between 0 and 4
-            const randomNumber = Math.round(Math.random() * 4);
-
-            console.log(randomNumber)
-            setTopLeftEyesClass(moods[randomNumber].topLeftEye);
-            setTopRightEyesClass(moods[randomNumber].topRightEye);
-            setBottomEyesClass(moods[randomNumber].bottomEyes);
-
-            //clear class before next one
-            const thisTimeout = setTimeout(() => {
-
-                setTopLeftEyesClass("");
-                setTopRightEyesClass("");
-                setBottomEyesClass("");
-
-            }, 4800)
-
-            return() => {
-                clearTimeout(thisTimeout);
-            }
-
-        }, 5000)
-
-        return() => {
-            clearInterval(thisInterval);
+    //DEVICE CHECK
+    useLayoutEffect(() => {
+        if (navigator.userAgent.match(/Android/i)
+        || navigator.userAgent.match(/webOS/i)
+        || navigator.userAgent.match(/iPhone/i)
+        || navigator.userAgent.match(/iPad/i)
+        || navigator.userAgent.match(/iPod/i)
+        || navigator.userAgent.match(/BlackBerry/i)
+        || navigator.userAgent.match(/Windows Phone/i)) {
+          setMobile(true);
+        } else {
+          setMobile(false);
         }
-        //*/
-
-
-
-
-    }, [])
+      }, [])
 
     return (
         <div onMouseMove={getMousePosition}>
