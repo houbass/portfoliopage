@@ -116,7 +116,6 @@ h1, h2 {
       font-size: 70px;
       line-height: 78px;
       margin-bottom: 20px;
-
   }
 }
 
@@ -125,7 +124,6 @@ h3 {
   line-height: 36px;
   margin-bottom: 8px;
   pointer-events: none;
-
 }
 
 p {
