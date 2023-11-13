@@ -37,6 +37,7 @@ color: rgb(18, 36, 50);
 .mainPic {
   max-width: 400px;
   width: 100%;
+  border-radius: 50px;
 }
 
 .header {
@@ -94,8 +95,14 @@ h1, h2 {
   font-size: 50px;
   line-height: 60px;
   margin-bottom: 14px;
-
 }
+
+.title {
+  color: transparent;  
+  text-shadow: 0 0 0 rgb(18, 36, 50);
+}
+
+
 
 @media (min-width: 800px) {
   h1, h2 {
@@ -110,6 +117,7 @@ h3 {
   font-size: 24px;
   line-height: 36px;
   margin-bottom: 8px;
+
 
 }
 
@@ -226,14 +234,27 @@ p {
   font-weight: 700;
   padding: 20px 25px;
   border-radius: 30px;
+  border: 3px dotted transparent;
+  position: relative;
+  z-index: 2;
+  
 }
 
 .button:hover {
-	background: rgba(255, 0, 0, 0.5);
+	background: rgb(255, 255, 255);
 	color: black;
+  border: 3px dotted rgb(18, 36, 50);
+  box-sizing: border-box;
 }
 
 .button-dark {
-  background: rgb(18, 36, 50);
+  background: rgb(36, 71, 95);
   color: white;
+}
+
+.button-cta {
+  color: rgb(255, 255, 255);
+  background: rgb(84, 185, 171);
+  padding: 12px 25px;
+  border-radius: 22px;
 }

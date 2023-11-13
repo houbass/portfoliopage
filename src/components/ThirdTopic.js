@@ -50,14 +50,14 @@ export default function ThirdTopic({ foto, mainOpacity }) {
     return(
         <div ref={pageRef} className="container color2">
 
-
+    <MatrixBackground height={divHeight}/>
 
             <section style={{opacity: mainOpacity}} >
 
-                <div className="container1 color2">
+                <div className="container1 ">
 
                         <div className="col col-1-2 intro-left">
-                            <h1 >My projects</h1>
+                            <h1 className="title">🏗️ My projects</h1>
 
                             <br/>
                             <h3>Lofi music chord progression randomizer</h3>
@@ -69,8 +69,9 @@ export default function ThirdTopic({ foto, mainOpacity }) {
                             textFontSize={text1FontSize} 
                             delay={delay1}
                             />
+                            <a className="button button-dark" href="https://lofichordrandomizer.netlify.app" target="blank">make some music</a>
+                            <br/><br/><br/><br/><br/><br/>
 
-                            <br/>
                             <h3>Gravitation simulation</h3>
                             <ScrollContainer 
                             foto={foto} 
@@ -80,8 +81,9 @@ export default function ThirdTopic({ foto, mainOpacity }) {
                             textFontSize={text1FontSize} 
                             delay={delay1}
                             />
+                            <a className="button button-dark" href="https://threejsgravitation.netlify.app/" target="blank">let's see</a>
+                            <br/><br/><br/><br/><br/><br/>
 
-                            <br/>
                             <h3>Mindfuck game</h3>
                             <ScrollContainer 
                             foto={foto} 

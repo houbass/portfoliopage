@@ -39,7 +39,7 @@ export default function SecondTopic({ foto, mainOpacity }) {
             <div className="container1 color1">
 
                     <div className="col col-1-2 intro-left">
-                        <h1 >My skills</h1>
+                        <h1 className="title" >🛠️ My skills</h1>
 
                         <br/>
                         <h3>React / Next.js</h3>

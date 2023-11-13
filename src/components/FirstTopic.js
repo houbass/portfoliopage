@@ -42,6 +42,7 @@ export default function FirstTopic({ foto, mainOpacity }) {
                             delay={delay1}
                             />
                             
+                            
                         </div>
                         <div className="col col-1-2 intro-right text-right"
                         style={{position: "relative", transition: "2s", opacity: mainOpacity}}>
