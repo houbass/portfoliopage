@@ -23,6 +23,8 @@ export default function SecondTopic({ foto, mainOpacity }) {
     //TEXT3
     const text3 = "Stepping into the immersive world of Three.js, I transcend the boundaries of traditional web development. With every line of code, I sculpt captivating 3D experiences, pushing the limits of what's possible in the browser. Armed with the power of Three.js, I turn concepts into visually stunning realities, where the intersection of creativity and technology becomes a mesmerizing playground.";
     
+    //TEXT4
+    const text4 = "some text about my firebase skills"
     
     //ON LOAD
     useLayoutEffect(() => {
@@ -39,7 +41,7 @@ export default function SecondTopic({ foto, mainOpacity }) {
             <div >
 
                     <div className="col col-1-2 intro-left">
-                        <h1 className="title" >🧠My skills</h1>
+                        <h1 className="title" >🧑🏾‍🎓My skills</h1>
                         
 
                         <br/>
@@ -56,6 +58,13 @@ export default function SecondTopic({ foto, mainOpacity }) {
 
                         <h3>Three.js</h3>
                         <span className="label">{text3} </span>
+                        <br/>
+                        <br/>
+                        
+                        <h3>Firebase</h3>
+                        <span className="label">{text4} </span>
+                        <br/>
+                        <br/>
                         
                     </div>
             </div>

@@ -55,7 +55,7 @@ export default function ComercialProjects({ foto, mainOpacity }) {
                 <div >
 
                         <div className="col col-1-2 intro-left">
-                            <h1 className="title"><span style={{border: "5px solid rgb(24, 24, 24)", borderRadius: "25%", fontSize: "60px"}}>💲</span>Comercial projects</h1>
+                            <h1 className="title"><span>💲</span>Comercial projects</h1>
 
                             <br/>
                             <h3>Sofa Lofi websites</h3>

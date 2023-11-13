@@ -95,11 +95,13 @@ h1, h2 {
   font-size: 50px;
   line-height: 60px;
   margin-bottom: 14px;
+  pointer-events: none;
 }
 
 .title {
   color: transparent;  
-  text-shadow: 0 0 0 rgb(18, 36, 50);
+  text-shadow: 0 0 0 white;
+  background: rgb(18, 36, 50);
 }
 
 
@@ -117,12 +119,14 @@ h3 {
   font-size: 24px;
   line-height: 36px;
   margin-bottom: 8px;
+  pointer-events: none;
 
 }
 
 p {
   font-size: 20px;
   line-height: 30px;
+  pointer-events: none;
 }
 
 
