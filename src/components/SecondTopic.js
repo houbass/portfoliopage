@@ -76,7 +76,7 @@ export default function SecondTopic({ foto, mainOpacity }) {
             <div >
 
                     <div className="col col-1-2 intro-left">
-                        <h1 ref={titleRef} className="title" ><span>🧑🏾‍🎓</span>My skills</h1>
+                        <h1 ref={titleRef} className="title" ><span role="img">🧑🏾‍🎓</span>My skills</h1>
                         <Watcher titleX={titleX} titleY={titleY} titleWidth={titleWidth} titleHeight={titleHeight}/>
                         
 
