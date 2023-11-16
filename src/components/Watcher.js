@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState, useLayoutEffect } from "react";
+import { useEffect, useRef, useState, useLayoutEffect } from "react";
 
 export default function Watcher({ titleX, titleY, titleWidth, titleHeight }) {
     const canvasRef = useRef(null);
@@ -100,9 +100,10 @@ export default function Watcher({ titleX, titleY, titleWidth, titleHeight }) {
         return() => {
             window.removeEventListener("scroll", scrollCheck);
         }
-    },[titleY])
+    }, [titleY]);
 
-    //EYEBROW ANIMATION
+
+    //EYEBROW ANIMATIONF
     useEffect(() => {
         if(startAnimation === true && mobile === false){
             //OPEN EYES FIRST
@@ -111,14 +112,33 @@ export default function Watcher({ titleX, titleY, titleWidth, titleHeight }) {
             setBottomEyesClass("openEyes");
 
             //RANDOM MOOD INTERVAL
-            const thisInterval = setInterval(() => {
-                //get random mood index between 0 and 4
-                const randomNumber = Math.round(Math.random() * 4);
+            const prev = [10];
+            const thisInterval = setInterval(async() => {
 
+                let check = 10;
+                async function getRandomNumber () {
+                    //get random mood index between 0 and 4
+                    const randomNumber = Math.round(Math.random() * 4);
 
-                setTopLeftEyesClass(moods[randomNumber].topLeftEye);
-                setTopRightEyesClass(moods[randomNumber].topRightEye);
-                setBottomEyesClass(moods[randomNumber].bottomEyes);
+                    //get previous number
+                    const getLastIndex = prev.length - 1;
+                    const getLast = prev[getLastIndex];
+
+                    //run again if prev number is same
+                    if(randomNumber === getLast){
+                        getRandomNumber();
+                    }
+                    else{
+                        check = randomNumber;
+                    }
+                }
+                getRandomNumber();
+
+                prev.push(check);
+
+                setTopLeftEyesClass(moods[check].topLeftEye);
+                setTopRightEyesClass(moods[check].topRightEye);
+                setBottomEyesClass(moods[check].bottomEyes);
 
                 //clear class before next one
                 const thisTimeout = setTimeout(() => {
@@ -134,7 +154,6 @@ export default function Watcher({ titleX, titleY, titleWidth, titleHeight }) {
                 }
 
             }, 5000)
-
 
             return() => {
                 clearInterval(thisInterval);
