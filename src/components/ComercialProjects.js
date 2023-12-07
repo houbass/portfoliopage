@@ -4,11 +4,9 @@ import { useRef } from "react";
 import ScrollContainer from "./ScrollContainer";
 
 //pictures
-import lofichordPic from "../pic/lofichord.png";
-import gittextdPic from "../pic/gittext.png";
-import gitPic from "../pic/git.png";
+import comercialPic from "../pic/comercial.svg"
 
-export default function ComercialProjects({ foto, mainOpacity }) {
+export default function ComercialProjects({lofichordPic, gittextdPic, gitPic, mainOpacity }) {
 
     //div ref
     const pageRef = useRef();
@@ -45,7 +43,7 @@ export default function ComercialProjects({ foto, mainOpacity }) {
             <section className="container1" style={{opacity: mainOpacity}} >
                 <div >
                     <div className="col col-1-2 intro-left">
-                        <h1 className="title"><span>💲</span>Comercial projects</h1>
+                        <h1 className="title"><img src={comercialPic} height="50px"/>Comercial projects</h1>
 
                         {myProjects.map((item, index) => {
                             let thisVisibility = "visible";
@@ -75,7 +73,6 @@ export default function ComercialProjects({ foto, mainOpacity }) {
                                             justifyContent: "space-between"
                                         }}>
                                             <ScrollContainer 
-                                            foto={foto} 
                                             textInput={item.text} 
                                             textFontWeight={text1Weight} 
                                             timing={timing1} 

@@ -3,11 +3,8 @@ import { useLayoutEffect, useRef, useState } from 'react'
 //components
 import ConsoleText from './ConsoleText';
 
-export default function ScrollContainer({ foto, textInput, textFontWeight, timing, textFontSize, delay }) {
+export default function ScrollContainer({ mainOpacity, textInput, textFontWeight, timing, textFontSize, delay }) {
 
-    //canvas img
-    const fotoImage = new Image();
-    fotoImage.src = foto
 
     //WRITING
     const [writingHandler, setWritingHandler] = useState(false);
@@ -42,13 +39,16 @@ export default function ScrollContainer({ foto, textInput, textFontWeight, timin
         }
       }
     }
+
+    useLayoutEffect(() => {
+      if(mainOpacity === 1){
+        scrollFun();
+      }
+    },[mainOpacity])
   
     //SCROLLING / RESIZE LISTENERS
     useLayoutEffect(() => {
 
-      fotoImage.onload = () => {      
-        scrollFun();
-      }
         window.addEventListener("scroll", scrollFun);
         window.addEventListener("resize", scrollFun);
 

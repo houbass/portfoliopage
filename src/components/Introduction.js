@@ -6,7 +6,7 @@ import ScrollContainer from "./ScrollContainer";
 export default function Introduction({ foto, mainOpacity }) {
 
     //Photo animation states
-    const [showFotoWidth, setShowFotoWidth] = useState("20%")
+    const [showFotoWidth, setShowFotoWidth] = useState("")
     const animatiaon = [1, 2, 3, 4, 5]
 
     //Animationed text settings
@@ -18,7 +18,7 @@ export default function Introduction({ foto, mainOpacity }) {
 
     useLayoutEffect(() => {
         if(mainOpacity === 1){
-            setShowFotoWidth("0%")
+            setShowFotoWidth("fotoTransition")
         }
     },[mainOpacity])
 
@@ -35,7 +35,7 @@ export default function Introduction({ foto, mainOpacity }) {
                             }} >Ondrej Laube</h1>
                             <h3>frontend developer for your next project</h3>
                             <ScrollContainer 
-                            foto={foto} 
+                            mainOpacity={mainOpacity}
                             textInput={text1} 
                             textFontWeight={text1Weight} 
                             timing={timing1} 
@@ -63,14 +63,13 @@ export default function Introduction({ foto, mainOpacity }) {
 
                                     return(
                                         <div 
-                                        className="color2" 
+                                        className={"color2" + " " + showFotoWidth} 
                                         key={index}
                                         style={{
-                                            width: showFotoWidth,
-                                            //background: "black",
+                                            //width: showFotoWidth,
+                                            background: "rgb(255, 255, 255)",
                                             height: "100%",
                                             position: "absolute",
-                                            transition: "1s linear",
                                             left: thisLeft + "%"
                                         }}></div>
                                     )

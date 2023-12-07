@@ -1,16 +1,13 @@
-import { useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 
 //pictures
-import lofichordPic from "../pic/lofichord.png";
-import gravityPic from "../pic/gravity.png";
-import gittextdPic from "../pic/gittext.png";
-import gitPic from "../pic/git.png";
+import projectsPic from "../pic/projects.svg"
 
 //components
 import ScrollContainer from "./ScrollContainer";
 import MatrixBackground from "./MatrixBackground";
 
-export default function MyProjects({ foto, mainOpacity }) {
+export default function MyProjects({ lofichordPic, gravityPic, gittextdPic, gitPic, mainOpacity }) {
 
     //div ref
     const pageRef = useRef();
@@ -23,13 +20,25 @@ export default function MyProjects({ foto, mainOpacity }) {
     const text1Weight = "default"; 
     const timing1 = 20;
     const delay1 = 0;
+
+    //RESIZE FUNCTION
+    function resizeFun() {
+        setDivHeight(pageRef.current.offsetHeight)
+    }
     
     //ON LOAD
     useLayoutEffect(() => {
-        if(mainOpacity === 1){
-            setDivHeight(pageRef.current.offsetHeight)
+        setDivHeight(pageRef.current.offsetHeight)
+    }, [mainOpacity])
+
+    //ON RESIZE
+    useEffect(() => {
+        window.addEventListener("resize", resizeFun);
+
+        return () => {
+            window.removeEventListener("resize", resizeFun);
         }
-    },[mainOpacity])
+    }, [])
 
     //MY PROJETS DESCRIPTION
     const myProjects = [
@@ -91,7 +100,7 @@ export default function MyProjects({ foto, mainOpacity }) {
 
             <section className="container1" style={{opacity: mainOpacity, zIndex: "30"}}>
                 <div className="col col-1-2 intro-left">
-                    <h1 className="title"> 🛠️My projects</h1>
+                    <h1 className="title"><img src={projectsPic} height="50px"/>My projects</h1>
 
                     {myProjects.map((item, index) => {
 
@@ -122,7 +131,6 @@ export default function MyProjects({ foto, mainOpacity }) {
                                         justifyContent: "space-between"
                                     }}>
                                         <ScrollContainer 
-                                        foto={foto} 
                                         textInput={item.text} 
                                         textFontWeight={text1Weight} 
                                         timing={timing1} 

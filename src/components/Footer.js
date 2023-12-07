@@ -10,18 +10,15 @@ export default function Footer({ mainOpacity }) {
                 <div >
                     <div className="col col-1-2 pad1">
 
-                            <br/>
-                            <h3>Footer</h3>
-
                             <div 
                             style={{
                                 display: "flex",
                                 flexDirection: "row",
                                 justifyContent: "space-between",
                             }}>
-                                <p className="footerLabel">some shiiit</p>
-                                <p className="footerLabel">contacts</p>
-                                <p className="footerLabel">email</p>
+                                <p className="footerLabel">laube.ondrej@seznam.cz</p>
+                                <p className="footerLabel">github</p>
+                                <p className="footerLabel">Linked In</p>
                             </div>
 
                     </div>

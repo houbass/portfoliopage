@@ -447,3 +447,18 @@ p {
   text-shadow: 0 0 0 rgb(18, 36, 50);
   font-size: 30px;
 }
+
+
+.fotoTransition{
+  width: 20%;
+  animation: introAnim 1s linear forwards;
+}
+
+@keyframes introAnim {
+  0%{
+    width: 20%;
+  }
+  100%{
+    width: 0%;
+  }
+}
