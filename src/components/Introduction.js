@@ -1,15 +1,15 @@
 import { useLayoutEffect, useState } from "react";
 
+//components
 import ScrollContainer from "./ScrollContainer";
 
+export default function Introduction({ foto, mainOpacity }) {
 
-
-export default function FirstTopic({ foto, mainOpacity }) {
-
+    //Photo animation states
     const [showFotoWidth, setShowFotoWidth] = useState("20%")
     const animatiaon = [1, 2, 3, 4, 5]
 
-    //TEXT 1
+    //Animationed text settings
     const text1 = "crafting digital landscapes where design meets functionality and user experience is not just a goal but a journey...";
     const text1FontSize = 22;
     const text1Weight = "default"; 
@@ -20,7 +20,6 @@ export default function FirstTopic({ foto, mainOpacity }) {
         if(mainOpacity === 1){
             setShowFotoWidth("0%")
         }
-
     },[mainOpacity])
 
 
@@ -28,9 +27,12 @@ export default function FirstTopic({ foto, mainOpacity }) {
         <div className="container intro color2">
             <section style={{opacity: mainOpacity}}>
                 <div className="container1 color2">
-                    <div className="row">
-                        <div className="col col-1-2 intro-left">
-                            <h1 >Ondrej Laube</h1>
+                    <div className="row" style={{justifyContent: "space-between"}}>
+                        <div className="col col-1-2 intro-left pad1">
+                            <h1 
+                            style={{
+                                fontSize: "50px"
+                            }} >Ondrej Laube</h1>
                             <h3>frontend developer for your next project</h3>
                             <ScrollContainer 
                             foto={foto} 
@@ -40,13 +42,10 @@ export default function FirstTopic({ foto, mainOpacity }) {
                             textFontSize={text1FontSize} 
                             delay={delay1}
                             />
-                            
-                            
                         </div>
-                        <div className="col col-1-2 intro-right text-right"
+                        <div className="col"
                         style={{position: "relative", transition: "2s", opacity: mainOpacity}}>
                             <img src={foto} className="mainPic" alt="profilephoto"/>
-
 
                             <div
                             style={{
@@ -60,7 +59,6 @@ export default function FirstTopic({ foto, mainOpacity }) {
                             }}>
 
                                 {animatiaon.map((item, index) => {
-
                                     const thisLeft = index * (100 / animatiaon.length)
 
                                     return(
@@ -79,11 +77,10 @@ export default function FirstTopic({ foto, mainOpacity }) {
                                 })}
 
                             </div>
-
                         </div>
                     </div>
                 </div>
             </section> 
         </div>
     )
-}
+};

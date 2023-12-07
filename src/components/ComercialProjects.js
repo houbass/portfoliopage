@@ -1,93 +1,132 @@
-import { useLayoutEffect, useRef, useState } from "react";
+import { useRef } from "react";
 
+//components
 import ScrollContainer from "./ScrollContainer";
-import MatrixBackground from "./MatrixBackground";
 
+//pictures
+import lofichordPic from "../pic/lofichord.png";
+import gittextdPic from "../pic/gittext.png";
+import gitPic from "../pic/git.png";
 
 export default function ComercialProjects({ foto, mainOpacity }) {
 
     //div ref
     const pageRef = useRef();
 
-    const [showFotoWidth, setShowFotoWidth] = useState("20%")
-    const [divHeight, setDivHeight] = useState(0);
-    const animatiaon = [1, 2, 3, 4, 5]
-
-    //TEXT 1
-    const text1 = "full stack website project, bla bla bla bla bla blabla bla blabla bla bla bla bla blabla bla blabla bla bla bla bla bla";
+    //WRITING ANIMATION SETTINGS
     const text1FontSize = 22;
     const text1Weight = "default"; 
     const timing1 = 20;
     const delay1 = 0;
 
-    //TEXT 2
-    const text2 =  "Text about gravitaion simulation using Three.js";
-
-    //TEXT3
-    const text3 = "Text about mindfuck game";
-
-    //TEXT4
-    const text4 = "Text about mining game";
-
-    //TEXT5
-    const text5 = "Spaceship game";
-
-    //TEXT5
-    const text6 = "Text about tank game";
+    const myProjects = [
+        {
+            title: "Sofa Lofi",
+            pic: lofichordPic,
+            text: "text about sofa lofi recording label websites",
+            techStack: ["next.js", "lottie", "firebase", "create-pdf-js"],
+            btnText: "check it out",
+            link: "https://lofichordrandomizer.netlify.app/",
+            git: "https://github.com/houbass/lofirandomizator.git"
+        }, {
+            title: "BNCexpress",
+            pic: lofichordPic,
+            text: "text about BNCexpress recording label websites",
+            techStack: ["next.js"],
+            btnText: "check it out",
+            link: "https://lofichordrandomizer.netlify.app/",
+            git: null
+        },    
+    ]
     
-    
-    //ON LOAD
-    useLayoutEffect(() => {
-        if(mainOpacity === 1){
-            setShowFotoWidth("0%")
-            setDivHeight(pageRef.current.offsetHeight)
-        }
-
-    },[mainOpacity])
-
-
-
     return(
         <div ref={pageRef} className="container color1">
 
             <section className="container1" style={{opacity: mainOpacity}} >
-
                 <div >
+                    <div className="col col-1-2 intro-left">
+                        <h1 className="title"><span>💲</span>Comercial projects</h1>
 
-                        <div className="col col-1-2 intro-left">
-                            <h1 className="title"><span>💲</span>Comercial projects</h1>
+                        {myProjects.map((item, index) => {
+                            let thisVisibility = "visible";
+                            if(item.git === null){
+                                thisVisibility = "hidden";
+                            }
 
-                            <br/>
-                            <h3>Sofa Lofi websites</h3>
-                            <ScrollContainer 
-                            foto={foto} 
-                            textInput={text1} 
-                            textFontWeight={text1Weight} 
-                            timing={timing1} 
-                            textFontSize={text1FontSize} 
-                            delay={delay1}
-                            />
-                            <a className="button button-dark" href="https://lofichordrandomizer.netlify.app" target="blank">make some music</a>
-                            <br/><br/><br/><br/><br/><br/>
+                            return(
+                                <div 
+                                key={index}
+                                className="projectCard pad1"
+                                style={{
+                                    background: "rgb(242, 247, 250)",
+                                    zIndex: "10",
+                                    paddingTop: "20px",
+                                    marginBottom: "30px"
+                                }}>
+                                    <h3>{item.title}</h3>
+                                    <div 
+                                    className="projectCardContent"
+                                    >
+                                        <img src={item.pic} width="300" height="auto"/>
+                                        <div 
+                                        style={{
+                                            display: "flex",
+                                            flexDirection: "column",
+                                            justifyContent: "space-between"
+                                        }}>
+                                            <ScrollContainer 
+                                            foto={foto} 
+                                            textInput={item.text} 
+                                            textFontWeight={text1Weight} 
+                                            timing={timing1} 
+                                            textFontSize={text1FontSize} 
+                                            delay={delay1}
+                                            />
+                                            <div>
+                                                <h4>tech stack:</h4>
+                                                {item.techStack.map((techItem, techIndex) => {
 
-                            <h3>Gravitation simulation</h3>
-                            <ScrollContainer 
-                            foto={foto} 
-                            textInput={text2} 
-                            textFontWeight={text1Weight} 
-                            timing={timing1} 
-                            textFontSize={text1FontSize} 
-                            delay={delay1}
-                            />
-                            <a className="button button-dark" href="https://threejsgravitation.netlify.app/" target="blank">let's see</a>
-                            <br/><br/><br/><br/><br/><br/>
+                                                    return(
+                                                        <p 
+                                                        key={techIndex}>
+                                                            {techItem}
+                                                        </p>
+                                                    )
+                                                })}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br/>
+                                    <div 
+                                    style={{
+                                        display: "flex",
+                                        flexDirection: "row",
+                                        alignItems: "baseline",
+                                        justifyContent: "space-between"
+                                    }}>
+                                        <a className="button button-dark" href={item.link} target="blank">{item.btnText}</a>
+                                        <a href={item.git} target="blank">
+                                            <div 
+                                            style={{
+                                                display: "flex",
+                                                flexDirection: "column",
+                                                width: "fit-content",
+                                                alignItems: "center",
+                                                visibility: thisVisibility
+                                            }}>
+                                                <img src={gitPic} width="50"/>
+                                                <img src={gittextdPic} width="70" style={{
 
-
-
-                        </div>
-                        <br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                                                }}/>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            )
+                        })}
+                    </div>
+                    <br/><br/><br/><br/><br/><br/><br/><br/><br/>
                 </div>
-
             </section> 
         </div>
     )

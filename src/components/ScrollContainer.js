@@ -11,10 +11,6 @@ export default function ScrollContainer({ foto, textInput, textFontWeight, timin
 
     //WRITING
     const [writingHandler, setWritingHandler] = useState(false);
-    const [strednikOpacity, setStrednikOpacity] = useState("█");
-    const [textCounter, setTextCounter] = useState(0);
-    const [welcomeText, setWelcomeText] = useState("");
-    const text = textInput;
 
     //SCROLLING
     const [elementClass, setElementClass] = useState("");
@@ -32,11 +28,9 @@ export default function ScrollContainer({ foto, textInput, textFontWeight, timin
     //on scroll function
     function scrollFun() {
       const y = getTotalHeight();
-      //console.log(elementRef.current.offsetTop)
-      //console.log(y)
+
       if(y > elementRef.current.offsetTop){
         
-
         //DELAY
         const timeout = setTimeout(() => {
             setElementClass("textAnimation");
