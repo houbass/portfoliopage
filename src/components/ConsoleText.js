@@ -65,15 +65,11 @@ export default function ConsoleText({writingHandler, textInput, textFontWeight, 
             display: "flex",
             flexDirection: "row",
             gap: "5px",
-            //background: "orange",
             position: "relative"
             }}>
               <p 
               className="label"
               style={{
-                  //fontSize: textFontSize,
-                  //fontWeight: textFontWeight,
-                  //marginTop: "auto",
                   fontFamily: "Poppins, sans-serif",
                   position: "absolute"
               }}>
@@ -83,9 +79,6 @@ export default function ConsoleText({writingHandler, textInput, textFontWeight, 
               <p 
               className="label"
               style={{
-                  //fontSize: textFontSize,
-                  //fontWeight: textFontWeight,
-                  //marginTop: "auto",
                   fontFamily: "Poppins, sans-serif", 
                   color: "rgba(0,0,0,0)"
               }}>

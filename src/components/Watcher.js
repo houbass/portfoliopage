@@ -6,6 +6,8 @@ export default function Watcher({ titleX, titleY, titleWidth, titleHeight }) {
     const width = window.innerWidth;
     const height = 2000;
 
+    console.log(width)
+
     //DEVICE CHECK STATES
     const [mobile, setMobile] = useState(null);
 
@@ -218,10 +220,8 @@ export default function Watcher({ titleX, titleY, titleWidth, titleHeight }) {
             setXBulva2(xNew2);
             setYBulva2(yNew2);
 
-
-
             //canvas shape
-            context.clearRect(0, 0, canvas.width, canvas.height);
+            context.clearRect(0, 0, width, height);
 
             //BĚLMO 1
             context.save();
@@ -262,9 +262,6 @@ export default function Watcher({ titleX, titleY, titleWidth, titleHeight }) {
             context.fill();
             //context.stroke();
             context.restore(); 
-            
-            
-
         };
         render();
 
@@ -292,15 +289,16 @@ export default function Watcher({ titleX, titleY, titleWidth, titleHeight }) {
 
     return (
         <div onMouseMove={getMousePosition}>
-            <canvas id="canvas" ref={canvasRef} height={height} width={width} />
+            
             <div style={{
                 position: "absolute",
-                width: width,
+                width: "100%",
                 height: height,
                 //background: "blue",
                 top: "0",
                 left: "0"
             }}>
+                <canvas id="canvas" ref={canvasRef} height={height} width={width}  />
                 <div 
                 className={topLeftEyesClass}
                 style={{

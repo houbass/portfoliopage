@@ -14,6 +14,9 @@ import Footer from './components/Footer';
 import foto from "./pic/foto.jpg";
 import lofichordPic from "./pic/lofichord.png";
 import gravityPic from "./pic/gravity.png";
+import mindfuckPic from "./pic/mindfuck.png";
+import miningPic from "./pic/mining.png";
+import spacePic from "./pic/space.png";
 import gittextdPic from "./pic/gittext.png";
 import gitPic from "./pic/git.png";
 
@@ -22,10 +25,11 @@ export default function App() {
   
   //TOPIC OPACITY (when img loaded)
   const [mainOpacity, setMainOpacity] = useState(0);
+  const [mainOpacity2, setMainOpacity2] = useState(0);
   const [allImagesLoaded, setAllImagesLoaded] = useState(false);
 
   //IMAGES
-  const imageUrls = [foto, lofichordPic, gravityPic, gittextdPic, gitPic];
+  const imageUrls = [foto, lofichordPic, gravityPic, mindfuckPic, miningPic, spacePic, gittextdPic, gitPic];
 
   //WAIT TO LOAD ALL IMAGES
   useEffect(() => {
@@ -55,6 +59,15 @@ export default function App() {
     if(allImagesLoaded === true){
       setMainOpacity(1);
       console.log("ALL IMAGES LOADED")
+
+      const timeout = setTimeout(() => {
+
+        setMainOpacity2(1);
+      }, 3500)
+
+      return () => {
+        clearInterval(timeout);
+      }
     }
   }, [allImagesLoaded])
 
@@ -64,24 +77,27 @@ export default function App() {
       <Introduction foto={foto} mainOpacity={mainOpacity}/>
 
       <MySkills 
-      mainOpacity={mainOpacity}
+      mainOpacity={mainOpacity2}
       />
 
       <MyProjects 
       lofichordPic={lofichordPic} 
+      mindfuckPic={mindfuckPic} 
       gravityPic={gravityPic} 
+      miningPic={miningPic} 
+      spacePic={spacePic}
       gittextdPic={gittextdPic} 
       gitPic={gitPic} 
-      mainOpacity={mainOpacity}
+      mainOpacity={mainOpacity2}
       />
 
       <ComercialProjects 
       lofichordPic={lofichordPic} 
       gittextdPic={gittextdPic} 
       gitPic={gitPic}
-      mainOpacity={mainOpacity}
+      mainOpacity={mainOpacity2}
       />
-      <Footer mainOpacity={mainOpacity}/>
+      <Footer mainOpacity={mainOpacity2}/>
     </div>
   );
 }

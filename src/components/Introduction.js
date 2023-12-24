@@ -1,9 +1,11 @@
-import { useLayoutEffect, useState } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 
 //components
 import ScrollContainer from "./ScrollContainer";
 
 export default function Introduction({ foto, mainOpacity }) {
+
+    const divRef = useRef();
 
     //Photo animation states
     const [showFotoWidth, setShowFotoWidth] = useState("")
@@ -19,20 +21,27 @@ export default function Introduction({ foto, mainOpacity }) {
     useLayoutEffect(() => {
         if(mainOpacity === 1){
             setShowFotoWidth("fotoTransition")
+            divRef.current.scrollIntoView();
         }
     },[mainOpacity])
 
 
     return(
-        <div className="container intro color2">
-            <section style={{opacity: mainOpacity}}>
+        <div 
+        ref={divRef}
+        className="container intro color2" 
+        style={{
+            paddingTop: "50px"
+        }}>
+            <section style={{opacity: mainOpacity, transition: "1s"}}>
                 <div className="container1 color2">
-                    <div className="row" style={{justifyContent: "space-between"}}>
-                        <div className="col col-1-2 intro-left pad1">
+                    <div className="row" style={{justifyContent: "space-between", paddingLeft: "10px", paddingRight: "10px"}}>
+                        <div className="col col-1-2 intro-left">
                             <h1 
                             style={{
                                 fontSize: "50px"
                             }} >Ondrej Laube</h1>
+                            <br/>
                             <h3>frontend developer for your next project</h3>
                             <ScrollContainer 
                             mainOpacity={mainOpacity}

@@ -1,44 +1,18 @@
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
 
 //pictures
 import projectsPic from "../pic/projects.svg"
 
 //components
 import ScrollContainer from "./ScrollContainer";
-import MatrixBackground from "./MatrixBackground";
 
-export default function MyProjects({ lofichordPic, gravityPic, gittextdPic, gitPic, mainOpacity }) {
+export default function MyProjects({ lofichordPic, gravityPic, mindfuckPic, miningPic, spacePic, gittextdPic, gitPic, mainOpacity }) {
 
-    //div ref
-    const pageRef = useRef();
 
-    //div height for canvas
-    const [divHeight, setDivHeight] = useState(0);
-
-    //TEXT 1
+    //TEXT settings
     const text1FontSize = 22;
     const text1Weight = "default"; 
     const timing1 = 20;
     const delay1 = 0;
-
-    //RESIZE FUNCTION
-    function resizeFun() {
-        setDivHeight(pageRef.current.offsetHeight)
-    }
-    
-    //ON LOAD
-    useLayoutEffect(() => {
-        setDivHeight(pageRef.current.offsetHeight)
-    }, [mainOpacity])
-
-    //ON RESIZE
-    useEffect(() => {
-        window.addEventListener("resize", resizeFun);
-
-        return () => {
-            window.removeEventListener("resize", resizeFun);
-        }
-    }, [])
 
     //MY PROJETS DESCRIPTION
     const myProjects = [
@@ -60,47 +34,50 @@ export default function MyProjects({ lofichordPic, gravityPic, gittextdPic, gitP
             git: null
         }, {
             title: "Mindfuck game",
-            pic: gravityPic,
+            pic: mindfuckPic,
             text: "Text about mindfuck game",
             techStack: ["next.js", "firebase"],
             btnText: "try me",
-            link: "https://threejsgravitation.netlify.app/",
-            git: null
+            link: "https://mindfuckgame.com/",
+            git: "https://github.com/houbass/mindfuck"
         }, {
             title: "Mining game",
-            pic: gravityPic,
+            pic: miningPic,
             text: "Text about mining game",
             techStack: ["react"],
             btnText: "let's mine",
-            link: "https://threejsgravitation.netlify.app/",
-            git: null
+            link: "https://bitcoinminegame.netlify.app/",
+            git: "https://github.com/houbass/minegame"
         }, {
             title: "Spaceship game",
-            pic: gravityPic,
+            pic: spacePic,
             text: "Text about spaceship game",
             techStack: ["react"],
             btnText: "let's fly",
-            link: "https://threejsgravitation.netlify.app/",
+            link: "https://gravitationgame.netlify.app/",
             git: null
         }, {
-            title: "Shooting game",
+            title: "Motivation flyer creater",
             pic: gravityPic,
-            text: "Text about shooting game",
+            text: "Text about motivation flyer creater",
             techStack: ["react"],
-            btnText: "let's shoot",
+            btnText: "show me",
             link: "https://threejsgravitation.netlify.app/",
             git: null
         }    
     ]
 
     return(
-        <div ref={pageRef} className="container color2">
-
-            <MatrixBackground height={divHeight}/>
+        <div className="container color2">
 
             <section className="container1" style={{opacity: mainOpacity, zIndex: "30"}}>
                 <div className="col col-1-2 intro-left">
-                    <h1 className="title"><img src={projectsPic} height="50px"/>My projects</h1>
+                    <h1 
+                    className="title" 
+                    style={{
+                        marginBottom: "30px"
+                    }}
+                    ><img src={projectsPic} height="50px"/>My projects</h1>
 
                     {myProjects.map((item, index) => {
 
