@@ -14,9 +14,6 @@ img {
   color: white;
 }
 
-html{
-
-}
 
 #canvas {
 
@@ -418,12 +415,19 @@ p {
 }
 
 .projectCard {
-  transition: 0.3s;
+  background: rgb(242, 247, 250);
+  z-index: 10;
+  padding-top: 20px;
+  margin-bottom: 30px;
 }
 
-.projectCard:hover {
-  filter: brightness(1.05);
+.projectCard2 {
+  background: rgb(255, 255, 255);
+  z-index: 10;
+  padding-top: 20px;
+  margin-bottom: 30px;
 }
+
 
 .projectCardContent {
   display: flex;

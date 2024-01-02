@@ -61,13 +61,8 @@ export default function ComercialProjects({lofichordPic, gittextdPic, gitPic, ma
                             return(
                                 <div 
                                 key={index}
-                                className="projectCard pad1"
-                                style={{
-                                    background: "rgb(242, 247, 250)",
-                                    zIndex: "10",
-                                    paddingTop: "20px",
-                                    marginBottom: "30px"
-                                }}>
+                                className="projectCard2 pad1"
+                                >
                                     <h3>{item.title}</h3>
                                     <div 
                                     className="projectCardContent"

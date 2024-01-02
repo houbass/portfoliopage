@@ -54,15 +54,7 @@ export default function MyProjects({ lofichordPic, gravityPic, mindfuckPic, mini
             btnText: "let's fly",
             link: "https://gravitationgame.netlify.app/",
             git: null
-        }, {
-            title: "Motivation flyer creater",
-            pic: gravityPic,
-            text: "Text about motivation flyer creater",
-            techStack: ["react"],
-            btnText: "show me",
-            link: "https://threejsgravitation.netlify.app/",
-            git: null
-        }    
+        } 
     ]
 
     return(
@@ -88,12 +80,7 @@ export default function MyProjects({ lofichordPic, gravityPic, mindfuckPic, mini
                             <div 
                             key={index}
                             className="projectCard pad1"
-                            style={{
-                                background: "rgb(242, 247, 250)",
-                                zIndex: "10",
-                                paddingTop: "20px",
-                                marginBottom: "30px"
-                            }}>
+                            >
                                 <h3>{item.title}</h3>
                                 <div 
                                 className="projectCardContent"
