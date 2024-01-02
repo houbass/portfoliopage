@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 
 //LIBRAIRES
 import NavBtnMobile from "./NavBtnMobile";
@@ -7,16 +7,20 @@ export default function MobileMenu({ menu, selections }) {
 
     const [menuVisibility, setMenuVisibility] = useState("mobileMenuHidden");
 
-
     //SHOW/HIDE MOBILE MENU
     function showMenu() {
-
         if(menuVisibility === "mobileMenuHidden" || menuVisibility === "mobileMenuHide") {
             setMenuVisibility("mobileMenuShow");
         } else {
             setMenuVisibility("mobileMenuHide");
         }
     }
+
+    //HIDE MENU WHEN CLICK OUTSIDE
+    function clickFun() {
+        setMenuVisibility("mobileMenuHide");
+    };
+
 
     return(
         <>
@@ -28,7 +32,6 @@ export default function MobileMenu({ menu, selections }) {
             right: "20px"
         }}
         >
-
             <div 
             onClick={showMenu}
             style={{
@@ -59,7 +62,8 @@ export default function MobileMenu({ menu, selections }) {
                 paddingTop: "20px",
                 borderRadius: "0 0 0 20px",
                 border: "3px solid rgb(18, 36, 50)",
-                marginRight: "-20px"
+                marginRight: "-20px",
+                zIndex: "10",
             }}>
                 {menu.map((e, i) => {
                     return(
@@ -75,6 +79,19 @@ export default function MobileMenu({ menu, selections }) {
                         </div>
                     )
                 })}
+            </div>
+
+            <div 
+            className={menuVisibility}
+            onClick={clickFun}
+            style={{
+                position: "fixed",
+                top: "56px",
+                right: "0px",
+                background: "rgba(0,0,0,0.5)",
+                width: "100%",
+                height: "100vh",
+            }}>
             </div>
         </div>
         </>
