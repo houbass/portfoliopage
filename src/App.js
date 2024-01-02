@@ -58,7 +58,6 @@ export default function App() {
   useEffect(() => {
     if(allImagesLoaded === true){
       setMainOpacity(1);
-      console.log("ALL IMAGES LOADED")
 
       const timeout = setTimeout(() => {
 

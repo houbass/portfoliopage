@@ -1,7 +1,3 @@
-import { useLayoutEffect, useState, useRef, useEffect } from "react";
-
-//components
-import Watcher from "./Watcher";
 
 //pictures
 import skillsPic from "../pic/skills.svg"
@@ -16,7 +12,6 @@ export default function MySkills({ mainOpacity }) {
 
     //THREE.JS
     const text3 = "Stepping into the immersive world of Three.js, I transcend the boundaries of traditional web development. With every line of code, I sculpt captivating 3D experiences, pushing the limits of what's possible in the browser. Armed with the power of Three.js, I turn concepts into visually stunning realities, where the intersection of creativity and technology becomes a mesmerizing playground.";
-
 
 
     return(

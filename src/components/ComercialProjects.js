@@ -12,8 +12,6 @@ export default function ComercialProjects({lofichordPic, gittextdPic, gitPic, ma
     const pageRef = useRef();
 
     //WRITING ANIMATION SETTINGS
-    const text1FontSize = 22;
-    const text1Weight = "default"; 
     const timing1 = 20;
     const delay1 = 0;
 
@@ -22,17 +20,26 @@ export default function ComercialProjects({lofichordPic, gittextdPic, gitPic, ma
             title: "Sofa Lofi",
             pic: lofichordPic,
             text: "text about sofa lofi recording label websites",
-            techStack: ["next.js", "lottie", "firebase", "create-pdf-js"],
+            techStack: ["next.js", "lottie", "anime.js", "firebase", "create-pdf-js"],
             btnText: "check it out",
-            link: "https://lofichordrandomizer.netlify.app/",
-            git: "https://github.com/houbass/lofirandomizator.git"
+            link: "https://sofalofi.com/",
+            git: "https://github.com/houbass/sofaoptimalization"
         }, {
+            title: "Autoservice Laube",
+            pic: lofichordPic,
+            text: "text about Autoservice Laube",
+            techStack: ["react", "lottie", "anime.js"],
+            btnText: "check it out",
+            link: "https://deft-custard-7140be.netlify.app/",
+            git: null
+        },  
+        {
             title: "BNCexpress",
             pic: lofichordPic,
             text: "text about BNCexpress recording label websites",
-            techStack: ["next.js"],
+            techStack: ["wordpress", "vanilla js"],
             btnText: "check it out",
-            link: "https://lofichordrandomizer.netlify.app/",
+            link: "https://bncexpress.com/",
             git: null
         },    
     ]
@@ -74,9 +81,7 @@ export default function ComercialProjects({lofichordPic, gittextdPic, gitPic, ma
                                         }}>
                                             <ScrollContainer 
                                             textInput={item.text} 
-                                            textFontWeight={text1Weight} 
                                             timing={timing1} 
-                                            textFontSize={text1FontSize} 
                                             delay={delay1}
                                             />
                                             <div>

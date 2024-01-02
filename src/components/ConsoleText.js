@@ -1,6 +1,6 @@
 import { useLayoutEffect, useRef, useState } from 'react'
 
-export default function ConsoleText({writingHandler, textInput, textFontWeight, timing, textFontSize, delay }) {
+export default function ConsoleText({writingHandler, textInput, timing, delay }) {
 
   //WRITING
   const [thisWritingHandler, setThisWritingHandler] = useState(false);
@@ -82,7 +82,7 @@ export default function ConsoleText({writingHandler, textInput, textFontWeight, 
                   fontFamily: "Poppins, sans-serif", 
                   color: "rgba(0,0,0,0)"
               }}>
-                  {text}
+                  {text + " █"}
               </p>
 
             </div>            

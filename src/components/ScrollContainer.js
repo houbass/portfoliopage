@@ -3,7 +3,7 @@ import { useLayoutEffect, useRef, useState } from 'react'
 //components
 import ConsoleText from './ConsoleText';
 
-export default function ScrollContainer({ mainOpacity, textInput, textFontWeight, timing, textFontSize, delay }) {
+export default function ScrollContainer({ mainOpacity, textInput, timing, delay }) {
 
 
     //WRITING
@@ -76,8 +76,6 @@ export default function ScrollContainer({ mainOpacity, textInput, textFontWeight
               <ConsoleText 
               writingHandler={writingHandler}
               textInput={textInput} 
-              textFontSize={textFontSize} 
-              textFontWeight={textFontWeight} 
               timing={timing} 
               delay = {delay}
               />               
