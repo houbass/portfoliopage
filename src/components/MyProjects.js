@@ -5,7 +5,7 @@ import projectsPic from "../pic/projects.svg"
 //components
 import ScrollContainer from "./ScrollContainer";
 
-export default function MyProjects({ lofichordPic, gravityPic, mindfuckPic, miningPic, spacePic, gittextdPic, gitPic, mainOpacity }) {
+export default function MyProjects({projects, lofichordPic, gravityPic, mindfuckPic, miningPic, spacePic, gittextdPic, gitPic, mainOpacity }) {
 
 
     //TEXT settings
@@ -15,7 +15,7 @@ export default function MyProjects({ lofichordPic, gravityPic, mindfuckPic, mini
     //MY PROJETS DESCRIPTION
     const myProjects = [
         {
-            title: "Lofi music chord progression randomizer",
+            title: "Lofi music chord progression generator",
             pic: lofichordPic,
             text: "text about Lofi music chord progression randomizer text about Lofi music chord progression randomizer",
             techStack: ["react", "midi-writer-js"],
@@ -28,8 +28,8 @@ export default function MyProjects({ lofichordPic, gravityPic, mindfuckPic, mini
             text: "Text about gravitaion simulation using Three.js",
             techStack: ["react", "three.js"],
             btnText: "let's try",
-            link: "https://threejsgravitation.netlify.app/",
-            git: null
+            link: "https://preeminent-florentine-a8e334.netlify.app/",
+            git: "https://github.com/houbass/gravitation"
         }, {
             title: "Mindfuck game",
             pic: mindfuckPic,
@@ -52,13 +52,16 @@ export default function MyProjects({ lofichordPic, gravityPic, mindfuckPic, mini
             text: "Text about spaceship game",
             techStack: ["react"],
             btnText: "let's fly",
-            link: "https://gravitationgame.netlify.app/",
-            git: null
+            link: "https://wondrous-jelly-5aa5c2.netlify.app/",
+            git: "https://github.com/houbass/gravity-game"
         } 
     ]
 
     return(
-        <div className="container color2">
+        <div 
+        ref={projects}
+        className="container color2 scrollMarginTop"
+        >
 
             <section className="container1" style={{opacity: mainOpacity, zIndex: "30"}}>
                 <div className="col col-1-2 intro-left">
@@ -67,7 +70,7 @@ export default function MyProjects({ lofichordPic, gravityPic, mindfuckPic, mini
                     style={{
                         marginBottom: "30px"
                     }}
-                    ><img src={projectsPic} height="50px"/>My projects</h1>
+                    ><img src={projectsPic} height="50px" alt="my projects"/>My projects</h1>
 
                     {myProjects.map((item, index) => {
 
@@ -85,7 +88,7 @@ export default function MyProjects({ lofichordPic, gravityPic, mindfuckPic, mini
                                 <div 
                                 className="projectCardContent"
                                 >
-                                    <img src={item.pic} width="300" height="auto"/>
+                                    <img src={item.pic} width="300" height="auto" alt={item.title}/>
                                     <div 
                                     style={{
                                         display: "flex",
@@ -129,10 +132,8 @@ export default function MyProjects({ lofichordPic, gravityPic, mindfuckPic, mini
                                             alignItems: "center",
                                             visibility: thisVisibility
                                         }}>
-                                            <img src={gitPic} width="50"/>
-                                            <img src={gittextdPic} width="70" style={{
-
-                                            }}/>
+                                            <img src={gitPic} width="50" alt="GitHub logo" />
+                                            <img src={gittextdPic} width="70" alt="GitHub text" />
                                         </div>
                                     </a>
                                 </div>

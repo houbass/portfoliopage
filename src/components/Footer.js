@@ -1,11 +1,17 @@
 
 
 
-export default function Footer({ mainOpacity }) {
+export default function Footer({contact, mainOpacity }) {
 
 
     return(
-        <div className="container intro color2">
+        <div 
+        ref={contact}
+        className="container intro color2 scrollMarginTop" 
+        style={{
+            minHeight: "700px"
+        }}
+        >
             <section className="container1 color2" style={{opacity: mainOpacity}}>
                 <div >
                     <div className="col col-1-2 pad1">

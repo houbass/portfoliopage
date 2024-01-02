@@ -1,4 +1,3 @@
-import { useRef } from "react";
 
 //components
 import ScrollContainer from "./ScrollContainer";
@@ -6,10 +5,7 @@ import ScrollContainer from "./ScrollContainer";
 //pictures
 import comercialPic from "../pic/comercial.svg"
 
-export default function ComercialProjects({lofichordPic, gittextdPic, gitPic, mainOpacity }) {
-
-    //div ref
-    const pageRef = useRef();
+export default function ComercialProjects({comercial, lofichordPic, gittextdPic, gitPic, mainOpacity }) {
 
     //WRITING ANIMATION SETTINGS
     const timing1 = 20;
@@ -45,12 +41,12 @@ export default function ComercialProjects({lofichordPic, gittextdPic, gitPic, ma
     ]
     
     return(
-        <div ref={pageRef} className="container color1">
+        <div ref={comercial} className="container color1 scrollMarginTop">
 
             <section className="container1" style={{opacity: mainOpacity}} >
                 <div >
                     <div className="col col-1-2 intro-left">
-                        <h1 className="title"><img src={comercialPic} height="50px"/>Comercial projects</h1>
+                        <h1 className="title"><img src={comercialPic} height="50px" alt="comercial projects"/>Comercial projects</h1>
 
                         {myProjects.map((item, index) => {
                             let thisVisibility = "visible";
@@ -61,13 +57,13 @@ export default function ComercialProjects({lofichordPic, gittextdPic, gitPic, ma
                             return(
                                 <div 
                                 key={index}
-                                className="projectCard2 pad1"
+                                className="projectCard2 pad1 scrollMarginTop"
                                 >
                                     <h3>{item.title}</h3>
                                     <div 
                                     className="projectCardContent"
                                     >
-                                        <img src={item.pic} width="300" height="auto"/>
+                                        <img src={item.pic} width="300" height="auto" alt={item.title}/>
                                         <div 
                                         style={{
                                             display: "flex",
@@ -85,7 +81,8 @@ export default function ComercialProjects({lofichordPic, gittextdPic, gitPic, ma
 
                                                     return(
                                                         <p 
-                                                        key={techIndex}>
+                                                        key={techIndex}
+                                                        >
                                                             {techItem}
                                                         </p>
                                                     )
@@ -111,10 +108,8 @@ export default function ComercialProjects({lofichordPic, gittextdPic, gitPic, ma
                                                 alignItems: "center",
                                                 visibility: thisVisibility
                                             }}>
-                                                <img src={gitPic} width="50"/>
-                                                <img src={gittextdPic} width="70" style={{
-
-                                                }}/>
+                                                <img src={gitPic} width="50" alt="GitHub logo"/>
+                                                <img src={gittextdPic} width="70" alt="GitHub text"/>
                                             </div>
                                         </a>
                                     </div>

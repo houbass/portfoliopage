@@ -1,11 +1,10 @@
-import { useLayoutEffect, useRef, useState } from "react";
+import { useLayoutEffect, useState } from "react";
 
 //components
 import ScrollContainer from "./ScrollContainer";
+import ScrollContainerIntro from "./ScrollContainerIntro";
 
-export default function Introduction({ foto, mainOpacity }) {
-
-    const divRef = useRef();
+export default function Introduction({introduction, foto, mainOpacity }) {
 
     //Photo animation states
     const [showFotoWidth, setShowFotoWidth] = useState("")
@@ -21,17 +20,17 @@ export default function Introduction({ foto, mainOpacity }) {
     useLayoutEffect(() => {
         if(mainOpacity === 1){
             setShowFotoWidth("fotoTransition")
-            divRef.current.scrollIntoView();
+            introduction.current.scrollIntoView();
         }
     },[mainOpacity])
 
-
+ 
     return(
         <div 
-        ref={divRef}
-        className="container intro color2" 
+        ref={introduction}
+        className="container intro color2 scrollMarginTop" 
         style={{
-            paddingTop: "50px"
+            paddingTop: "100px"
         }}>
             <section style={{opacity: mainOpacity, transition: "1s"}}>
                 <div className="container1 color2">
@@ -43,7 +42,7 @@ export default function Introduction({ foto, mainOpacity }) {
                             }} >Ondrej Laube</h1>
                             <br/>
                             <h3>frontend developer for your next project</h3>
-                            <ScrollContainer 
+                            <ScrollContainerIntro 
                             mainOpacity={mainOpacity}
                             textInput={text1} 
                             textFontWeight={text1Weight} 
@@ -54,12 +53,11 @@ export default function Introduction({ foto, mainOpacity }) {
                         </div>
                         <div className="col"
                         style={{position: "relative", transition: "2s", opacity: mainOpacity}}>
-                            <img src={foto} className="mainPic" alt="profilephoto"/>
+                            <img src={foto} className="mainPic" alt="profile photo"/>
 
                             <div
                             style={{
                                 width: "100%",
-                                //background: "black",
                                 height: "100%",
                                 position: "absolute",
                                 top: "0",
@@ -75,7 +73,6 @@ export default function Introduction({ foto, mainOpacity }) {
                                         className={"color2" + " " + showFotoWidth} 
                                         key={index}
                                         style={{
-                                            //width: showFotoWidth,
                                             background: "rgb(255, 255, 255)",
                                             height: "100%",
                                             position: "absolute",

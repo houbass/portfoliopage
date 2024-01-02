@@ -2,7 +2,7 @@
 //pictures
 import skillsPic from "../pic/skills.svg"
 
-export default function MySkills({ mainOpacity }) {
+export default function MySkills({ skills, mainOpacity }) {
     
     //REACT / NEXT.JS
     const text1 = "Mastering the language of React and dancing on the edge with Next.js, I sculpt dynamic web experiences that transcend the ordinary. With each component, I breathe life into interfaces, seamlessly blending creativity with the power of cutting-edge technology.";
@@ -15,14 +15,15 @@ export default function MySkills({ mainOpacity }) {
 
 
     return(
-        <div className="container color1" 
+        <div className="container color1 scrollMarginTop" 
+        ref={skills}
         style={{
             opacity: mainOpacity,
             transition: "1.5s"
             }}>
             <section className="container1 color1" >
                 <div className="col col-1-2 intro-left">
-                    <h1 className="title" ><img src={skillsPic} height="50px"/>My skills</h1>
+                    <h1 className="title" ><img src={skillsPic} height="50px" alt="my skills"/>My skills</h1>
                     <div className="pad1">
                         <br/>
                         <h3>React / Next.js</h3>

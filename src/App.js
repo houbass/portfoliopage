@@ -1,9 +1,10 @@
-import { useEffect, useLayoutEffect, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 
 //CSS
 import './App.css';
 
 //COMPONENTS
+import Navbar from './components/Navbar';
 import Introduction from './components/Introduction';
 import MySkills from './components/MySkills';
 import MyProjects from './components/MyProjects';
@@ -11,17 +12,24 @@ import ComercialProjects from './components/ComercialProjects';
 import Footer from './components/Footer';
 
 //PICTURES
-import foto from "./pic/foto.jpg";
-import lofichordPic from "./pic/lofichord.png";
-import gravityPic from "./pic/gravity.png";
-import mindfuckPic from "./pic/mindfuck.png";
-import miningPic from "./pic/mining.png";
-import spacePic from "./pic/space.png";
+import foto from "./pic/foto.webp";
+import lofichordPic from "./pic/lofichord.webp";
+import gravityPic from "./pic/gravity.webp";
+import mindfuckPic from "./pic/mindfuck.webp";
+import miningPic from "./pic/mining.webp";
+import spacePic from "./pic/space.webp";
 import gittextdPic from "./pic/gittext.png";
-import gitPic from "./pic/git.png";
+import gitPic from "./pic/git.webp";
 
 
 export default function App() {
+
+  //refs
+  const introduction = useRef();
+  const skills = useRef();
+  const projects = useRef();
+  const comercial = useRef();
+  const contact = useRef();
   
   //TOPIC OPACITY (when img loaded)
   const [mainOpacity, setMainOpacity] = useState(0);
@@ -73,13 +81,26 @@ export default function App() {
 
   return (
     <div  className="App" >
-      <Introduction foto={foto} mainOpacity={mainOpacity}/>
+      <Navbar 
+      introduction={introduction}
+      skills={skills} 
+      projects={projects} 
+      comercial={comercial} 
+      contact={contact}
+      />
+      <Introduction 
+      introduction={introduction}
+      foto={foto} 
+      mainOpacity={mainOpacity}
+      />
 
       <MySkills 
+      skills={skills}
       mainOpacity={mainOpacity2}
       />
 
       <MyProjects 
+      projects={projects}
       lofichordPic={lofichordPic} 
       mindfuckPic={mindfuckPic} 
       gravityPic={gravityPic} 
@@ -91,12 +112,17 @@ export default function App() {
       />
 
       <ComercialProjects 
+      comercial={comercial}
       lofichordPic={lofichordPic} 
       gittextdPic={gittextdPic} 
       gitPic={gitPic}
       mainOpacity={mainOpacity2}
       />
-      <Footer mainOpacity={mainOpacity2}/>
+
+      <Footer 
+      contact={contact}
+      mainOpacity={mainOpacity2}
+      />
     </div>
   );
 }

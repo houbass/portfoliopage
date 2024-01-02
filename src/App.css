@@ -4,22 +4,108 @@
 
 }
 
+:root {
+  background: rgb(255, 255, 255);
+  color: white;
+  scroll-behavior: smooth;
+}
+
 img {
   max-width: 100%;
   vertical-align: middle;
 }
 
-:root {
-  background: rgb(255, 255, 255);
+.scrollMarginTop {
+  scroll-margin-top: 60px;
+}
+
+.fr {
+  display: flex;
+  flex-direction: row;
+}
+
+.fc {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu {
+  visibility: hidden;
+}
+
+.mobileMenu {
+  visibility: visible;
+}
+
+@media screen and (min-width: 800px) {
+  .menu {
+    visibility: visible;
+  }
+
+  .mobileMenu {
+    visibility: hidden;
+  }
+}
+
+.mobileMenuHidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.mobileMenuShow {
+  animation: mobileMenuShowAnim 0.5s forwards;
+}
+
+@keyframes mobileMenuShowAnim {
+  0%{
+    visibility: visible;
+    opacity: 0;
+  }
+  1%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+.mobileMenuHide {
+  animation: mobileMenuHideAnim 0.5s forwards;
+}
+
+@keyframes mobileMenuHideAnim {
+  0%{
+    opacity: 1;
+    visibility: visible;
+  }
+  90%{
+    opacity: 0;
+    visibility: visible;
+  }
+  100%{
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.navBtn {
+  pointer-events: all;
+  cursor: pointer;
+  padding: 0px 5px;
+
+}
+.navBtn:hover {
+  background: rgb(18, 36, 50);
   color: white;
 }
 
-
-#canvas {
-
-  width: 100%;
+.navBtnHovered {
+  pointer-events: all;
+  cursor: pointer;
+  padding: 0px 5px;
+  background: rgb(18, 36, 50);
+  color: white;
 }
-
 
 .App {
 display: flex;
@@ -218,7 +304,15 @@ p {
 
 
 .label {
-  color: rgba(18, 36, 50, 0.48);
+  color: rgba(18, 36, 50, 0.7);
+  font-size: 17px;
+  line-height: 28px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.labelIntro {
+  color: rgba(18, 36, 50, 0.9);
   font-size: 17px;
   line-height: 28px;
   font-weight: 600;
