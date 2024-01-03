@@ -1,11 +1,7 @@
-import { useState } from "react";
-
 //LIBRAIRES
 import NavBtnMobile from "./NavBtnMobile";
 
-export default function MobileMenu({ menu, selections }) {
-
-    const [menuVisibility, setMenuVisibility] = useState("mobileMenuHidden");
+export default function MobileMenu({ menuVisibility, setMenuVisibility, menu, selections }) {
 
     //SHOW/HIDE MOBILE MENU
     function showMenu() {
@@ -23,7 +19,6 @@ export default function MobileMenu({ menu, selections }) {
         setMenuVisibility("mobileMenuHide");
         document.body.style.overflow = 'visible';
     };
-
 
     return(
         <>

@@ -45,7 +45,6 @@ export default function App() {
   //WAIT TO LOAD ALL IMAGES
   useEffect(() => {
     document.body.style.overflow = 'hidden';
-    
 
     const loadImage = (url) =>
       new Promise((resolve, reject) => {

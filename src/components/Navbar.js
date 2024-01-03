@@ -9,6 +9,7 @@ export default function Navbar({ mainOpacity2, introduction, skills, projects, c
 
     //navbar states
     const [selections, setSelections] = useState(["navBtn", "navBtn", "navBtn", "navBtn", "navBtn"]);
+    const [menuVisibility, setMenuVisibility] = useState("mobileMenuHidden");
     
     const menu = [
         {
@@ -100,7 +101,17 @@ export default function Navbar({ mainOpacity2, introduction, skills, projects, c
                     alignItems: "end",
                 }}
                 >
-                    <NavBtn text={"home"} refData={introduction.current} selections={selections[4]}/>
+                    <h3 
+                    className={selections[4]}
+                    onClick={() => {
+                        introduction.current.scrollIntoView();
+
+                        if(menuVisibility === "mobileMenuShow") {
+                            document.body.style.overflow = 'visible';
+                            setMenuVisibility("mobileMenuHide")
+                        }
+                    }}
+                    >home</h3>
                 </div>
 
                 <Menu 
@@ -109,6 +120,8 @@ export default function Navbar({ mainOpacity2, introduction, skills, projects, c
                 />
 
                 <MobileMenu 
+                    menuVisibility={menuVisibility} 
+                    setMenuVisibility={setMenuVisibility} 
                     menu={menu} 
                     selections={selections}
                 />

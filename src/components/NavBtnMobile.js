@@ -8,6 +8,7 @@ export default function NavBtnMobile({ text, refData, selections, setMenuVisibil
         onClick={() => {
             refData.scrollIntoView();
             setMenuVisibility("mobileMenuHide");
+            document.body.style.overflow = 'visible';
         }}
         >{text}</h3>
     )
