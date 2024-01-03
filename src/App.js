@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 //CSS
 import './App.css';
@@ -18,6 +18,9 @@ import gravityPic from "./pic/gravity.webp";
 import mindfuckPic from "./pic/mindfuck.webp";
 import miningPic from "./pic/mining.webp";
 import spacePic from "./pic/space.webp";
+import sofaPic from "./pic/sofalofi.webp";
+import servicePic from "./pic/autoservis.webp";
+import bncPic from "./pic/bnc.webp";
 import gittextdPic from "./pic/gittext.png";
 import gitPic from "./pic/git.webp";
 
@@ -37,7 +40,7 @@ export default function App() {
   const [allImagesLoaded, setAllImagesLoaded] = useState(false);
 
   //IMAGES
-  const imageUrls = [foto, lofichordPic, gravityPic, mindfuckPic, miningPic, spacePic, gittextdPic, gitPic];
+  const imageUrls = [foto, lofichordPic, gravityPic, mindfuckPic, miningPic, spacePic, sofaPic, servicePic, bncPic, gittextdPic, gitPic];
 
   //WAIT TO LOAD ALL IMAGES
   useEffect(() => {
@@ -112,16 +115,19 @@ export default function App() {
       />
 
       <ComercialProjects 
-      comercial={comercial}
-      lofichordPic={lofichordPic} 
+      comercial={comercial} 
+      sofaPic={sofaPic} 
+      servicePic={servicePic} 
+      bncPic={bncPic} 
       gittextdPic={gittextdPic} 
       gitPic={gitPic}
       mainOpacity={mainOpacity2}
       />
 
       <Footer 
+      sofaPic={sofaPic} 
       contact={contact}
-      mainOpacity={mainOpacity2}
+      mainOpacity={mainOpacity2} 
       />
     </div>
   );

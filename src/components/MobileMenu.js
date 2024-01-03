@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 //LIBRAIRES
 import NavBtnMobile from "./NavBtnMobile";
@@ -11,16 +11,28 @@ export default function MobileMenu({ menu, selections }) {
     function showMenu() {
         if(menuVisibility === "mobileMenuHidden" || menuVisibility === "mobileMenuHide") {
             setMenuVisibility("mobileMenuShow");
+            document.body.style.overflow = 'hidden';
         } else {
             setMenuVisibility("mobileMenuHide");
+            document.body.style.overflow = 'visible';
         }
     }
 
     //HIDE MENU WHEN CLICK OUTSIDE
     function clickFun() {
         setMenuVisibility("mobileMenuHide");
+        document.body.style.overflow = 'visible';
     };
 
+
+    function scrollingFun() {
+
+        //console.log("madafaka")
+        if(menuVisibility === "mobileMenuShow") {
+            //setMenuVisibility("mobileMenuHide");
+            
+        }
+    }
 
     return(
         <>

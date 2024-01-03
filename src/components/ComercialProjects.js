@@ -5,7 +5,7 @@ import ScrollContainer from "./ScrollContainer";
 //pictures
 import comercialPic from "../pic/comercial.svg"
 
-export default function ComercialProjects({comercial, lofichordPic, gittextdPic, gitPic, mainOpacity }) {
+export default function ComercialProjects({comercial, sofaPic, servicePic, bncPic, gittextdPic, gitPic, mainOpacity }) {
 
     //WRITING ANIMATION SETTINGS
     const timing1 = 20;
@@ -13,8 +13,8 @@ export default function ComercialProjects({comercial, lofichordPic, gittextdPic,
 
     const myProjects = [
         {
-            title: "Sofa Lofi",
-            pic: lofichordPic,
+            title: "Sofa Lofi recording label",
+            pic: sofaPic,
             text: "text about sofa lofi recording label websites",
             techStack: ["next.js", "lottie", "anime.js", "firebase", "create-pdf-js"],
             btnText: "check it out",
@@ -22,16 +22,16 @@ export default function ComercialProjects({comercial, lofichordPic, gittextdPic,
             git: "https://github.com/houbass/sofaoptimalization"
         }, {
             title: "Autoservice Laube",
-            pic: lofichordPic,
+            pic: servicePic,
             text: "text about Autoservice Laube",
             techStack: ["react", "lottie", "anime.js"],
             btnText: "check it out",
             link: "https://deft-custard-7140be.netlify.app/",
-            git: null
+            git: "https://github.com/houbass/autoservice"
         },  
         {
-            title: "BNCexpress",
-            pic: lofichordPic,
+            title: "BNCexpress recording label",
+            pic: bncPic,
             text: "text about BNCexpress recording label websites",
             techStack: ["wordpress", "vanilla js"],
             btnText: "check it out",
@@ -117,7 +117,6 @@ export default function ComercialProjects({comercial, lofichordPic, gittextdPic,
                             )
                         })}
                     </div>
-                    <br/><br/><br/><br/><br/><br/><br/><br/><br/>
                 </div>
             </section> 
         </div>

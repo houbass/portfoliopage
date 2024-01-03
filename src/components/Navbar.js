@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 
-
 //components
 import Menu from "./Menu";
 import MobileMenu from "./MobileMenu";
@@ -8,7 +7,8 @@ import NavBtn from "./NavBtn";
 
 export default function Navbar({ introduction, skills, projects, comercial, contact}) {
 
-    const [selections, setSelections] = useState(["navBtn", "navBtn", "navBtn", "navBtn"]);
+    //navbar states
+    const [selections, setSelections] = useState(["navBtn", "navBtn", "navBtn", "navBtn", "navBtn"]);
     
     const menu = [
         {
@@ -34,28 +34,29 @@ export default function Navbar({ introduction, skills, projects, comercial, cont
 
         if(skills.current && projects.current && comercial.current && contact.current) {
             const screen = window.innerHeight * 0.33;
-
+            const screen2 = window.innerHeight * 0.66;
+            
             if(
             skills.current.getBoundingClientRect().y < screen && 
             projects.current.getBoundingClientRect().y > screen
             ) {
-                setSelections(["navBtnHovered", "navBtn", "navBtn", "navBtn"]);
+                setSelections(["navBtnHovered", "navBtn", "navBtn", "navBtn", "navBtn"]);
             } else if(
             projects.current.getBoundingClientRect().y < screen && 
             comercial.current.getBoundingClientRect().y > screen
             ) {
-                setSelections(["navBtn", "navBtnHovered", "navBtn", "navBtn"]);
+                setSelections(["navBtn", "navBtnHovered", "navBtn", "navBtn", "navBtn"]);
             } else if(
                 comercial.current.getBoundingClientRect().y < screen &&
-                contact.current.getBoundingClientRect().y > screen
+                contact.current.getBoundingClientRect().y > screen2
             ) {
-                setSelections(["navBtn", "navBtn", "navBtnHovered", "navBtn"]);
+                setSelections(["navBtn", "navBtn", "navBtnHovered", "navBtn", "navBtn"]);
             } else if(
-                contact.current.getBoundingClientRect().y < screen
+                contact.current.getBoundingClientRect().y < screen2
             ) {
-                setSelections(["navBtn", "navBtn", "navBtn", "navBtnHovered",]);
+                setSelections(["navBtn", "navBtn", "navBtn", "navBtnHovered", "navBtn"]);
             }else{
-                setSelections(["navBtn", "navBtn", "navBtn", "navBtn"]);
+                setSelections(["navBtn", "navBtn", "navBtn", "navBtn", "navBtnHovered"]);
             }
         }
     }
@@ -97,7 +98,7 @@ export default function Navbar({ introduction, skills, projects, comercial, cont
                     alignItems: "end",
                 }}
                 >
-                    <NavBtn text={"home"} refData={introduction.current} selections={"navBtn"}/>
+                    <NavBtn text={"home"} refData={introduction.current} selections={selections[4]}/>
                 </div>
 
                 <Menu 
@@ -105,12 +106,10 @@ export default function Navbar({ introduction, skills, projects, comercial, cont
                 selections={selections}
                 />
 
-
                 <MobileMenu 
                     menu={menu} 
                     selections={selections}
                 />
-
             </nav>
         </>
     )
