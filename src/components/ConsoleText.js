@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef, useState } from 'react'
+import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 
 export default function ConsoleText({writingHandler, textInput, timing, delay }) {
 
@@ -27,7 +27,7 @@ export default function ConsoleText({writingHandler, textInput, timing, delay })
   }, [writingHandler]);
 
   //WRITING
-  useLayoutEffect(() => {
+  useEffect(() => {
     if(thisWritingHandler === true){
         let textInterval;
         let timeout;

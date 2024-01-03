@@ -1,7 +1,6 @@
 import { useLayoutEffect, useState } from "react";
 
 //components
-import ScrollContainer from "./ScrollContainer";
 import ScrollContainerIntro from "./ScrollContainerIntro";
 
 export default function Introduction({introduction, foto, mainOpacity }) {
@@ -12,15 +11,12 @@ export default function Introduction({introduction, foto, mainOpacity }) {
 
     //Animationed text settings
     const text1 = "crafting digital landscapes where design meets functionality and user experience is not just a goal but a journey...";
-    const text1FontSize = 22;
-    const text1Weight = "default"; 
     const timing1 = 20;
     const delay1 = 500;
 
     useLayoutEffect(() => {
         if(mainOpacity === 1){
-            setShowFotoWidth("fotoTransition")
-            introduction.current.scrollIntoView();
+            setShowFotoWidth("fotoTransition");
         }
     },[mainOpacity])
 
@@ -45,9 +41,7 @@ export default function Introduction({introduction, foto, mainOpacity }) {
                             <ScrollContainerIntro 
                             mainOpacity={mainOpacity}
                             textInput={text1} 
-                            textFontWeight={text1Weight} 
                             timing={timing1} 
-                            textFontSize={text1FontSize} 
                             delay={delay1}
                             />
                         </div>
@@ -80,7 +74,6 @@ export default function Introduction({introduction, foto, mainOpacity }) {
                                         }}></div>
                                     )
                                 })}
-
                             </div>
                         </div>
                     </div>

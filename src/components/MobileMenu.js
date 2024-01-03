@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 //LIBRAIRES
 import NavBtnMobile from "./NavBtnMobile";
@@ -24,15 +24,6 @@ export default function MobileMenu({ menu, selections }) {
         document.body.style.overflow = 'visible';
     };
 
-
-    function scrollingFun() {
-
-        //console.log("madafaka")
-        if(menuVisibility === "mobileMenuShow") {
-            //setMenuVisibility("mobileMenuHide");
-            
-        }
-    }
 
     return(
         <>

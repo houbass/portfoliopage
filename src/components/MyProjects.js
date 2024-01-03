@@ -63,7 +63,12 @@ export default function MyProjects({projects, lofichordPic, gravityPic, mindfuck
         className="container color2 scrollMarginTop"
         >
 
-            <section className="container1" style={{opacity: mainOpacity, zIndex: "30"}}>
+            <section className="container1" 
+            style={{
+                opacity: mainOpacity, 
+                transition: "1.5s",
+                zIndex: "30"
+                }}>
                 <div className="col col-1-2 intro-left">
                     <h1 
                     className="title" 
@@ -96,6 +101,7 @@ export default function MyProjects({projects, lofichordPic, gravityPic, mindfuck
                                         justifyContent: "space-between"
                                     }}>
                                         <ScrollContainer 
+                                        mainOpacity={mainOpacity} 
                                         textInput={item.text} 
                                         timing={timing1} 
                                         delay={delay1}

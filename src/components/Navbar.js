@@ -5,7 +5,7 @@ import Menu from "./Menu";
 import MobileMenu from "./MobileMenu";
 import NavBtn from "./NavBtn";
 
-export default function Navbar({ introduction, skills, projects, comercial, contact}) {
+export default function Navbar({ mainOpacity2, introduction, skills, projects, comercial, contact}) {
 
     //navbar states
     const [selections, setSelections] = useState(["navBtn", "navBtn", "navBtn", "navBtn", "navBtn"]);
@@ -34,7 +34,7 @@ export default function Navbar({ introduction, skills, projects, comercial, cont
 
         if(skills.current && projects.current && comercial.current && contact.current) {
             const screen = window.innerHeight * 0.33;
-            const screen2 = window.innerHeight * 0.66;
+            const screen2 = window.innerHeight * 0.8;
             
             if(
             skills.current.getBoundingClientRect().y < screen && 
@@ -89,7 +89,9 @@ export default function Navbar({ introduction, skills, projects, comercial, cont
                 top: "-25px",
                 height: "75px",
                 border: "3px solid rgb(18, 36, 50)",
-                borderRadius: "0 0 6px 6px"
+                borderRadius: "0 0 6px 6px", 
+                opacity: mainOpacity2,
+                transition: "1.5s"
             }}>
                 <div 
                 className="fr"

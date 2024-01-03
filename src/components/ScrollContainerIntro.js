@@ -70,7 +70,6 @@ export default function ScrollContainerIntro({ mainOpacity, textInput, timing, d
             display: "flex",
             flexDirection: "column",
             gap: "10px",
-            //background: "pink",
             position: "relative"
             }}>
               <ConsoleTextIntro 

@@ -43,7 +43,12 @@ export default function ComercialProjects({comercial, sofaPic, servicePic, bncPi
     return(
         <div ref={comercial} className="container color1 scrollMarginTop">
 
-            <section className="container1" style={{opacity: mainOpacity}} >
+            <section 
+            className="container1" 
+            style={{
+                opacity: mainOpacity,
+                transition: "1.5s"
+            }} >
                 <div >
                     <div className="col col-1-2 intro-left">
                         <h1 className="title"><img src={comercialPic} height="50px" alt="comercial projects"/>Comercial projects</h1>
@@ -71,6 +76,7 @@ export default function ComercialProjects({comercial, sofaPic, servicePic, bncPi
                                             justifyContent: "space-between"
                                         }}>
                                             <ScrollContainer 
+                                            mainOpacity={mainOpacity}
                                             textInput={item.text} 
                                             timing={timing1} 
                                             delay={delay1}

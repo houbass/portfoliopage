@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 
 //CSS
 import './App.css';
@@ -44,6 +44,9 @@ export default function App() {
 
   //WAIT TO LOAD ALL IMAGES
   useEffect(() => {
+    document.body.style.overflow = 'hidden';
+    
+
     const loadImage = (url) =>
       new Promise((resolve, reject) => {
         const img = new Image();
@@ -71,7 +74,7 @@ export default function App() {
       setMainOpacity(1);
 
       const timeout = setTimeout(() => {
-
+        document.body.style.overflow = 'visible';
         setMainOpacity2(1);
       }, 3500)
 
@@ -79,12 +82,18 @@ export default function App() {
         clearInterval(timeout);
       }
     }
-  }, [allImagesLoaded])
+  }, [allImagesLoaded]);
+
+
+  useLayoutEffect(() => {
+    introduction.current.scrollIntoView();
+  }, [])
 
 
   return (
     <div  className="App" >
       <Navbar 
+      mainOpacity2={mainOpacity2} 
       introduction={introduction}
       skills={skills} 
       projects={projects} 

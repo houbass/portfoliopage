@@ -52,7 +52,6 @@ export default function ScrollContainer({ mainOpacity, textInput, timing, delay 
         window.addEventListener("scroll", scrollFun);
         window.addEventListener("resize", scrollFun);
 
-
       return () => {
         window.removeEventListener("scroll", scrollFun);
         window.removeEventListener("resize", scrollFun);
@@ -70,7 +69,6 @@ export default function ScrollContainer({ mainOpacity, textInput, timing, delay 
             display: "flex",
             flexDirection: "column",
             gap: "10px",
-            //background: "pink",
             position: "relative"
             }}>
               <ConsoleText 
