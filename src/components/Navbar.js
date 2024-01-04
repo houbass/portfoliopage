@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 //components
 import Menu from "./Menu";
 import MobileMenu from "./MobileMenu";
-import NavBtn from "./NavBtn";
 
 export default function Navbar({ mainOpacity2, introduction, skills, projects, comercial, contact}) {
 
@@ -73,6 +72,7 @@ export default function Navbar({ mainOpacity2, introduction, skills, projects, c
 
     useEffect(() => {
         scrolling();
+        // eslint-disable-next-line
     }, []);
 
     return(
@@ -101,7 +101,7 @@ export default function Navbar({ mainOpacity2, introduction, skills, projects, c
                     alignItems: "end",
                 }}
                 >
-                    <h3 
+                    <h2 
                     className={selections[4]}
                     onClick={() => {
                         introduction.current.scrollIntoView();
@@ -111,7 +111,7 @@ export default function Navbar({ mainOpacity2, introduction, skills, projects, c
                             setMenuVisibility("mobileMenuHide")
                         }
                     }}
-                    >home</h3>
+                    >home</h2>
                 </div>
 
                 <Menu 

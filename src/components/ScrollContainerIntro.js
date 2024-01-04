@@ -1,10 +1,9 @@
-import { useLayoutEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 //components
 import ConsoleTextIntro from './ConsoleTextIntro';
 
 export default function ScrollContainerIntro({ mainOpacity, textInput, timing, delay }) {
-
 
     //WRITING
     const [writingHandler, setWritingHandler] = useState(false);
@@ -40,30 +39,30 @@ export default function ScrollContainerIntro({ mainOpacity, textInput, timing, d
       }
     }
 
-    useLayoutEffect(() => {
+    useEffect(() => {
       if(mainOpacity === 1){
         scrollFun();
       }
+      // eslint-disable-next-line
     },[mainOpacity])
   
     //SCROLLING / RESIZE LISTENERS
-    useLayoutEffect(() => {
-
+    useEffect(() => {
         window.addEventListener("scroll", scrollFun);
         window.addEventListener("resize", scrollFun);
-
 
       return () => {
         window.removeEventListener("scroll", scrollFun);
         window.removeEventListener("resize", scrollFun);
       }
+      // eslint-disable-next-line
     }, []);
 
   return (
     <>
         <div 
         ref={elementRef} 
-        className={"topic1" + " " + "text" + " " + elementClass}
+        className={"topic1 text " + elementClass}
         >
             <div 
             style={{

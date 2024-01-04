@@ -36,7 +36,7 @@ export default function ComercialProjects({comercial, sofaPic, servicePic, bncPi
             techStack: ["wordpress", "vanilla js"],
             btnText: "check it out",
             link: "https://bncexpress.com/",
-            git: null
+            git: ""
         },    
     ]
     
@@ -55,7 +55,7 @@ export default function ComercialProjects({comercial, sofaPic, servicePic, bncPi
 
                         {myProjects.map((item, index) => {
                             let thisVisibility = "visible";
-                            if(item.git === null){
+                            if(item.git === ""){
                                 thisVisibility = "hidden";
                             }
 
@@ -64,7 +64,7 @@ export default function ComercialProjects({comercial, sofaPic, servicePic, bncPi
                                 key={index}
                                 className="projectCard2 pad1 scrollMarginTop"
                                 >
-                                    <h3>{item.title}</h3>
+                                    <h2>{item.title}</h2>
                                     <div 
                                     className="projectCardContent"
                                     >
@@ -82,7 +82,7 @@ export default function ComercialProjects({comercial, sofaPic, servicePic, bncPi
                                             delay={delay1}
                                             />
                                             <div>
-                                                <h4>tech stack:</h4>
+                                                <h3>tech stack:</h3>
                                                 {item.techStack.map((techItem, techIndex) => {
 
                                                     return(
@@ -102,17 +102,23 @@ export default function ComercialProjects({comercial, sofaPic, servicePic, bncPi
                                         display: "flex",
                                         flexDirection: "row",
                                         alignItems: "baseline",
-                                        justifyContent: "space-between"
+                                        justifyContent: "space-between",
                                     }}>
                                         <a className="button button-dark" href={item.link} target="blank">{item.btnText}</a>
-                                        <a href={item.git} target="blank">
+                                        <a 
+                                        href={item.git} 
+                                        target="blank" 
+                                        style={{
+                                            visibility: thisVisibility
+                                        }}
+                                        >
                                             <div 
                                             style={{
                                                 display: "flex",
                                                 flexDirection: "column",
                                                 width: "fit-content",
                                                 alignItems: "center",
-                                                visibility: thisVisibility
+
                                             }}>
                                                 <img src={gitPic} width="50" alt="GitHub logo"/>
                                                 <img src={gittextdPic} width="70" alt="GitHub text"/>

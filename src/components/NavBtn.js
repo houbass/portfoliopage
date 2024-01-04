@@ -3,9 +3,9 @@
 export default function NavBtn({ text, refData, selections }) {
 
     return(
-        <h3 
+        <h2 
         className={selections}
         onClick={() => {refData.scrollIntoView()}}
-        >{text}</h3>
+        >{text}</h2>
     )
 }

@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 export default function ConsoleText({writingHandler, textInput, timing, delay }) {
 
@@ -12,18 +12,17 @@ export default function ConsoleText({writingHandler, textInput, timing, delay })
   //SCROLLING
   const elementRef = useRef();
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const thisTimeout = setTimeout(() => {
       if(writingHandler === true) {
         setThisWritingHandler(true);
-      }else{
-
       }
     }, delay);
 
     return () => {
       clearTimeout(thisTimeout);
     }
+    // eslint-disable-next-line
   }, [writingHandler]);
 
   //WRITING
@@ -84,7 +83,6 @@ export default function ConsoleText({writingHandler, textInput, timing, delay })
               }}>
                   {text + " █"}
               </p>
-
             </div>            
         </div>
     </>

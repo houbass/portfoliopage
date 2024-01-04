@@ -184,9 +184,6 @@ color: rgb(18, 36, 50);
   background: rgb(255, 255, 255);
 }
 
-
-
-
 a {
   color: rgb(24, 24, 24);
   text-decoration: none;
@@ -198,10 +195,22 @@ h1 {
   pointer-events: none;
 }
 
-@media (min-width: 800px) {
-  h1 {
-      font-size: 40px;
-  }
+h2 {
+  font-size: 24px;
+  line-height: 36px;
+  margin-bottom: 8px;
+  pointer-events: none;
+}
+
+h3 {
+  font-size: 20px;
+  pointer-events: none;
+}
+
+p {
+  font-size: 20px;
+  line-height: 30px;
+  pointer-events: none;
 }
 
 .pad1 {
@@ -230,21 +239,6 @@ h1 {
   left: 0;
   z-index: 0;
 }
-
-h3 {
-  font-size: 24px;
-  line-height: 36px;
-  margin-bottom: 8px;
-  pointer-events: none;
-}
-
-p {
-  font-size: 20px;
-  line-height: 30px;
-  pointer-events: none;
-}
-
-
 
 
 .intro-right {

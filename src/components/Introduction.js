@@ -37,7 +37,7 @@ export default function Introduction({introduction, foto, mainOpacity }) {
                                 fontSize: "50px"
                             }} >Ondrej Laube</h1>
                             <br/>
-                            <h3>frontend developer for your next project</h3>
+                            <h2>frontend developer for your next project</h2>
                             <ScrollContainerIntro 
                             mainOpacity={mainOpacity}
                             textInput={text1} 
@@ -47,7 +47,12 @@ export default function Introduction({introduction, foto, mainOpacity }) {
                         </div>
                         <div className="col"
                         style={{position: "relative", transition: "2s", opacity: mainOpacity}}>
-                            <img src={foto} className="mainPic" alt="profile photo"/>
+                            <img 
+                            src={foto} 
+                            className="mainPic" 
+                            alt="profile"
+                            loading="lazy"
+                            />
 
                             <div
                             style={{
@@ -64,7 +69,7 @@ export default function Introduction({introduction, foto, mainOpacity }) {
 
                                     return(
                                         <div 
-                                        className={"color2" + " " + showFotoWidth} 
+                                        className={"color2 " + showFotoWidth} 
                                         key={index}
                                         style={{
                                             background: "rgb(255, 255, 255)",

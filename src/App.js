@@ -21,7 +21,7 @@ import spacePic from "./pic/space.webp";
 import sofaPic from "./pic/sofalofi.webp";
 import servicePic from "./pic/autoservis.webp";
 import bncPic from "./pic/bnc.webp";
-import gittextdPic from "./pic/gittext.png";
+import gittextdPic from "./pic/gittext.webp";
 import gitPic from "./pic/git.webp";
 
 
@@ -40,7 +40,8 @@ export default function App() {
   const [allImagesLoaded, setAllImagesLoaded] = useState(false);
 
   //IMAGES
-  const imageUrls = [foto, lofichordPic, gravityPic, mindfuckPic, miningPic, spacePic, sofaPic, servicePic, bncPic, gittextdPic, gitPic];
+  //const imageUrls = [foto, lofichordPic, gravityPic, mindfuckPic, miningPic, spacePic, sofaPic, servicePic, bncPic, gittextdPic, gitPic];
+  const imageUrls = [foto];
 
   //WAIT TO LOAD ALL IMAGES
   useEffect(() => {

@@ -26,18 +26,18 @@ export default function MySkills({ skills, mainOpacity }) {
                     <h1 className="title" ><img src={skillsPic} height="50px" alt="my skills"/>My skills</h1>
                     <div className="pad1">
                         <br/>
-                        <h3>React / Next.js</h3>
+                        <h2>React / Next.js</h2>
 
                         <span className="label">{text1} </span>
                         <br/>
                         <br/>
 
-                        <h3>UI</h3>
+                        <h2>UI</h2>
                         <span className="label">{text2} </span>
                         <br/>
                         <br/>
 
-                        <h3>Three.js</h3>
+                        <h2>Three.js</h2>
                         <span className="label">{text3} </span>
                         <br/>
                         <br/>

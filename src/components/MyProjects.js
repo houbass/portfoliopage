@@ -89,7 +89,7 @@ export default function MyProjects({projects, lofichordPic, gravityPic, mindfuck
                             key={index}
                             className="projectCard pad1"
                             >
-                                <h3>{item.title}</h3>
+                                <h2>{item.title}</h2>
                                 <div 
                                 className="projectCardContent"
                                 >
@@ -107,7 +107,7 @@ export default function MyProjects({projects, lofichordPic, gravityPic, mindfuck
                                         delay={delay1}
                                         />
                                         <div>
-                                            <h4>tech stack:</h4>
+                                            <h3>tech stack:</h3>
                                             {item.techStack.map((techItem, techIndex) => {
 
                                                 return(
