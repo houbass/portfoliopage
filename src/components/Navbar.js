@@ -12,19 +12,19 @@ export default function Navbar({ mainOpacity2, introduction, skills, projects, c
     
     const menu = [
         {
-            name: "my skills",
+            name: "My skills",
             ref: skills.current
         }, 
         {
-            name: "my projects",
+            name: "My projects",
             ref: projects.current
         },
         {
-            name: "comercial projects",
+            name: "Comercial projects",
             ref: comercial.current
         },
         {
-            name: "contact",
+            name: "Contact",
             ref: contact.current
         },
     ]
@@ -34,14 +34,19 @@ export default function Navbar({ mainOpacity2, introduction, skills, projects, c
 
         if(skills.current && projects.current && comercial.current && contact.current) {
             const screen = window.innerHeight * 0.33;
-            const screen2 = window.innerHeight * 0.8;
-            
+            const screen2 = window.innerHeight * 0.85;
+
             if(
+                skills.current.getBoundingClientRect().y === 60   
+            ) {
+                setSelections(["navBtnHovered", "navBtn", "navBtn", "navBtn", "navBtn"]);
+            } else if(
+            introduction.current.getBoundingClientRect().y !== 0 &&    
             skills.current.getBoundingClientRect().y < screen && 
             projects.current.getBoundingClientRect().y > screen
             ) {
                 setSelections(["navBtnHovered", "navBtn", "navBtn", "navBtn", "navBtn"]);
-            } else if(
+            } else if(      
             projects.current.getBoundingClientRect().y < screen && 
             comercial.current.getBoundingClientRect().y > screen
             ) {
@@ -80,7 +85,7 @@ export default function Navbar({ mainOpacity2, introduction, skills, projects, c
             <nav 
             style={{
                 width: "100%",
-                maxWidth: "1080px",
+                maxWidth: "1076px",
                 position: "fixed",
                 background: "white",
                 display: "flex",
@@ -92,7 +97,7 @@ export default function Navbar({ mainOpacity2, introduction, skills, projects, c
                 border: "3px solid rgb(18, 36, 50)",
                 borderRadius: "0 0 6px 6px", 
                 opacity: mainOpacity2,
-                transition: "1.5s"
+                transition: "1.5s",
             }}>
                 <div 
                 className="fr"
@@ -111,7 +116,7 @@ export default function Navbar({ mainOpacity2, introduction, skills, projects, c
                             setMenuVisibility("mobileMenuHide")
                         }
                     }}
-                    >home</h2>
+                    >Home</h2>
                 </div>
 
                 <Menu 

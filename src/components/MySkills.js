@@ -5,14 +5,13 @@ import skillsPic from "../pic/skills.svg"
 export default function MySkills({ skills, mainOpacity }) {
     
     //REACT / NEXT.JS
-    const text1 = "Mastering the language of React and dancing on the edge with Next.js, I sculpt dynamic web experiences that transcend the ordinary. With each component, I breathe life into interfaces, seamlessly blending creativity with the power of cutting-edge technology.";
+    const text1 = "Mastering the language of React and dancing on the edge with Next.js, I create dynamic web experiences. With each component, I breathe life into interfaces, seamlessly blending creativity with the power of cutting-edge technology.";
 
     //UI
-    const text2 =  "With a keen eye for detail and a passion for intuitive design, I shape interfaces that not only captivate but also elevate the user journey. In the realm of UI and UX, I turn pixels into poetry, creating a symphony of seamless interactions that leave a lasting impression.";
+    const text2 =  "Passionate about intuitive design, I craft interfaces with attention to detail. I transform pixels into poetry, creating seamless interactions that captivate and elevate the user journey in UI and UX.";
 
     //THREE.JS
-    const text3 = "Stepping into the immersive world of Three.js, I transcend the boundaries of traditional web development. With every line of code, I sculpt captivating 3D experiences, pushing the limits of what's possible in the browser. Armed with the power of Three.js, I turn concepts into visually stunning realities, where the intersection of creativity and technology becomes a mesmerizing playground.";
-
+    const text3 = "Exploring Three.js, I push beyond traditional web development boundaries, showcasing the potential within the browser. With Three.js, I bring concepts to life, merging creativity and technology into a captivating playground.";
 
     return(
         <div className="container color1 scrollMarginTop" 
@@ -23,28 +22,28 @@ export default function MySkills({ skills, mainOpacity }) {
             }}>
             <section className="container1 color1" >
                 <div className="col col-1-2 intro-left">
-                    <h1 className="title" ><img src={skillsPic} height="50px" alt="my skills"/>My skills</h1>
+                    <h1 
+                    className="title" 
+                    style={{
+                        marginBottom: "30px"
+                    }}>
+                        <img src={skillsPic} height="50px" alt="my skills"/>
+                        My skills
+                    </h1>
                     <div className="pad1">
                         <br/>
                         <h2>React / Next.js</h2>
-
-                        <span className="label">{text1} </span>
-                        <br/>
+                        <p className="label">{text1} </p>
                         <br/>
 
                         <h2>UI</h2>
-                        <span className="label">{text2} </span>
-                        <br/>
+                        <p className="label">{text2} </p>
                         <br/>
 
                         <h2>Three.js</h2>
-                        <span className="label">{text3} </span>
-                        <br/>
-                        <br/>
-                        
+                        <p className="label">{text3} </p>
                     </div>
                 </div>
-
             </section> 
         </div>
     )

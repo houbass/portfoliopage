@@ -1,4 +1,3 @@
-
 //components
 import ScrollContainer from "./ScrollContainer";
 
@@ -8,31 +7,31 @@ import comercialPic from "../pic/comercial.svg"
 export default function ComercialProjects({comercial, sofaPic, servicePic, bncPic, gittextdPic, gitPic, mainOpacity }) {
 
     //WRITING ANIMATION SETTINGS
-    const timing1 = 20;
+    const timing1 = 10;
     const delay1 = 0;
 
     const myProjects = [
         {
             title: "Sofa Lofi recording label",
             pic: sofaPic,
-            text: "text about sofa lofi recording label websites",
-            techStack: ["next.js", "lottie", "anime.js", "firebase", "create-pdf-js"],
+            text: "Explore my full-stack project for Sofa Lofi recording label, a platform harmonizing front-end and back-end tech. Tailored to the label's needs, it includes features such as releases cards, an admin page, submission forms with validations, subscription and a PDF generator for contract creation.",
+            techStack: ["next.js", "lottie", "anime.js", "firebase","create-pdf-js"],
             btnText: "check it out",
             link: "https://sofalofi.com/",
             git: "https://github.com/houbass/sofaoptimalization"
         }, {
-            title: "Autoservice Laube",
+            title: "Autoservis Laube",
             pic: servicePic,
-            text: "text about Autoservice Laube",
+            text: "Check out the website I made for a family member's car service. It's user-friendly, offering essential info on services. With detailed descriptions and easy navigation, it ensures a smooth and informative experience for visitors.",
             techStack: ["react", "lottie", "anime.js"],
-            btnText: "check it out",
+            btnText: "repair car",
             link: "https://deft-custard-7140be.netlify.app/",
             git: "https://github.com/houbass/autoservice"
         },  
         {
             title: "BNCexpress recording label",
             pic: bncPic,
-            text: "text about BNCexpress recording label websites",
+            text: "Worked on a WordPress site for BNCexpress recording label, enhancing their online presence. The site showcases artists and music, offering a user-friendly platform for fans. Explore the catalog and stay updated on the latest releases effortlessly.",
             techStack: ["wordpress", "vanilla js"],
             btnText: "check it out",
             link: "https://bncexpress.com/",
@@ -51,7 +50,14 @@ export default function ComercialProjects({comercial, sofaPic, servicePic, bncPi
             }} >
                 <div >
                     <div className="col col-1-2 intro-left">
-                        <h1 className="title"><img src={comercialPic} height="50px" alt="comercial projects"/>Comercial projects</h1>
+                        <h1 
+                        className="title" 
+                        style={{
+                            marginBottom: "30px"
+                        }}
+                        >
+                            <img src={comercialPic} height="50px" alt="comercial projects"/>Comercial projects
+                        </h1>
 
                         {myProjects.map((item, index) => {
                             let thisVisibility = "visible";
@@ -68,8 +74,9 @@ export default function ComercialProjects({comercial, sofaPic, servicePic, bncPi
                                     <div 
                                     className="projectCardContent"
                                     >
-                                        <img src={item.pic} width="300" height="auto" alt={item.title}/>
+                                        <img src={item.pic} width="300" height="300" alt={item.title}/>
                                         <div 
+                                        className="infoCard" 
                                         style={{
                                             display: "flex",
                                             flexDirection: "column",
@@ -83,16 +90,7 @@ export default function ComercialProjects({comercial, sofaPic, servicePic, bncPi
                                             />
                                             <div>
                                                 <h3>tech stack:</h3>
-                                                {item.techStack.map((techItem, techIndex) => {
-
-                                                    return(
-                                                        <p 
-                                                        key={techIndex}
-                                                        >
-                                                            {techItem}
-                                                        </p>
-                                                    )
-                                                })}
+                                                <p>{item.techStack.join(", ")}</p>
                                             </div>
                                         </div>
                                     </div>

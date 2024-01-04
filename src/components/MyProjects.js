@@ -1,4 +1,3 @@
-
 //pictures
 import projectsPic from "../pic/projects.svg"
 
@@ -7,9 +6,8 @@ import ScrollContainer from "./ScrollContainer";
 
 export default function MyProjects({projects, lofichordPic, gravityPic, mindfuckPic, miningPic, spacePic, gittextdPic, gitPic, mainOpacity }) {
 
-
     //TEXT settings
-    const timing1 = 20;
+    const timing1 = 10;
     const delay1 = 0;
 
     //MY PROJETS DESCRIPTION
@@ -17,7 +15,7 @@ export default function MyProjects({projects, lofichordPic, gravityPic, mindfuck
         {
             title: "Lofi music chord progression generator",
             pic: lofichordPic,
-            text: "text about Lofi music chord progression randomizer text about Lofi music chord progression randomizer",
+            text: "In this app my goal was to blend music theory with the elegance of code. In this project, I faced the challenge of handling audio files, oscillators, and precisely managing time intervals. Dive into the synergy of music and code, where every chord progression becomes a harmonious dance, and each line of code contributes to the symphony of your musical journey.",
             techStack: ["react", "midi-writer-js"],
             btnText: "make some music",
             link: "https://lofichordrandomizer.netlify.app/",
@@ -25,7 +23,7 @@ export default function MyProjects({projects, lofichordPic, gravityPic, mindfuck
         }, {
             title: "Gravitation simulation",
             pic: gravityPic,
-            text: "Text about gravitaion simulation using Three.js",
+            text: "Explore the cosmos with my React app. A space-themed gravitational simulation using Three.js. Experience the mesmerizing dance of celestial bodies as they gravitate and orbit in real-time. This project harmonizes Newton's principles of gravitation with the elegance of Three.js. Unleash your curiosity with this gravitational simulation.",
             techStack: ["react", "three.js"],
             btnText: "let's try",
             link: "https://preeminent-florentine-a8e334.netlify.app/",
@@ -33,7 +31,7 @@ export default function MyProjects({projects, lofichordPic, gravityPic, mindfuck
         }, {
             title: "Mindfuck game",
             pic: mindfuckPic,
-            text: "Text about mindfuck game",
+            text: "Test your cognitive skills with my Next.js app, a fun and interactive journey to enhance mental acuity. Ready to push your limits and embark on a thrilling adventure of self-discovery? Challenge yourself, submit your scores, and compare them with others!",
             techStack: ["next.js", "firebase"],
             btnText: "try me",
             link: "https://mindfuckgame.com/",
@@ -41,15 +39,15 @@ export default function MyProjects({projects, lofichordPic, gravityPic, mindfuck
         }, {
             title: "Mining game",
             pic: miningPic,
-            text: "Text about mining game",
-            techStack: ["react"],
+            text: "Explore the tranquility of my relaxing mining game crafted with Next.js! Plan your moves strategically as you navigate the terrain, seeking the ideal path to achieve the highest score.",
+            techStack: ["next.js"],
             btnText: "let's mine",
             link: "https://bitcoinminegame.netlify.app/",
             git: "https://github.com/houbass/minegame"
         }, {
             title: "Spaceship game",
             pic: spacePic,
-            text: "Text about spaceship game",
+            text: "Explore the excitement of my React spaceship game! Steer your spaceship through gravity fields, dodge obstacles, and reach the wormhole for a cosmic escape. Ready for the challenge?",
             techStack: ["react"],
             btnText: "let's fly",
             link: "https://wondrous-jelly-5aa5c2.netlify.app/",
@@ -62,7 +60,6 @@ export default function MyProjects({projects, lofichordPic, gravityPic, mindfuck
         ref={projects}
         className="container color2 scrollMarginTop"
         >
-
             <section className="container1" 
             style={{
                 opacity: mainOpacity, 
@@ -76,6 +73,8 @@ export default function MyProjects({projects, lofichordPic, gravityPic, mindfuck
                         marginBottom: "30px"
                     }}
                     ><img src={projectsPic} height="50px" alt="my projects"/>My projects</h1>
+
+                    
 
                     {myProjects.map((item, index) => {
 
@@ -93,8 +92,9 @@ export default function MyProjects({projects, lofichordPic, gravityPic, mindfuck
                                 <div 
                                 className="projectCardContent"
                                 >
-                                    <img src={item.pic} width="300" height="auto" alt={item.title}/>
+                                    <img src={item.pic} width="300" height="300" alt={item.title}/>
                                     <div 
+                                    className="infoCard"
                                     style={{
                                         display: "flex",
                                         flexDirection: "column",
@@ -108,15 +108,7 @@ export default function MyProjects({projects, lofichordPic, gravityPic, mindfuck
                                         />
                                         <div>
                                             <h3>tech stack:</h3>
-                                            {item.techStack.map((techItem, techIndex) => {
-
-                                                return(
-                                                    <p 
-                                                    key={techIndex}>
-                                                        {techItem}
-                                                    </p>
-                                                )
-                                            })}
+                                            <p>{item.techStack.join(", ")}</p>
                                         </div>
                                     </div>
                                 </div>

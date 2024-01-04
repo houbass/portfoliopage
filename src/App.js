@@ -9,7 +9,7 @@ import Introduction from './components/Introduction';
 import MySkills from './components/MySkills';
 import MyProjects from './components/MyProjects';
 import ComercialProjects from './components/ComercialProjects';
-import Footer from './components/Footer';
+import Contact from './components/Contact';
 
 //PICTURES
 import foto from "./pic/foto.webp";
@@ -66,6 +66,7 @@ export default function App() {
     };
 
     loadAllImages();
+    // eslint-disable-next-line
   }, []);
 
   //CHECK IF ALL IMAGES ARE LOADED
@@ -82,11 +83,13 @@ export default function App() {
         clearInterval(timeout);
       }
     }
+    // eslint-disable-next-line
   }, [allImagesLoaded]);
 
 
   useLayoutEffect(() => {
     introduction.current.scrollIntoView();
+    // eslint-disable-next-line
   }, [])
 
 
@@ -133,7 +136,7 @@ export default function App() {
       mainOpacity={mainOpacity2}
       />
 
-      <Footer 
+      <Contact 
       sofaPic={sofaPic} 
       contact={contact}
       mainOpacity={mainOpacity2} 
