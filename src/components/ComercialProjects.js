@@ -15,7 +15,7 @@ export default function ComercialProjects({comercial, sofaPic, servicePic, bncPi
             title: "Sofa Lofi recording label",
             pic: sofaPic,
             text: "Explore my full-stack project for Sofa Lofi recording label, a platform harmonizing front-end and back-end tech. Tailored to the label's needs, it includes features such as releases cards, an admin page, submission forms with validations, subscription and a PDF generator for contract creation.",
-            techStack: ["next.js", "lottie", "anime.js", "firebase","create-pdf-js"],
+            techStack: ["next.js", "lottie", "anime.js", "firebase","create-pdf-js", "netlify"],
             btnText: "check it out",
             link: "https://sofalofi.com/",
             git: "https://github.com/houbass/sofaoptimalization"
@@ -23,20 +23,11 @@ export default function ComercialProjects({comercial, sofaPic, servicePic, bncPi
             title: "Autoservis Laube",
             pic: servicePic,
             text: "Check out the website I made for a family member's car service. It's user-friendly, offering essential info on services. With detailed descriptions and easy navigation, it ensures a smooth and informative experience for visitors.",
-            techStack: ["react", "lottie", "anime.js"],
+            techStack: ["react", "lottie", "anime.js", "netlify"],
             btnText: "repair car",
             link: "https://deft-custard-7140be.netlify.app/",
             git: "https://github.com/houbass/autoservice"
-        },  
-        {
-            title: "BNCexpress recording label",
-            pic: bncPic,
-            text: "Worked on a WordPress site for BNCexpress recording label, enhancing their online presence. The site showcases artists and music, offering a user-friendly platform for fans. Explore the catalog and stay updated on the latest releases effortlessly.",
-            techStack: ["wordpress", "vanilla js"],
-            btnText: "check it out",
-            link: "https://bncexpress.com/",
-            git: ""
-        },    
+        }
     ]
     
     return(
@@ -56,7 +47,7 @@ export default function ComercialProjects({comercial, sofaPic, servicePic, bncPi
                             marginBottom: "30px"
                         }}
                         >
-                            <img src={comercialPic} height="50px" alt="comercial projects"/>Comercial projects
+                            Comercial projects
                         </h1>
 
                         {myProjects.map((item, index) => {
@@ -68,13 +59,23 @@ export default function ComercialProjects({comercial, sofaPic, servicePic, bncPi
                             return(
                                 <div 
                                 key={index}
-                                className="projectCard2 pad1 scrollMarginTop"
+                                className="projectCard2 scrollMarginTop" 
                                 >
-                                    <h2>{item.title}</h2>
+                                    <a href={item.link} target="blank">
+                                        <h2 className="pad1">{item.title}</h2>
+                                    </a>
                                     <div 
-                                    className="projectCardContent"
+                                    className="projectCardContent pad1"
                                     >
-                                        <img src={item.pic} width="300" height="300" alt={item.title}/>
+                                        <a href={item.link} target="blank">
+                                            <div style={{
+                                                width: "300px",
+                                                height: "300px"
+                                            }}>
+                                                <img src={item.pic} width="300" height="300" alt={item.title} />
+                                            </div>
+                                        </a>
+
                                         <div 
                                         className="infoCard" 
                                         style={{
@@ -99,8 +100,10 @@ export default function ComercialProjects({comercial, sofaPic, servicePic, bncPi
                                     style={{
                                         display: "flex",
                                         flexDirection: "row",
-                                        alignItems: "baseline",
+                                        alignItems: "center",
                                         justifyContent: "space-between",
+                                        background: "white",
+                                        padding: "10px"
                                     }}>
                                         <a className="button button-dark" href={item.link} target="blank">{item.btnText}</a>
                                         <a 
@@ -118,8 +121,8 @@ export default function ComercialProjects({comercial, sofaPic, servicePic, bncPi
                                                 alignItems: "center",
 
                                             }}>
-                                                <img src={gitPic} width="50" alt="GitHub logo"/>
-                                                <img src={gittextdPic} width="70" alt="GitHub text"/>
+                                                <img src={gitPic} width="40" alt="GitHub logo"/>
+                                                <img src={gittextdPic} width="50" alt="GitHub text"/>
                                             </div>
                                         </a>
                                     </div>

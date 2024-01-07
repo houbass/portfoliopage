@@ -50,7 +50,6 @@ export default function Contact({ contact, mainOpacity }) {
                         marginBottom: "00px"
                     }}
                     >
-                        <img src={contactPic} height="50px" alt="my skills"/>
                         Contact
                     </h1>
                     <div className="pad1">

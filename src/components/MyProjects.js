@@ -1,22 +1,30 @@
-//pictures
+// pictures
+import { useState } from "react";
 import projectsPic from "../pic/projects.svg"
 
-//components
+// components
 import ScrollContainer from "./ScrollContainer";
 
 export default function MyProjects({projects, lofichordPic, gravityPic, mindfuckPic, miningPic, spacePic, gittextdPic, gitPic, mainOpacity }) {
 
-    //TEXT settings
+    // STATES FOR SHOWMORE BTN
+    const [showMore, setShowMore] = useState({
+        text: "show more",
+        elements: 2,
+        state: false
+    });
+
+    // TEXT settings
     const timing1 = 10;
     const delay1 = 0;
 
-    //MY PROJETS DESCRIPTION
+    // MY PROJETS DESCRIPTION
     const myProjects = [
         {
             title: "Lofi music chord progression generator",
             pic: lofichordPic,
             text: "In this app my goal was to blend music theory with the elegance of code. In this project, I faced the challenge of handling audio files, oscillators, and precisely managing time intervals. Dive into the synergy of music and code, where every chord progression becomes a harmonious dance, and each line of code contributes to the symphony of your musical journey.",
-            techStack: ["react", "midi-writer-js"],
+            techStack: ["react", "midi-writer-js", "netlify"],
             btnText: "make some music",
             link: "https://lofichordrandomizer.netlify.app/",
             git: "https://github.com/houbass/lofirandomizator.git"
@@ -24,7 +32,7 @@ export default function MyProjects({projects, lofichordPic, gravityPic, mindfuck
             title: "Gravitation simulation",
             pic: gravityPic,
             text: "Explore the cosmos with my React app. A space-themed gravitational simulation using Three.js. Experience the mesmerizing dance of celestial bodies as they gravitate and orbit in real-time. This project harmonizes Newton's principles of gravitation with the elegance of Three.js. Unleash your curiosity with this gravitational simulation.",
-            techStack: ["react", "three.js"],
+            techStack: ["react", "three.js", "netlify"],
             btnText: "let's try",
             link: "https://preeminent-florentine-a8e334.netlify.app/",
             git: "https://github.com/houbass/gravitation"
@@ -32,7 +40,7 @@ export default function MyProjects({projects, lofichordPic, gravityPic, mindfuck
             title: "Mindfuck game",
             pic: mindfuckPic,
             text: "Test your cognitive skills with my Next.js app, a fun and interactive journey to enhance mental acuity. Ready to push your limits and embark on a thrilling adventure of self-discovery? Challenge yourself, submit your scores, and compare them with others!",
-            techStack: ["next.js", "firebase"],
+            techStack: ["next.js", "firebase", "netlify"],
             btnText: "try me",
             link: "https://mindfuckgame.com/",
             git: "https://github.com/houbass/mindfuck"
@@ -40,7 +48,7 @@ export default function MyProjects({projects, lofichordPic, gravityPic, mindfuck
             title: "Mining game",
             pic: miningPic,
             text: "Explore the tranquility of my relaxing mining game crafted with Next.js! Plan your moves strategically as you navigate the terrain, seeking the ideal path to achieve the highest score.",
-            techStack: ["next.js"],
+            techStack: ["next.js", "netlify"],
             btnText: "let's mine",
             link: "https://bitcoinminegame.netlify.app/",
             git: "https://github.com/houbass/minegame"
@@ -48,12 +56,34 @@ export default function MyProjects({projects, lofichordPic, gravityPic, mindfuck
             title: "Spaceship game",
             pic: spacePic,
             text: "Explore the excitement of my React spaceship game! Steer your spaceship through gravity fields, dodge obstacles, and reach the wormhole for a cosmic escape. Ready for the challenge?",
-            techStack: ["react"],
+            techStack: ["react", "netlify"],
             btnText: "let's fly",
             link: "https://wondrous-jelly-5aa5c2.netlify.app/",
             git: "https://github.com/houbass/gravity-game"
         } 
     ]
+
+
+    const filteredProjects = myProjects.filter((e, i) => i <= showMore.elements )
+    //console.log(myProjects.filter((e, i) => i <= (myProjects.length - 1) ))
+
+    // SHOW MORE FUNCTIONS
+    function showMoreFun() {
+
+        if(showMore.state === false) {
+            setShowMore({
+                text: "show less",
+                elements: myProjects.length,
+                state: true
+            });
+        } else{
+            setShowMore({
+                text: "show more",
+                elements: 2,
+                state: false
+            });
+        }
+    };
 
     return(
         <div 
@@ -72,11 +102,9 @@ export default function MyProjects({projects, lofichordPic, gravityPic, mindfuck
                     style={{
                         marginBottom: "30px"
                     }}
-                    ><img src={projectsPic} height="50px" alt="my projects"/>My projects</h1>
+                    >My projects</h1>                    
 
-                    
-
-                    {myProjects.map((item, index) => {
+                    {filteredProjects.map((item, index) => {
 
                         let thisVisibility = "visible";
                         if(item.git === null){
@@ -86,13 +114,24 @@ export default function MyProjects({projects, lofichordPic, gravityPic, mindfuck
                         return(
                             <div 
                             key={index}
-                            className="projectCard pad1"
+                            className="projectCard animePad" 
                             >
-                                <h2>{item.title}</h2>
+                                <a href={item.link} target="blank">
+                                    <h2 className="pad1">{item.title}</h2>
+                                </a>
+
                                 <div 
-                                className="projectCardContent"
+                                className="projectCardContent pad1"
                                 >
-                                    <img src={item.pic} width="300" height="300" alt={item.title}/>
+                                    <a href={item.link} target="blank">
+                                        <div style={{
+                                            width: "300px",
+                                            height: "300px"
+                                        }}>
+                                            <img src={item.pic} width="300" height="300" alt={item.title} />
+                                        </div>
+                                    </a>
+
                                     <div 
                                     className="infoCard"
                                     style={{
@@ -114,11 +153,14 @@ export default function MyProjects({projects, lofichordPic, gravityPic, mindfuck
                                 </div>
                                 <br/>
                                 <div 
+                                //className="pad1"
                                 style={{
                                     display: "flex",
                                     flexDirection: "row",
-                                    alignItems: "baseline",
-                                    justifyContent: "space-between"
+                                    alignItems: "center",
+                                    justifyContent: "space-between",
+                                    background: "rgb(242, 247, 250)",
+                                    padding: "10px"
                                 }}>
                                     <a className="button button-dark" href={item.link} target="blank">{item.btnText}</a>
                                     <a href={item.git} target="blank">
@@ -130,8 +172,8 @@ export default function MyProjects({projects, lofichordPic, gravityPic, mindfuck
                                             alignItems: "center",
                                             visibility: thisVisibility
                                         }}>
-                                            <img src={gitPic} width="50" alt="GitHub logo" />
-                                            <img src={gittextdPic} width="70" alt="GitHub text" />
+                                            <img src={gitPic} width="40" alt="GitHub logo" />
+                                            <img src={gittextdPic} width="50" alt="GitHub text" />
                                         </div>
                                     </a>
                                 </div>
@@ -140,6 +182,15 @@ export default function MyProjects({projects, lofichordPic, gravityPic, mindfuck
                     })}
                 </div>
             </section> 
+
+            <button 
+            onClick={showMoreFun} 
+            className="button button-dark"
+            style={{
+                cursor: "pointer"
+            }}
+            >{showMore.text}</button>
+
         </div>
     )
 }

@@ -10,7 +10,7 @@ export default function Introduction({introduction, foto, mainOpacity }) {
     const animatiaon = [1, 2, 3, 4, 5]
 
     //Animationed text settings
-    const text1 = "crafting digital landscapes where design meets functionality and user experience is not just a goal but a journey...";
+    const text1 = "crafting digital landscapes where design meets functionality and user experience is not just a goal but a journey";
     const timing1 = 20;
     const delay1 = 500;
 
@@ -34,7 +34,7 @@ export default function Introduction({introduction, foto, mainOpacity }) {
                         <div className="col col-1-2 intro-left">
                             <h1 
                             style={{
-                                fontSize: "50px"
+                                fontSize: "40px"
                             }} >Ondrej Laube</h1>
                             <br/>
                             <h2>frontend developer for your next project</h2>

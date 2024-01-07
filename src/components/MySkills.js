@@ -27,7 +27,6 @@ export default function MySkills({ skills, mainOpacity }) {
                     style={{
                         marginBottom: "30px"
                     }}>
-                        <img src={skillsPic} height="50px" alt="my skills"/>
                         My skills
                     </h1>
                     <div className="pad1">
