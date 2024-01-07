@@ -45,7 +45,6 @@ export default function App() {
 
   //WAIT TO LOAD ALL IMAGES
   useEffect(() => {
-    document.body.style.overflow = 'hidden';
 
     const loadImage = (url) =>
       new Promise((resolve, reject) => {
@@ -73,15 +72,7 @@ export default function App() {
   useEffect(() => {
     if(allImagesLoaded === true){
       setMainOpacity(1);
-
-      const timeout = setTimeout(() => {
-        document.body.style.overflow = 'visible';
-        setMainOpacity2(1);
-      }, 3500)
-
-      return () => {
-        clearInterval(timeout);
-      }
+      setMainOpacity2(1);
     }
     // eslint-disable-next-line
   }, [allImagesLoaded]);
@@ -95,14 +86,8 @@ export default function App() {
 
   return (
     <div  className="App" >
-      <Navbar 
-      mainOpacity2={mainOpacity2} 
-      introduction={introduction}
-      skills={skills} 
-      projects={projects} 
-      comercial={comercial} 
-      contact={contact}
-      />
+
+
       <Introduction 
       introduction={introduction}
       foto={foto} 

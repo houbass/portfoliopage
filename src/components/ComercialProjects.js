@@ -68,11 +68,14 @@ export default function ComercialProjects({comercial, sofaPic, servicePic, bncPi
                                     className="projectCardContent pad1"
                                     >
                                         <a href={item.link} target="blank">
-                                            <div style={{
-                                                width: "300px",
-                                                height: "300px"
-                                            }}>
-                                                <img src={item.pic} width="300" height="300" alt={item.title} />
+                                        <div className="cardImg">
+                                                <img 
+                                                src={item.pic} 
+                                                alt={item.title}
+                                                style={{
+                                                    width: "100%",
+                                                    borderRadius: "5px"
+                                                }}/>
                                             </div>
                                         </a>
 

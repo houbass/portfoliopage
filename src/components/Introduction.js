@@ -12,7 +12,7 @@ export default function Introduction({introduction, foto, mainOpacity }) {
     //Animationed text settings
     const text1 = "crafting digital landscapes where design meets functionality and user experience is not just a goal but a journey";
     const timing1 = 20;
-    const delay1 = 500;
+    const delay1 = 0;
 
     useLayoutEffect(() => {
         if(mainOpacity === 1){
@@ -26,7 +26,7 @@ export default function Introduction({introduction, foto, mainOpacity }) {
         ref={introduction}
         className="container intro color2 scrollMarginTop" 
         style={{
-            paddingTop: "100px"
+            paddingTop: "50px"
         }}>
             <section style={{opacity: mainOpacity, transition: "1s"}}>
                 <div className="container1 color2">
@@ -46,7 +46,7 @@ export default function Introduction({introduction, foto, mainOpacity }) {
                             />
                         </div>
                         <div className="col"
-                        style={{position: "relative", transition: "2s", opacity: mainOpacity}}>
+                        >
                             <img 
                             src={foto} 
                             className="mainPic" 
@@ -54,32 +54,6 @@ export default function Introduction({introduction, foto, mainOpacity }) {
                             loading="lazy"
                             />
 
-                            <div
-                            style={{
-                                width: "100%",
-                                height: "100%",
-                                position: "absolute",
-                                top: "0",
-                                display: "flex",
-                                flexDirection: "row"
-                            }}>
-
-                                {animatiaon.map((item, index) => {
-                                    const thisLeft = index * (100 / animatiaon.length)
-
-                                    return(
-                                        <div 
-                                        className={"color2 " + showFotoWidth} 
-                                        key={index}
-                                        style={{
-                                            background: "rgb(255, 255, 255)",
-                                            height: "100%",
-                                            position: "absolute",
-                                            left: thisLeft + "%"
-                                        }}></div>
-                                    )
-                                })}
-                            </div>
                         </div>
                     </div>
                 </div>

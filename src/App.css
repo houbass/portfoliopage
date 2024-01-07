@@ -177,7 +177,9 @@ color: rgb(18, 36, 50);
 }
 
 .color1 {
+  /* background: rgb(242, 247, 250); */
   background: rgb(242, 247, 250);
+  
 }
 
 .color2 {
@@ -339,7 +341,7 @@ p {
   font-size: 15px;
   font-weight: 700;
   padding: 15px 20px;
-  border-radius: 30px;
+  border-radius: 5px;
   border: 2px solid transparent;
   position: relative;
   z-index: 2;
@@ -496,17 +498,38 @@ p {
 .projectCard {
   /*background: rgb(242, 247, 250);*/
   border: 5px solid rgb(242, 247, 250);
+  border-radius: 5px;
   z-index: 10;
   padding-top: 10px;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
+  margin-left: 10px;
+  margin-right: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  transition: 0.5s;
 }
 
 .projectCard2 {
   /*background: rgb(255, 255, 255);*/
   border: 5px solid rgb(255, 255, 255);
+  border-radius: 5px;
   z-index: 10;
   padding-top: 10px;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
+  margin-left: 10px;
+  margin-right: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+@media (min-width: 1080px) {
+  .projectCard {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
+  .projectCard2 {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
 }
 
 
@@ -520,6 +543,11 @@ p {
   gap: 20px;
 }
 
+.cardImg {
+  width: 100%;
+  aspect-ratio: auto 300/300;
+}
+
 @media (min-width: 800px) {
   .projectCardContent {
     flex-direction: row;
@@ -527,6 +555,11 @@ p {
 
   .infoCard {
     gap: 20px;
+  }
+
+  .cardImg {
+    width: 300px;
+    height: 300px;
   }
 }
 

@@ -120,15 +120,16 @@ export default function MyProjects({projects, lofichordPic, gravityPic, mindfuck
                                     <h2 className="pad1">{item.title}</h2>
                                 </a>
 
-                                <div 
-                                className="projectCardContent pad1"
-                                >
+                                <div className="projectCardContent pad1" >
                                     <a href={item.link} target="blank">
-                                        <div style={{
-                                            width: "300px",
-                                            height: "300px"
-                                        }}>
-                                            <img src={item.pic} width="300" height="300" alt={item.title} />
+                                        <div className="cardImg">
+                                            <img 
+                                            src={item.pic} 
+                                            alt={item.title} 
+                                            style={{
+                                                width: "100%",
+                                                borderRadius: "5px"
+                                            }}/>
                                         </div>
                                     </a>
 
