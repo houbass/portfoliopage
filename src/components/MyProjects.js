@@ -76,12 +76,23 @@ export default function MyProjects({projects, lofichordPic, gravityPic, mindfuck
                 elements: myProjects.length,
                 state: true
             });
+
+
+            
         } else{
             setShowMore({
                 text: "show more",
                 elements: 2,
                 state: false
             });
+
+            projects.current.scrollIntoView(
+                {
+                    behavior: 'smooth',
+                    block: "center",
+                    inline: "nearest"
+                  }
+            );
         }
     };
 
