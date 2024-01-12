@@ -1,13 +1,14 @@
 * {
   margin: 0;
   padding: 0;
-
+  font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
 }
 
 :root {
   background: rgb(255, 255, 255);
   color: white;
   scroll-behavior: smooth;
+
 }
 
 img {
@@ -112,7 +113,7 @@ display: flex;
 flex-direction: column;
 align-items: center;
 font-family: Poppins, sans-serif; 
-color: rgb(18, 36, 50);
+color: rgb(25, 25, 25);
 }
 
 
@@ -187,13 +188,14 @@ color: rgb(18, 36, 50);
 }
 
 a {
-  color: rgb(24, 24, 24);
+  color: rgb(25, 25, 25);
   text-decoration: none;
 }
 
 h1 {
   font-size: 30px;
   pointer-events: none;
+  font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
 }
 
 h2 {
@@ -204,12 +206,10 @@ h2 {
 }
 
 h3 {
-
   pointer-events: none;
 }
 
 p {
-
   line-height: 30px;
   pointer-events: none;
 }
@@ -232,6 +232,7 @@ p {
 .title2 {
   color: transparent;  
   text-shadow: 0 0 0 white;
+
 }
 
 #canvas {
@@ -296,23 +297,20 @@ p {
 
 
 .label {
-  color: rgba(18, 36, 50, 0.7);
-  font-size: 17px;
+  color: rgba(25, 25, 25, 0.7);
+  font-size: 18px;
   line-height: 28px;
-  font-weight: 500;
-  margin-bottom: 4px;
 }
 
 .labelIntro {
-  color: rgba(18, 36, 50, 0.9);
-  font-size: 17px;
+  color: rgba(25, 25, 25, 0.9);
+  font-size: 18px;
   line-height: 28px;
-  font-weight: 600;
   margin-bottom: 4px;
 }
 
 .footerLabel {
-  color: rgba(18, 36, 50, 0.48);
+  color: rgba(25, 25, 25, 0.48);
   font-size: 17px;
   font-weight: 600;
 }
@@ -350,7 +348,7 @@ p {
 
 .button:hover {
 	background: rgb(255, 255, 255);
-	color: black;
+	color: rgb(25, 25, 25);
   border: 2px solid rgb(18, 36, 50);
 }
 
