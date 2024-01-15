@@ -19,7 +19,7 @@ export default function Contact({ contact, mainOpacity }) {
             link: "https://www.codewars.com/users/houbass"
         }, 
         {
-            text: "My music",
+            text: "My Music",
             link: "https://open.spotify.com/artist/1ioPe940lafF8R9ejGRRpW"
         }, 
     ]

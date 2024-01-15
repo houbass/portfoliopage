@@ -25,7 +25,7 @@ export default function MySkills({ skills, mainOpacity }) {
                     style={{
 
                     }}>
-                        My skills
+                        My Skills
                     </h1>
                     <div className="pad1">
                     <br/>
