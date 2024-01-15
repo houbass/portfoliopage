@@ -69,7 +69,6 @@ export default function ConsoleText({writingHandler, textInput, timing, delay })
               <p 
               className="label"
               style={{
-                  fontFamily: "Poppins, sans-serif",
                   position: "absolute"
               }}>
                   {welcomeText + strednikOpacity}
@@ -78,7 +77,6 @@ export default function ConsoleText({writingHandler, textInput, timing, delay })
               <p 
               className="label"
               style={{
-                  fontFamily: "Poppins, sans-serif", 
                   color: "rgba(0,0,0,0)"
               }}>
                   {text + " █"}

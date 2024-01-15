@@ -1,14 +1,15 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  /*font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;*/
+  /*font-family: 'Arvo', serif;*/
+  /*font-family: 'Montserrat', sans-serif;*/
+  font-family: 'Play', sans-serif;
 }
 
 :root {
-  background: rgb(255, 255, 255);
-  color: white;
   scroll-behavior: smooth;
-
+  color: #3B3B3B;
 }
 
 img {
@@ -112,8 +113,6 @@ img {
 display: flex;
 flex-direction: column;
 align-items: center;
-font-family: Poppins, sans-serif; 
-color: rgb(25, 25, 25);
 }
 
 
@@ -122,16 +121,13 @@ color: rgb(25, 25, 25);
   display: flex;
   flex-direction: column;
   align-items: center;
-  
   padding: 50px 0px;
-
 }
 
 .mainPic {
   max-width: 400px;
   width: 100%;
   border-radius: 50px;
-
 }
 
 @media (min-width: 800px) {
@@ -150,7 +146,6 @@ color: rgb(25, 25, 25);
   align-items: center;
   margin-top: 100px;
   gap: 10px;
-  font-family: 'Courier New', Courier, monospace;
 }
 
 .topic1 {
@@ -161,7 +156,6 @@ color: rgb(25, 25, 25);
 .text {
   font-size: 30px;
   opacity: 0;
-  font-family: 'Courier New', Courier, monospace;
 }
 
 .textAnimation {
@@ -180,7 +174,6 @@ color: rgb(25, 25, 25);
 .color1 {
   /* background: rgb(242, 247, 250); */
   background: rgb(242, 247, 250);
-  
 }
 
 .color2 {
@@ -188,30 +181,33 @@ color: rgb(25, 25, 25);
 }
 
 a {
-  color: rgb(25, 25, 25);
+  color: #3B3B3B;
   text-decoration: none;
 }
 
 h1 {
-  font-size: 30px;
+  font-size: 28px;
   pointer-events: none;
-  font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
 }
 
 h2 {
-
+  font-size: 20px;
   line-height: 36px;
-  margin-bottom: 8px;
   pointer-events: none;
 }
 
 h3 {
+  font-size: 16px;
   pointer-events: none;
 }
 
 p {
   line-height: 30px;
   pointer-events: none;
+  /*font-family: 'Lato', sans-serif;*/
+  /*font-family: 'Crimson Text', serif;*/
+
+  font-family: 'Play', sans-serif;
 }
 
 .pad1 {
@@ -297,20 +293,17 @@ p {
 
 
 .label {
-  color: rgba(25, 25, 25, 0.7);
   font-size: 18px;
   line-height: 28px;
 }
 
 .labelIntro {
-  color: rgba(25, 25, 25, 0.9);
   font-size: 18px;
   line-height: 28px;
   margin-bottom: 4px;
 }
 
 .footerLabel {
-  color: rgba(25, 25, 25, 0.48);
   font-size: 17px;
   font-weight: 600;
 }
@@ -323,7 +316,7 @@ p {
 
 @media (min-width: 800px) {
   .big-text {
-      font-size: 24px;
+    font-size: 24px;
       line-height: 26px;
 
   }
@@ -348,11 +341,34 @@ p {
 
 .button:hover {
 	background: rgb(255, 255, 255);
-	color: rgb(25, 25, 25);
-  border: 2px solid rgb(18, 36, 50);
+	color: #3B3B3B;
+  border: 2px solid #3B3B3B;
 }
 
 .button-dark {
+  background: rgb(36, 71, 95);
+  color: white;
+}
+
+.button2 {
+  display: inline-block;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 15px 20px;
+  border-radius: 5px;
+
+  position: relative;
+  z-index: 2;
+	background: rgb(255, 255, 255);
+	color: #3B3B3B;
+  border: 2px solid #3B3B3B;
+}
+
+.button2:hover {
+
+  
+  border: 2px solid transparent;
   background: rgb(36, 71, 95);
   color: white;
 }
@@ -362,6 +378,7 @@ p {
   background: rgb(84, 185, 171);
   padding: 12px 25px;
   border-radius: 22px;
+  
 }
 
 
@@ -543,7 +560,12 @@ p {
 
 .cardImg {
   width: 100%;
-  aspect-ratio: auto 300/300;
+  aspect-ratio: auto 800/800;
+  transition: 0.1s linear;
+}
+
+.cardImg:hover {
+  filter: brightness(1.1);
 }
 
 @media (min-width: 800px) {
@@ -585,29 +607,42 @@ p {
 .contactBtn {
   pointer-events: all;
   cursor: pointer;
-  font-size: 15px;
+  font-size: 20px;
   padding: 0px 5px;
   font-weight: bold;
   margin: 3px 0px;
+  width: fit-content;
 }
 
 .contactBtn:hover {
-  background: rgb(18, 36, 50);
+  background: rgb(36, 71, 95);
   color: white;
 }
 
-@media (min-width: 500px) {
-  .contactBtn {
-    font-size: 20px;
-    margin: 5px 0px;
+
+.contactTable {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+@media (min-width: 700px) {
+  .contactTable {
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0px;
+    margin-top: 0px;
   }
+
 }
 
 @media (max-width: 330px) {
-  .contactBtn {
-    font-size: 12px;
-    margin: 0px 0px;
-  }
+
 }
 
 li::before {

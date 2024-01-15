@@ -1,15 +1,5 @@
 
-//libraries
-import Lottie from "lottie-react";
-
-//pic
-import contactPic from "../pic/contact.svg";
-
-//animation data
-import contactAnim from "../animations/contact.json";
-
 export default function Contact({ contact, mainOpacity }) {
-
 
     const links = [
         {
@@ -36,7 +26,7 @@ export default function Contact({ contact, mainOpacity }) {
 
     return(
         <div 
-        className="container color2 scrollMarginTop" 
+        className="container color1 scrollMarginTop" 
         ref={contact}
         style={{
             opacity: mainOpacity,
@@ -58,39 +48,24 @@ export default function Contact({ contact, mainOpacity }) {
                             display: "flex",
                             flexDirection: "row",
                             justifyContent: "space-between",
-                            minHeight: "230px",
-                            gap: "20px"
+                            minHeight: "150px",
+                            gap: "20px",
+                            //background: "pink"
                         }}>
-                            <Lottie 
-                            animationData={contactAnim} 
-                            style={{
-                                maxWidth: "200px",
-                                width: "100%",
-                            }}
-                            />
-
-                            <div 
-                            className="fc"
-                            style={{
-                                justifyContent: "center",
-                            }}>
-                                <ul>
+                            <div className="contactTable">
                                     {links.map(e => {
 
                                         return(
-                                            <li 
+                                            <a 
+                                            href={e.link} 
                                             key={e.text} 
+                                            target="_blank"
+                                            rel="noopener noreferrer"
                                             >
-                                                <a 
-                                                href={e.link}
-                                                target="blank"
-                                                >
-                                                    <p className="contactBtn">{e.text}</p>
-                                                </a>
-                                            </li>
+                                                <p className="contactBtn">{e.text}</p>
+                                            </a>
                                         )
                                     })}
-                               </ul>
                             </div>
                         </div>   
                     </div>

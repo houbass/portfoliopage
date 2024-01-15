@@ -24,6 +24,8 @@ export default function ConsoleTextIntro({writingHandler, textInput, timing, del
     return () => {
       clearTimeout(thisTimeout);
     }
+    
+    // eslint-disable-next-line
   }, [writingHandler]);
 
   //WRITING
@@ -70,7 +72,6 @@ export default function ConsoleTextIntro({writingHandler, textInput, timing, del
               <p 
               className="labelIntro"
               style={{
-                  fontFamily: "Poppins, sans-serif",
                   position: "absolute"
               }}>
                   {welcomeText + strednikOpacity}
@@ -79,7 +80,6 @@ export default function ConsoleTextIntro({writingHandler, textInput, timing, del
               <p 
               className="label"
               style={{
-                  fontFamily: "Poppins, sans-serif", 
                   color: "rgba(0,0,0,0)"
               }}>
                   {text + " █"}

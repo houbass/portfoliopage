@@ -1,6 +1,4 @@
 
-//pictures
-import skillsPic from "../pic/skills.svg"
 
 export default function MySkills({ skills, mainOpacity }) {
     
@@ -25,15 +23,17 @@ export default function MySkills({ skills, mainOpacity }) {
                     <h1 
                     className="title" 
                     style={{
-                        marginBottom: "30px"
+
                     }}>
                         My skills
                     </h1>
                     <div className="pad1">
-                        <br/>
+                    <br/>
+
                         <h2>React / Next.js</h2>
                         <p className="label">{text1} </p>
                         <br/>
+
 
                         <h2>UI</h2>
                         <p className="label">{text2} </p>

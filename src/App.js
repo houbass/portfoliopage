@@ -4,11 +4,9 @@ import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import './App.css';
 
 //COMPONENTS
-import Navbar from './components/Navbar';
 import Introduction from './components/Introduction';
 import MySkills from './components/MySkills';
 import MyProjects from './components/MyProjects';
-import ComercialProjects from './components/ComercialProjects';
 import Contact from './components/Contact';
 
 //PICTURES
@@ -20,18 +18,12 @@ import miningPic from "./pic/mining.webp";
 import spacePic from "./pic/space.webp";
 import sofaPic from "./pic/sofalofi.webp";
 import servicePic from "./pic/autoservis.webp";
-import bncPic from "./pic/bnc.webp";
-import gittextdPic from "./pic/gittext.webp";
-import gitPic from "./pic/git.webp";
-
 
 export default function App() {
-
   //refs
   const introduction = useRef();
   const skills = useRef();
   const projects = useRef();
-  const comercial = useRef();
   const contact = useRef();
   
   //TOPIC OPACITY (when img loaded)
@@ -105,19 +97,9 @@ export default function App() {
       mindfuckPic={mindfuckPic} 
       gravityPic={gravityPic} 
       miningPic={miningPic} 
-      spacePic={spacePic}
-      gittextdPic={gittextdPic} 
-      gitPic={gitPic} 
-      mainOpacity={mainOpacity2}
-      />
-
-      <ComercialProjects 
-      comercial={comercial} 
+      spacePic={spacePic} 
       sofaPic={sofaPic} 
       servicePic={servicePic} 
-      bncPic={bncPic} 
-      gittextdPic={gittextdPic} 
-      gitPic={gitPic}
       mainOpacity={mainOpacity2}
       />
 

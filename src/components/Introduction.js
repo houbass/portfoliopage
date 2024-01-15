@@ -1,25 +1,13 @@
-import { useLayoutEffect, useState } from "react";
 
 //components
 import ScrollContainerIntro from "./ScrollContainerIntro";
 
 export default function Introduction({introduction, foto, mainOpacity }) {
 
-    //Photo animation states
-    const [showFotoWidth, setShowFotoWidth] = useState("")
-    const animatiaon = [1, 2, 3, 4, 5]
-
     //Animationed text settings
     const text1 = "crafting digital landscapes where design meets functionality and user experience is not just a goal but a journey";
     const timing1 = 20;
     const delay1 = 0;
-
-    useLayoutEffect(() => {
-        if(mainOpacity === 1){
-            setShowFotoWidth("fotoTransition");
-        }
-    },[mainOpacity])
-
  
     return(
         <div 
@@ -51,7 +39,6 @@ export default function Introduction({introduction, foto, mainOpacity }) {
                             src={foto} 
                             className="mainPic" 
                             alt="profile"
-                            loading="lazy"
                             />
 
                         </div>

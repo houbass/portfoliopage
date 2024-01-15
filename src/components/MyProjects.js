@@ -1,11 +1,14 @@
 // pictures
 import { useState } from "react";
-import projectsPic from "../pic/projects.svg"
+
+//pictures
+import gitPic from "../pic/git.svg"
+import gittextdPic from "../pic/gittext.svg"
 
 // components
 import ScrollContainer from "./ScrollContainer";
 
-export default function MyProjects({projects, lofichordPic, gravityPic, mindfuckPic, miningPic, spacePic, gittextdPic, gitPic, mainOpacity }) {
+export default function MyProjects({projects, lofichordPic, gravityPic, mindfuckPic, miningPic, spacePic, sofaPic, servicePic, mainOpacity }) {
 
     // STATES FOR SHOWMORE BTN
     const [showMore, setShowMore] = useState({
@@ -28,6 +31,22 @@ export default function MyProjects({projects, lofichordPic, gravityPic, mindfuck
             btnText: "make some music",
             link: "https://lofichordrandomizer.netlify.app/",
             git: "https://github.com/houbass/lofirandomizator.git"
+        }, {
+            title: "Sofa Lofi recording label",
+            pic: sofaPic,
+            text: "Explore my full-stack project for Sofa Lofi recording label, a platform harmonizing front-end and back-end tech. Tailored to the label's needs, it includes features such as releases cards, an admin page, submission forms with validations, subscription and a PDF generator for contract creation.",
+            techStack: ["next.js", "lottie", "anime.js", "firebase","create-pdf-js", "netlify"],
+            btnText: "check it out",
+            link: "https://sofalofi.com/",
+            git: "https://github.com/houbass/sofaoptimalization"
+        }, {
+            title: "Autoservis Laube",
+            pic: servicePic,
+            text: "Check out the website I made for a family member's car service. It's user-friendly, offering essential info on services. With detailed descriptions and easy navigation, it ensures a smooth and informative experience for visitors.",
+            techStack: ["react", "lottie", "anime.js", "netlify"],
+            btnText: "repair car",
+            link: "https://deft-custard-7140be.netlify.app/",
+            git: "https://github.com/houbass/autoservice"
         }, {
             title: "Gravitation simulation",
             pic: gravityPic,
@@ -60,14 +79,13 @@ export default function MyProjects({projects, lofichordPic, gravityPic, mindfuck
             btnText: "let's fly",
             link: "https://wondrous-jelly-5aa5c2.netlify.app/",
             git: "https://github.com/houbass/gravity-game"
-        } 
+        }, 
     ]
 
 
+    // SHOW MORE
     const filteredProjects = myProjects.filter((e, i) => i <= showMore.elements )
-    //console.log(myProjects.filter((e, i) => i <= (myProjects.length - 1) ))
-
-    // SHOW MORE FUNCTIONS
+    
     function showMoreFun() {
 
         if(showMore.state === false) {
@@ -76,9 +94,6 @@ export default function MyProjects({projects, lofichordPic, gravityPic, mindfuck
                 elements: myProjects.length,
                 state: true
             });
-
-
-            
         } else{
             setShowMore({
                 text: "show more",
@@ -127,12 +142,20 @@ export default function MyProjects({projects, lofichordPic, gravityPic, mindfuck
                             key={index}
                             className="projectCard animePad" 
                             >
-                                <a href={item.link} target="blank">
-                                    <h2 className="pad1">{item.title}</h2>
+                                <a 
+                                href={item.link} 
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                >
+                                <h2 className="pad1">{item.title}</h2>
                                 </a>
 
                                 <div className="projectCardContent pad1" >
-                                    <a href={item.link} target="blank">
+                                    <a 
+                                    href={item.link} 
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    >
                                         <div className="cardImg">
                                             <img 
                                             src={item.pic} 
@@ -174,8 +197,16 @@ export default function MyProjects({projects, lofichordPic, gravityPic, mindfuck
                                     background: "rgb(242, 247, 250)",
                                     padding: "10px"
                                 }}>
-                                    <a className="button button-dark" href={item.link} target="blank">{item.btnText}</a>
-                                    <a href={item.git} target="blank">
+                                    <a className="button button-dark" 
+                                    href={item.link} 
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    >{item.btnText}</a>
+
+                                    <a href={item.git} 
+                                    target="_blank" 
+                                    rel="noopener noreferrer"
+                                    >
                                         <div 
                                         style={{
                                             display: "flex",
@@ -197,7 +228,7 @@ export default function MyProjects({projects, lofichordPic, gravityPic, mindfuck
 
             <button 
             onClick={showMoreFun} 
-            className="button button-dark"
+            className="button2"
             style={{
                 cursor: "pointer"
             }}
