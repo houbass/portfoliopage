@@ -12,30 +12,24 @@ export default function MySkills({ skills, mainOpacity }) {
     const text3 = "Exploring Three.js, I push beyond traditional web development boundaries, showcasing the potential within the browser. With Three.js, I bring concepts to life, merging creativity and technology into a captivating playground.";
 
     return(
-        <div className="container color1 scrollMarginTop" 
+        <div className="container color1" 
         ref={skills}
         style={{
             opacity: mainOpacity,
             transition: "1.5s"
             }}>
             <section className="container1 color1" >
-                <div className="col col-1-2 intro-left">
-                    <h1 
-                    className="title" 
-                    style={{
-
-                    }}>
+                <div className="col-1-2">
+                    <h1 className="title mb1">
                         My Skills
                     </h1>
                     <div className="pad1">
-                    <br/>
 
                         <h2>React / Next.js</h2>
                         <p className="label">{text1} </p>
                         <br/>
 
-
-                        <h2>UI</h2>
+                        <h2>UI / UX</h2>
                         <p className="label">{text2} </p>
                         <br/>
 

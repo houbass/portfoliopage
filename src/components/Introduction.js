@@ -12,19 +12,21 @@ export default function Introduction({introduction, foto, mainOpacity }) {
     return(
         <div 
         ref={introduction}
-        className="container intro color2 scrollMarginTop" 
-        style={{
-            paddingTop: "50px"
-        }}>
-            <section style={{opacity: mainOpacity, transition: "1s"}}>
+        className="container color2 p1">
+            <section 
+            style={{
+                opacity: mainOpacity, 
+                transition: "1s"
+            }}>
                 <div className="container1 color2">
-                    <div className="row" style={{justifyContent: "space-between", paddingLeft: "10px", paddingRight: "10px"}}>
+                    <div className="row introCard">
                         <div className="col col-1-2 intro-left">
-                            <h1 
+                            <h1
                             style={{
-                                fontSize: "40px"
+                                fontSize: "40px",
+                                marginBottom: "15px"
                             }} >Ondrej Laube</h1>
-                            <br/>
+
                             <h2>frontend developer for your next project</h2>
                             <ScrollContainerIntro 
                             mainOpacity={mainOpacity}
@@ -40,7 +42,6 @@ export default function Introduction({introduction, foto, mainOpacity }) {
                             className="mainPic" 
                             alt="profile"
                             />
-
                         </div>
                     </div>
                 </div>

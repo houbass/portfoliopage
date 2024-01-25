@@ -1,24 +1,23 @@
 * {
   margin: 0;
   padding: 0;
-  /*font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;*/
-  /*font-family: 'Arvo', serif;*/
-  /*font-family: 'Montserrat', sans-serif;*/
   font-family: 'Play', sans-serif;
 }
 
 :root {
-  scroll-behavior: smooth;
-  color: #3B3B3B;
+  --col1: #3B3B3B;
+  --bg1: rgb(225, 243, 253);
+  /*--bg1: rgb(225, 243, 253);*/
+  --bg2: rgb(255, 255, 255);
+
+  --maxWidth: 1080px;
+
+  color: var(--col1);
 }
 
 img {
   max-width: 100%;
   vertical-align: middle;
-}
-
-.scrollMarginTop {
-  scroll-margin-top: 60px;
 }
 
 .fr {
@@ -121,11 +120,15 @@ align-items: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 50px 0px;
+  padding: 40px 0px;
+}
+
+.mb1 {
+  margin-bottom: 40px;
 }
 
 .mainPic {
-  max-width: 400px;
+  /*max-width: 400px;*/
   width: 100%;
   border-radius: 50px;
 }
@@ -172,12 +175,11 @@ align-items: center;
 }
 
 .color1 {
-  /* background: rgb(242, 247, 250); */
-  background: rgb(242, 247, 250);
+  background: var(--bg1);
 }
 
 .color2 {
-  background: rgb(255, 255, 255);
+  background: var(--bg2);
 }
 
 a {
@@ -192,7 +194,7 @@ h1 {
 
 h2 {
   font-size: 20px;
-  line-height: 36px;
+  line-height: 28px;
   pointer-events: none;
 }
 
@@ -202,7 +204,6 @@ h3 {
 }
 
 p {
-  line-height: 30px;
   pointer-events: none;
   /*font-family: 'Lato', sans-serif;*/
   /*font-family: 'Crimson Text', serif;*/
@@ -214,15 +215,21 @@ p {
   padding: 0 10px;
 }
 
+.pad2 {
+  padding: 0px 20px;
+}
+
+.pb1 {
+  padding-bottom: 10px;
+}
+
+
 .title {
-  /*color: transparent;  
-  text-shadow: 0 0 0 white;
-  background: rgb(18, 36, 50);  */
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 10px;
-  padding: 10px;
+  padding-left: 10px;
 }
 
 .title2 {
@@ -231,11 +238,8 @@ p {
 
 }
 
-#canvas {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 0;
+.pt1 {
+  padding-top: 50px;
 }
 
 
@@ -254,7 +258,7 @@ p {
 }
 
 .container1 {
-  max-width: 1080px;
+  max-width: var(--maxWidth);
   width: 100%;
 }
 
@@ -291,15 +295,19 @@ p {
     }
 }
 
+.introCard {
+  justify-content: space-between; 
+  padding-left: 10px; 
+  padding-right: 10px;
+}
 
 .label {
   font-size: 18px;
-  line-height: 28px;
+  line-height: 24px;
 }
 
 .labelIntro {
   font-size: 18px;
-  line-height: 28px;
   margin-bottom: 4px;
 }
 
@@ -363,6 +371,7 @@ p {
 	background: rgb(255, 255, 255);
 	color: #3B3B3B;
   border: 2px solid #3B3B3B;
+  cursor: pointer;
 }
 
 .button2:hover {
@@ -512,36 +521,20 @@ p {
 
 .projectCard {
   /*background: rgb(242, 247, 250);*/
-  border: 5px solid rgb(242, 247, 250);
+  border: 5px solid var(--bg1);
   border-radius: 5px;
   z-index: 10;
   padding-top: 10px;
   margin-bottom: 50px;
   margin-left: 10px;
   margin-right: 10px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  box-shadow: rgba(117, 127, 133, 0.5) 0px 5px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
   transition: 0.5s;
 }
 
-.projectCard2 {
-  /*background: rgb(255, 255, 255);*/
-  border: 5px solid rgb(255, 255, 255);
-  border-radius: 5px;
-  z-index: 10;
-  padding-top: 10px;
-  margin-bottom: 50px;
-  margin-left: 10px;
-  margin-right: 10px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-}
 
-@media (min-width: 1080px) {
+@media (min-width: var(--maxWidth)) {
   .projectCard {
-    margin-left: 0px;
-    margin-right: 0px;
-  }
-
-  .projectCard2 {
     margin-left: 0px;
     margin-right: 0px;
   }
@@ -551,11 +544,14 @@ p {
 .projectCardContent {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
 }
 
 .infoCard {
-  gap: 20px;
+  gap: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .cardImg {
@@ -603,6 +599,28 @@ p {
   }
 }
 
+.infoCardLinks {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--bg1);
+  padding: 10px;
+  border-top: 5px solid var(--bg1);
+}
+
+.gitIcon {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  align-items: center;
+}
+
+
+.projectImg {
+  width: 100%;
+  border-radius: 5px;
+}
 
 .contactBtn {
   pointer-events: all;
@@ -625,18 +643,18 @@ p {
   display: flex;
   flex-direction: column;
   gap: 5px;
-  margin-top: 10px;
+  padding-left: 5px;
 }
 
 @media (min-width: 700px) {
   .contactTable {
-
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     gap: 0px;
     margin-top: 0px;
+    padding: 0px 5px;
   }
 
 }

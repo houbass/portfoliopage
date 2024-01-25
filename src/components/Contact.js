@@ -33,24 +33,17 @@ export default function Contact({ contact, mainOpacity }) {
             transition: "1.5s"
         }}>
             <section className="container1 color1" >
-                <div className="col col-1-2 intro-left">
-                    <h1 
-                    className="title" 
-                    style={{
-                        marginBottom: "00px"
-                    }}
-                    >
-                        Contact
-                    </h1>
-                    <div className="pad1">
+                <div className="col-1-2 intro-left">
+                    <h1 className="title mb1">Contact</h1>
+                    <div>
                         <div 
+                        className="mb1"
                         style={{
                             display: "flex",
                             flexDirection: "row",
                             justifyContent: "space-between",
-                            minHeight: "150px",
-                            gap: "20px",
-                            //background: "pink"
+                            //minHeight: "150px",
+
                         }}>
                             <div className="contactTable">
                                     {links.map(e => {

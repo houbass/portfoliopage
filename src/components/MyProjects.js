@@ -5,9 +5,6 @@ import { useState } from "react";
 import gitPic from "../pic/git.svg"
 import gittextdPic from "../pic/gittext.svg"
 
-// components
-import ScrollContainer from "./ScrollContainer";
-
 export default function MyProjects({projects, lofichordPic, gravityPic, mindfuckPic, miningPic, spacePic, sofaPic, servicePic, mainOpacity }) {
 
     // STATES FOR SHOWMORE BTN
@@ -17,9 +14,6 @@ export default function MyProjects({projects, lofichordPic, gravityPic, mindfuck
         state: false
     });
 
-    // TEXT settings
-    const timing1 = 10;
-    const delay1 = 0;
 
     // MY PROJETS DESCRIPTION
     const myProjects = [
@@ -114,20 +108,16 @@ export default function MyProjects({projects, lofichordPic, gravityPic, mindfuck
     return(
         <div 
         ref={projects}
-        className="container color2 scrollMarginTop"
+        className="container color2"
         >
             <section className="container1" 
             style={{
                 opacity: mainOpacity, 
                 transition: "1.5s",
-                zIndex: "30"
                 }}>
-                <div className="col col-1-2 intro-left">
+                <div className="col col-1-2">
                     <h1 
-                    className="title" 
-                    style={{
-                        marginBottom: "30px"
-                    }}
+                    className="title mb1" 
                     >My Projects</h1>                    
 
                     {filteredProjects.map((item, index) => {
@@ -147,10 +137,10 @@ export default function MyProjects({projects, lofichordPic, gravityPic, mindfuck
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 >
-                                <h2 className="pad1">{item.title}</h2>
+                                <h2 className="pad2 pb1">{item.title}</h2>
                                 </a>
 
-                                <div className="projectCardContent pad1" >
+                                <div className="projectCardContent pad2" >
                                     <a 
                                     href={item.link} 
                                     target="_blank"
@@ -158,28 +148,16 @@ export default function MyProjects({projects, lofichordPic, gravityPic, mindfuck
                                     >
                                         <div className="cardImg">
                                             <img 
+                                            className="projectImg"
                                             src={item.pic} 
                                             alt={item.title} 
-                                            style={{
-                                                width: "100%",
-                                                borderRadius: "5px"
-                                            }}/>
+                                            />
                                         </div>
                                     </a>
 
                                     <div 
-                                    className="infoCard"
-                                    style={{
-                                        display: "flex",
-                                        flexDirection: "column",
-                                        justifyContent: "space-between"
-                                    }}>
-                                        <ScrollContainer 
-                                        mainOpacity={mainOpacity} 
-                                        textInput={item.text} 
-                                        timing={timing1} 
-                                        delay={delay1}
-                                        />
+                                    className="infoCard">
+                                        <p className="label">{item.text}</p>
                                         <div>
                                             <h3>Tech Stack:</h3>
                                             <p>{item.techStack.join(", ")}</p>
@@ -187,16 +165,7 @@ export default function MyProjects({projects, lofichordPic, gravityPic, mindfuck
                                     </div>
                                 </div>
                                 <br/>
-                                <div 
-                                //className="pad1"
-                                style={{
-                                    display: "flex",
-                                    flexDirection: "row",
-                                    alignItems: "center",
-                                    justifyContent: "space-between",
-                                    background: "rgb(242, 247, 250)",
-                                    padding: "10px"
-                                }}>
+                                <div className="infoCardLinks">
                                     <a className="button button-dark" 
                                     href={item.link} 
                                     target="_blank"
@@ -207,13 +176,9 @@ export default function MyProjects({projects, lofichordPic, gravityPic, mindfuck
                                     target="_blank" 
                                     rel="noopener noreferrer"
                                     >
-                                        <div 
+                                        <div className="gitIcon"
                                         style={{
-                                            display: "flex",
-                                            flexDirection: "column",
-                                            width: "fit-content",
-                                            alignItems: "center",
-                                            visibility: thisVisibility
+                                            visibility: thisVisibility,
                                         }}>
                                             <img src={gitPic} width="40" alt="GitHub logo" />
                                             <img src={gittextdPic} width="50" alt="GitHub text" />
@@ -229,9 +194,6 @@ export default function MyProjects({projects, lofichordPic, gravityPic, mindfuck
             <button 
             onClick={showMoreFun} 
             className="button2"
-            style={{
-                cursor: "pointer"
-            }}
             >{showMore.text}</button>
 
         </div>
