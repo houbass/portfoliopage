@@ -25,7 +25,7 @@ export default function Introduction({introduction, foto, mainOpacity }) {
                             className="mb1"
                             style={{
                                 fontSize: "40px",
-                            }} >Ondrej Laube</h1>
+                            }} >Ondřej Laube</h1>
 
                             <h2 className="mb2">Frontend developer for your next project.</h2>
                             <ScrollContainerIntro 
@@ -35,8 +35,8 @@ export default function Introduction({introduction, foto, mainOpacity }) {
                             delay={delay1}
                             />
                         </div>
-                        <div className="col"
-                        >
+
+                        <div>
                             <img 
                             src={foto} 
                             className="mainPic" 

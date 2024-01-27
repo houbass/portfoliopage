@@ -14,7 +14,6 @@ export default function MyProjects({projects, lofichordPic, gravityPic, mindfuck
         state: false
     });
 
-
     // MY PROJETS DESCRIPTION
     const myProjects = [
         {
@@ -155,8 +154,7 @@ export default function MyProjects({projects, lofichordPic, gravityPic, mindfuck
                                         </div>
                                     </a>
 
-                                    <div 
-                                    className="infoCard">
+                                    <div className="infoCard">
                                         <p className="label">{item.text}</p>
                                         <div>
                                             <h3>Tech Stack:</h3>
@@ -180,8 +178,8 @@ export default function MyProjects({projects, lofichordPic, gravityPic, mindfuck
                                         style={{
                                             visibility: thisVisibility,
                                         }}>
-                                            <img src={gitPic} width="40" alt="GitHub logo" />
-                                            <img src={gittextdPic} width="50" alt="GitHub text" />
+                                            <img src={gitPic} width="40" alt="GitHub logo"/>
+                                            <img src={gittextdPic} width="50" alt="GitHub text"/>
                                         </div>
                                     </a>
                                 </div>
@@ -190,12 +188,10 @@ export default function MyProjects({projects, lofichordPic, gravityPic, mindfuck
                     })}
                 </div>
             </section> 
-
             <button 
             onClick={showMoreFun} 
             className="button2"
             >{showMore.text}</button>
-
         </div>
     )
 }
