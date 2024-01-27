@@ -10,6 +10,10 @@
   /*--bg1: rgb(225, 243, 253);*/
   --bg2: rgb(255, 255, 255);
 
+  --divPad: 40px;
+  --mb1: 40px;
+  --mb2: 10px;
+
   --maxWidth: 1080px;
 
   color: var(--col1);
@@ -120,11 +124,14 @@ align-items: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 40px 0px;
+  padding: var(--divPad) 0px;
 }
 
 .mb1 {
-  margin-bottom: 40px;
+  margin-bottom: 30px;
+}
+.mb2 {
+  margin-bottom: 10px;
 }
 
 .mainPic {
@@ -316,11 +323,6 @@ p {
   font-weight: 600;
 }
 
-@media (min-width: 800px) {
-  .label {
-      margin-bottom: 10px; 
-  }
-}
 
 @media (min-width: 800px) {
   .big-text {
@@ -523,12 +525,11 @@ p {
   /*background: rgb(242, 247, 250);*/
   border: 5px solid var(--bg1);
   border-radius: 5px;
-  z-index: 10;
   padding-top: 10px;
-  margin-bottom: 50px;
+  margin-bottom: var(--mb1);
   margin-left: 10px;
   margin-right: 10px;
-  box-shadow: rgba(117, 127, 133, 0.5) 0px 5px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  box-shadow: rgba(117, 127, 133, 0.5) 0px 5px 27px -5px, rgba(117, 127, 133, 0.3) 0px 8px 16px -8px;
   transition: 0.5s;
 }
 
@@ -574,8 +575,8 @@ p {
   }
 
   .cardImg {
-    width: 300px;
-    height: 300px;
+    width: 250px;
+    height: 250px;
   }
 }
 

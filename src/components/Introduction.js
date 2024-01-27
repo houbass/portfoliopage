@@ -5,7 +5,7 @@ import ScrollContainerIntro from "./ScrollContainerIntro";
 export default function Introduction({introduction, foto, mainOpacity }) {
 
     //Animationed text settings
-    const text1 = "crafting digital landscapes where design meets functionality and user experience is not just a goal but a journey";
+    const text1 = "Crafting digital landscapes where design meets functionality and user experience is not just a goal but a journey.";
     const timing1 = 20;
     const delay1 = 0;
  
@@ -22,12 +22,12 @@ export default function Introduction({introduction, foto, mainOpacity }) {
                     <div className="row introCard">
                         <div className="col col-1-2 intro-left">
                             <h1
+                            className="mb1"
                             style={{
                                 fontSize: "40px",
-                                marginBottom: "15px"
                             }} >Ondrej Laube</h1>
 
-                            <h2>frontend developer for your next project</h2>
+                            <h2 className="mb2">Frontend developer for your next project.</h2>
                             <ScrollContainerIntro 
                             mainOpacity={mainOpacity}
                             textInput={text1} 

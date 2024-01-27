@@ -37,13 +37,11 @@ export default function Contact({ contact, mainOpacity }) {
                     <h1 className="title mb1">Contact</h1>
                     <div>
                         <div 
-                        className="mb1"
+                        className=""
                         style={{
                             display: "flex",
                             flexDirection: "row",
                             justifyContent: "space-between",
-                            //minHeight: "150px",
-
                         }}>
                             <div className="contactTable">
                                     {links.map(e => {

@@ -23,18 +23,22 @@ export default function MySkills({ skills, mainOpacity }) {
                     <h1 className="title mb1">
                         My Skills
                     </h1>
-                    <div className="pad1">
+                    <div className="fc pad1" style={{gap: "var(--mb1)"}}>
 
-                        <h2>React / Next.js</h2>
-                        <p className="label">{text1} </p>
-                        <br/>
+                        <div className="">
+                            <h2>React / Next.js</h2>
+                            <p className="label">{text1} </p>
+                        </div>
 
-                        <h2>UI / UX</h2>
-                        <p className="label">{text2} </p>
-                        <br/>
+                        <div className="">
+                            <h2>UI / UX</h2>
+                            <p className="label">{text2} </p>
+                        </div>
 
-                        <h2>Three.js</h2>
-                        <p className="label">{text3} </p>
+                        <div className="">
+                            <h2>Three.js</h2>
+                            <p className="label">{text3} </p>
+                        </div>
                     </div>
                 </div>
             </section> 
