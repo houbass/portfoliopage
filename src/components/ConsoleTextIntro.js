@@ -1,6 +1,6 @@
 import { useLayoutEffect, useRef, useState } from 'react'
 
-export default function ConsoleText({writingHandler, textInput, textFontWeight, timing, textFontSize, delay }) {
+export default function ConsoleTextIntro({writingHandler, textInput, timing, delay }) {
 
   //WRITING
   const [thisWritingHandler, setThisWritingHandler] = useState(false);
@@ -24,6 +24,8 @@ export default function ConsoleText({writingHandler, textInput, textFontWeight, 
     return () => {
       clearTimeout(thisTimeout);
     }
+    
+    // eslint-disable-next-line
   }, [writingHandler]);
 
   //WRITING
@@ -59,36 +61,28 @@ export default function ConsoleText({writingHandler, textInput, textFontWeight, 
     <>
         <div 
         ref={elementRef} 
-
         >
             <div 
             style={{
             display: "flex",
             flexDirection: "row",
             gap: "5px",
-            //background: "orange",
             position: "relative"
             }}>
-              <p
+              <p 
+              className="labelIntro"
               style={{
-                  fontSize: textFontSize,
-                  fontWeight: textFontWeight,
-                  marginTop: "auto",
-                  fontFamily: "'Courier New', Courier, monospace",
                   position: "absolute"
               }}>
                   {welcomeText + strednikOpacity}
               </p>
 
-              <p
+              <p 
+              className="label"
               style={{
-                  fontSize: textFontSize,
-                  fontWeight: textFontWeight,
-                  marginTop: "auto",
-                  fontFamily: "'Courier New', Courier, monospace",
                   color: "rgba(0,0,0,0)"
               }}>
-                  {text}
+                  {text + " █"}
               </p>
 
             </div>            

@@ -1,20 +1,12 @@
-import { useLayoutEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 //components
-import ConsoleText from './ConsoleText';
+import ConsoleTextIntro from './ConsoleTextIntro';
 
-export default function ScrollContainer({ foto, textInput, textFontWeight, timing, textFontSize, delay }) {
-
-    //canvas img
-    const fotoImage = new Image();
-    fotoImage.src = foto
+export default function ScrollContainerIntro({ mainOpacity, textInput, timing, delay }) {
 
     //WRITING
     const [writingHandler, setWritingHandler] = useState(false);
-    const [strednikOpacity, setStrednikOpacity] = useState("█");
-    const [textCounter, setTextCounter] = useState(0);
-    const [welcomeText, setWelcomeText] = useState("");
-    const text = textInput;
 
     //SCROLLING
     const [elementClass, setElementClass] = useState("");
@@ -34,7 +26,7 @@ export default function ScrollContainer({ foto, textInput, textFontWeight, timin
       const y = getTotalHeight();
 
       if(y > elementRef.current.offsetTop){
-
+        
         //DELAY
         const timeout = setTimeout(() => {
             setElementClass("textAnimation");
@@ -46,54 +38,45 @@ export default function ScrollContainer({ foto, textInput, textFontWeight, timin
         }
       }
     }
-  
-    //SCROLLING / RESIZE LISTENERS
-    useLayoutEffect(() => {
 
-      fotoImage.onload = () => {      
+    useEffect(() => {
+      if(mainOpacity === 1){
         scrollFun();
       }
+      // eslint-disable-next-line
+    },[mainOpacity])
+  
+    //SCROLLING / RESIZE LISTENERS
+    useEffect(() => {
         window.addEventListener("scroll", scrollFun);
         window.addEventListener("resize", scrollFun);
-
 
       return () => {
         window.removeEventListener("scroll", scrollFun);
         window.removeEventListener("resize", scrollFun);
       }
+      // eslint-disable-next-line
     }, []);
 
   return (
     <>
         <div 
         ref={elementRef} 
-        className={"topic1" + " " + "text" + " " + elementClass}
+        className={"topic1 text " + elementClass}
         >
             <div 
             style={{
             display: "flex",
             flexDirection: "column",
             gap: "10px",
-            //background: "pink",
             position: "relative"
             }}>
-              <ConsoleText 
+              <ConsoleTextIntro 
               writingHandler={writingHandler}
               textInput={textInput} 
-              textFontSize={textFontSize} 
-              textFontWeight={textFontWeight} 
               timing={timing} 
-              delay = {0}
-              />         
-              
-              <ConsoleText 
-              writingHandler={writingHandler}
-              textInput={textInput} 
-              textFontSize={textFontSize} 
-              textFontWeight={textFontWeight} 
-              timing={timing} 
-              delay = {1500}
-              />        
+              delay = {delay}
+              />               
             </div>            
         </div>
     </>
