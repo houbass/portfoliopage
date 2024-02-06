@@ -38,7 +38,7 @@ export default function MyProjects({projects, lofichordPic, gravityPic, mindfuck
             text: "Check out the website I made for a family member's car service. It's user-friendly, offering essential info on services. With detailed descriptions and easy navigation, it ensures a smooth and informative experience for visitors.",
             techStack: ["React", "Lottie", "Anime.js", "Netlify"],
             btnText: "Repair a Car",
-            link: "https://deft-custard-7140be.netlify.app/",
+            link: "https://autoservislaube.cz/",
             git: "https://github.com/houbass/autoservice"
         }, {
             title: "Gravitation Simulation",
