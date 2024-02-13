@@ -34,7 +34,14 @@ export default function Contact({ contact, mainOpacity }) {
         }}>
             <section className="container1 color1" >
                 <div className="col-1-2 intro-left">
-                    <h1 className="title mb1">Contact</h1>
+                    <div 
+                    className="pointer fit"
+                    onClick={() => {
+                        contact.current.scrollIntoView();
+                    }}>
+                        <h1 className="title mb1">Contact</h1>
+                    </div>
+
                     <div>
                         <div 
                         className=""

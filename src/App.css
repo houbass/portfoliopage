@@ -17,6 +17,7 @@
   --maxWidth: 1080px;
 
   color: var(--col1);
+  scroll-behavior: smooth;
 }
 
 img {
@@ -32,6 +33,14 @@ img {
 .fc {
   display: flex;
   flex-direction: column;
+}
+
+.gap1 {
+  gap: var(--mb1);
+}
+
+.gap2 {
+  gap: var(--mb2);
 }
 
 .menu {
@@ -622,6 +631,23 @@ p {
   border-radius: 5px;
 }
 
+
+.techList {
+  display: inline-flex;
+  padding-right: 10px;
+  padding-top: 5px;
+}
+
+.techLink {
+  text-wrap: nowrap;
+
+}
+
+.techLink:hover {
+  text-decoration: underline;
+}
+
+
 .contactBtn {
   pointer-events: all;
   cursor: pointer;
@@ -680,4 +706,12 @@ li::before {
   100% {
     opacity: 1;
   }
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.fit {
+  width: fit-content;
 }

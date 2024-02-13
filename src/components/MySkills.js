@@ -20,9 +20,16 @@ export default function MySkills({ skills, mainOpacity }) {
             }}>
             <section className="container1 color1" >
                 <div className="col-1-2">
-                    <h1 className="title mb1">
-                        My Skills
-                    </h1>
+
+                    <div 
+                    className="pointer fit"
+                    onClick={() => {
+                        skills.current.scrollIntoView();
+                    }}>
+                        <h1 className="title mb1">
+                            My Skills
+                        </h1>
+                    </div>
                     <div className="fc pad1" style={{gap: "var(--mb1)"}}>
 
                         <div className="">
