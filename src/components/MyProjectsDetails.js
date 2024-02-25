@@ -6,9 +6,9 @@ const stacks = {
         url: "https://animejs.com/"
     },
 
-    axios: {
-        name: "Axios",
-        url: "https://www.npmjs.com/package/axios"
+    emailJs: {
+        name: "Email.js",
+        url: "https://www.emailjs.com/"
     },
 
     brevo: {
@@ -101,7 +101,7 @@ const stacks = {
             title: "Sofa Lofi Recording Label",
             pic: sofaPic,
             text: "Explore my full-stack project for Sofa Lofi recording label, a platform harmonizing front-end and back-end tech. Tailored to the label's needs, it includes features such as releases cards, an admin page, submission forms with validations, subscription and a PDF generator for contract creation.",
-            techStack: [stacks.nextJs, stacks.lottie, stacks.animeJs, stacks.jsPdf, stacks.axios, stacks.firebase, stacks.brevo, stacks.youtubeDataApi, stacks.git, stacks.netlify],
+            techStack: [stacks.nextJs, stacks.lottie, stacks.animeJs, stacks.jsPdf, stacks.emailJs, stacks.firebase, stacks.brevo, stacks.youtubeDataApi, stacks.git, stacks.netlify],
             btnText: "Check It Out",
             link: "https://sofalofi.com/",
             git: "https://github.com/houbass/sofaoptimalization"
