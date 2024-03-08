@@ -12,7 +12,7 @@ export default function Contact({ contact, mainOpacity }) {
         }, 
         {
             text: "Linkedin",
-            link: "https://linkedin.com"
+            link: "https://www.linkedin.com/in/ondrej-laube-5a0364212"
         }, 
         {
             text: "CodeWars",
