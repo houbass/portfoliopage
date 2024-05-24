@@ -1,17 +1,37 @@
 // pictures
 import { useState } from "react";
 
+// material ui
+import Box from '@mui/material/Box';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import FormHelperText from '@mui/material/FormHelperText';
+import Select from '@mui/material/Select';
+
 //pictures
-import gitPic from "../pic/git.svg"
-import gittextdPic from "../pic/gittext.svg"
+import gitPic from "../pic/git.svg";
+import gittextdPic from "../pic/gittext.svg";
+
+import takecarsPic from "../pic/takecars.webp";
+import letitrollPic from "../pic/letitroll.webp";
+import ritaPic from "../pic/rita.webp";
+import grooovePic from "../pic/grooove.webp";
+import kafeavubecPic from "../pic/kafeavubec.webp";
+import top10dnbPic from "../pic/top10dnb.webp";
 
 // components
 import MyProjectsDetails from "./MyProjectsDetails";
+import ProjectCard from "./ProjctCard";
 
 export default function MyProjects({projects, lofichordPic, gravityPic, mindfuckPic, miningPic, spacePic, sofaPic, servicePic, mainOpacity }) {
 
     // IMPORTING MY PROJECTS DETAILS
-    const {myProjects} = MyProjectsDetails(lofichordPic, gravityPic, mindfuckPic, miningPic, spacePic, sofaPic, servicePic)
+    const {myProjects} = MyProjectsDetails(lofichordPic, gravityPic, mindfuckPic, miningPic, spacePic, sofaPic, servicePic, takecarsPic, letitrollPic, ritaPic, grooovePic, kafeavubecPic, top10dnbPic)
+
+    // STATES FOR FILTERING
+    const [framework, setFramework] = useState("All");
+    const [language, setLanguage] = useState("All");
 
     // STATES FOR SHOWMORE BTN
     const [showMore, setShowMore] = useState({
@@ -21,8 +41,33 @@ export default function MyProjects({projects, lofichordPic, gravityPic, mindfuck
     });
 
 
+    // FILTERING BY FRAMEWORKS
+    const filteredByFramework = myProjects.filter((e, i) => {
+
+        if(framework === "All") {
+            return e
+        } else{
+            const stackCheck = e.techStack.map((stack) => stack.name).includes(framework)
+    
+            return stackCheck === true
+        }
+    })
+
+
+    // FILTERING BY LANGUAGE
+    const filteredByLanguage = filteredByFramework.filter((e, i) => {
+        if(language === "All") {
+            return e
+        } else{
+            const languageCheck = e.techStack.map((stack) => stack.name).includes(language)
+
+            return languageCheck === true
+        }
+    })
+
+
     // SHOW MORE
-    const filteredProjects = myProjects.filter((e, i) => i <= showMore.elements )
+    const filteredProjects = filteredByLanguage.filter((e, i) => i <= showMore.elements )
     
     function showMoreFun() {
         if(showMore.state === false) {
@@ -65,10 +110,47 @@ export default function MyProjects({projects, lofichordPic, gravityPic, mindfuck
                     onClick={() => {
                         projects.current.scrollIntoView();
                     }}>
-                        <h1 
-                        className="title mb1" 
-                        >My Projects</h1>   
+                        <h1 className="title mb1">My Projects</h1>   
                     </div>                 
+
+                    <div className="filter-box mb1">
+                        <FormControl className="custom-form-control" sx={{ width: 150 }}>
+                            <InputLabel id="demo-simple-select-label">Framework</InputLabel>
+                            <Select
+                            labelId="demo-simple-select-label"
+                            id="demo-simple-select"
+                            value={framework}
+                            label="Framework"
+                            onChange={(e) => {setFramework(e.target.value)}} 
+                            MenuProps={{
+                                PaperProps: {
+                                  className: 'custom-menu-paper', // Apply custom class to the menu paper
+                                }
+                            }}
+                            >
+                                <MenuItem className="MenuItem" value={"All"}>All</MenuItem>
+                                <MenuItem value={"React"}>React</MenuItem>
+                                <MenuItem value={"WordPress"}>WordPress</MenuItem>
+                                <MenuItem value={"Easol"}>Easol</MenuItem>
+                                <MenuItem value={"Shoptet"}>Shoptet</MenuItem>
+                            </Select>
+                        </FormControl>
+
+                        <FormControl className="custom-form-control" sx={{ width: 150 }}>
+                            <InputLabel id="demo-simple-select-label">Language</InputLabel>
+                            <Select
+                            labelId="demo-simple-select-label"
+                            id="demo-simple-select"
+                            value={language}
+                            label="Language"
+                            onChange={(e) => {setLanguage(e.target.value)}} 
+                            >
+                                <MenuItem value={"All"}>All</MenuItem>
+                                <MenuItem value={"JavaScript"}>Javascript</MenuItem>
+                                <MenuItem value={"PHP"}>PHP</MenuItem>
+                            </Select>
+                        </FormControl>
+                    </div>
                     
                     {filteredProjects.map((item, index) => {
                         let thisVisibility = "visible";
@@ -81,84 +163,29 @@ export default function MyProjects({projects, lofichordPic, gravityPic, mindfuck
                             key={index}
                             className="projectCard animePad" 
                             >
-                                <a 
-                                href={item.link} 
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                >
-                                <h2 className="pad2 pb1">{item.title}</h2>
-                                </a>
-
-                                <div className="projectCardContent pad2" >
-                                    <a 
-                                    href={item.link} 
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    >
-                                        <div className="cardImg">
-                                            <img 
-                                            className="projectImg"
-                                            src={item.pic} 
-                                            alt={item.title} 
-                                            />
-                                        </div>
-                                    </a>
-
-                                    <div className="infoCard">
-                                        <p className="label">{item.text}</p>
-                                        <div>
-                                            <h3>Tech Stack:</h3>
-
-                                            {item.techStack.map((stack, i) => {
-                                                // NO COMMA ON LAST ELEMENT
-                                                let comma;
-                                                if(i + 1 === item.techStack.length ) {
-                                                    comma = "";
-                                                } else{
-                                                    comma = ","
-                                                }
-
-                                                return(
-                                                    <div key={i} className="techList">
-                                                        <a className="techLink" href={stack.url} rel="noopener noreferrer" target="_blank" >
-                                                            {stack.name + comma}
-                                                        </a>
-                                                    </div>
-                                                )
-                                            })}
-                                        </div>
-                                    </div>
-                                </div>
-                                <br/>
-                                <div className="infoCardLinks">
-                                    <a className="button button-dark" 
-                                    href={item.link} 
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    >{item.btnText}</a>
-
-                                    <a href={item.git} 
-                                    target="_blank" 
-                                    rel="noopener noreferrer"
-                                    >
-                                        <div className="gitIcon"
-                                        style={{
-                                            visibility: thisVisibility,
-                                        }}>
-                                            <img src={gitPic} width="40" alt="GitHub logo"/>
-                                            <img src={gittextdPic} width="50" alt="GitHub text"/>
-                                        </div>
-                                    </a>
-                                </div>
+                                <ProjectCard 
+                                item={item} 
+                                index={index} 
+                                thisVisibility={thisVisibility} 
+                                gitPic={gitPic}
+                                gittextdPic={gittextdPic}
+                                />
                             </div>
                         )
                     })}
                 </div>
             </section> 
-            <button 
+
+
+            {filteredByLanguage.length > 3
+            ? <button 
             onClick={showMoreFun} 
             className="button2"
             >{showMore.text}</button>
+
+            : null
+            }
+
         </div>
     )
 }

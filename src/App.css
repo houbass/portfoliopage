@@ -251,7 +251,14 @@ p {
 .title2 {
   color: transparent;  
   text-shadow: 0 0 0 white;
+}
 
+.filter-box {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .pt1 {
@@ -714,4 +721,15 @@ li::before {
 
 .fit {
   width: fit-content;
+}
+
+
+
+/* CUSTOM MATERIAL UI SELECTORS */
+.custom-form-control .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: var(--col1);
+}
+
+.custom-form-control .MuiInputLabel-root.Mui-focused {
+  color: var(--col1);
 }
