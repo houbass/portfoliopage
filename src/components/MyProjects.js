@@ -130,6 +130,7 @@ export default function MyProjects({projects, lofichordPic, gravityPic, mindfuck
                             >
                                 <MenuItem className="MenuItem" value={"All"}>All</MenuItem>
                                 <MenuItem value={"React"}>React</MenuItem>
+                                <MenuItem value={"Next.js"}>Next.js</MenuItem>
                                 <MenuItem value={"WordPress"}>WordPress</MenuItem>
                                 <MenuItem value={"Easol"}>Easol</MenuItem>
                                 <MenuItem value={"Shoptet"}>Shoptet</MenuItem>
