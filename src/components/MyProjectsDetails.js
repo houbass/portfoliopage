@@ -134,6 +134,7 @@ const stacks = {
             link: "https://www.kafeavubec.cz/",
             git: null
         }, 
+        /*
         {
             title: "Grooove",
             pic: grooovePic,
@@ -143,6 +144,7 @@ const stacks = {
             link: "https://www.grooove.cz/",
             git: null
         }, 
+        */
         {
             title: "RITA",
             pic: ritaPic,
