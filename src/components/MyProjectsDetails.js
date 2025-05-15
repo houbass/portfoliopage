@@ -110,12 +110,46 @@ const stacks = {
         name: "YouTube-data-api",
         url: "https://developers.google.com/youtube/v3"
     },
+
+    materialUi: {
+        name: "MaterialUI",
+        url: "https://mui.com/material-ui/"
+    },
+
+    reduxToolit: {
+        name: "React-redux-toolkit",
+        url: "https://redux-toolkit.js.org/"
+    },
+
+    angularJs: {
+        name: "AngularJs",
+        url: "https://angularjs.org/"
+    },
+
+    figma: {
+        name: "Figma",
+        url: "https://www.figma.com/"
+    },
+
+    typeScript: {
+        name: "TypeScript",
+        url: "https://www.typescriptlang.org/"
+    },
 }
 
-    export default function MyProjectsDetails(lofichordPic, gravityPic, mindfuckPic, miningPic, spacePic, sofaPic, servicePic, takecarsPic, letitrollPic, ritaPic, grooovePic, kafeavubecPic, top10dnbPic) {
+    export default function MyProjectsDetails(lofichordPic, gravityPic, mindfuckPic, miningPic, spacePic, sofaPic, servicePic, takecarsPic, letitrollPic, ritaPic, grooovePic, kafeavubecPic, top10dnbPic, broadcom) {
 
     // MY PROJETS DESCRIPTION
     const myProjects = [
+        {
+            title: "Application Performance Management",
+            pic: broadcom,
+            text: "Collaborated with a large international team to modernize Broadcom's Application Performance Manager (APM) by rewriting the frontend from AngularJS to React. Focused on improving performance, scalability, and user experience through component-based architecture and modern development practices.",
+            techStack: [stacks.react, stacks.angularJs, stacks.typeScript, stacks.javascript, stacks.git, stacks.materialUi, stacks.reduxToolit, stacks.figma],
+            btnText: "Let's check it",
+            link: "https://www.broadcom.com/products/software/aiops-observability/application-performance-management",
+            git: null
+        }, 
         {
             title: "Top 10 DnB",
             pic: top10dnbPic,
@@ -231,5 +265,7 @@ const stacks = {
         }, 
     ]
 
-    return{myProjects}
+    return{
+        myProjects
+    }
 }

@@ -2,11 +2,9 @@
 import { useState } from "react";
 
 // material ui
-import Box from '@mui/material/Box';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
-import FormHelperText from '@mui/material/FormHelperText';
 import Select from '@mui/material/Select';
 
 //pictures
@@ -19,6 +17,7 @@ import ritaPic from "../pic/rita.webp";
 import grooovePic from "../pic/grooove.webp";
 import kafeavubecPic from "../pic/kafeavubec.webp";
 import top10dnbPic from "../pic/top10dnb.webp";
+import broadcom from "../pic/broadcom.webp";
 
 // components
 import MyProjectsDetails from "./MyProjectsDetails";
@@ -27,7 +26,7 @@ import ProjectCard from "./ProjctCard";
 export default function MyProjects({projects, lofichordPic, gravityPic, mindfuckPic, miningPic, spacePic, sofaPic, servicePic, mainOpacity }) {
 
     // IMPORTING MY PROJECTS DETAILS
-    const {myProjects} = MyProjectsDetails(lofichordPic, gravityPic, mindfuckPic, miningPic, spacePic, sofaPic, servicePic, takecarsPic, letitrollPic, ritaPic, grooovePic, kafeavubecPic, top10dnbPic)
+    const {myProjects} = MyProjectsDetails(lofichordPic, gravityPic, mindfuckPic, miningPic, spacePic, sofaPic, servicePic, takecarsPic, letitrollPic, ritaPic, grooovePic, kafeavubecPic, top10dnbPic, broadcom)
 
     // STATES FOR FILTERING
     const [framework, setFramework] = useState("All");
@@ -131,6 +130,7 @@ export default function MyProjects({projects, lofichordPic, gravityPic, mindfuck
                                 <MenuItem className="MenuItem" value={"All"}>All</MenuItem>
                                 <MenuItem value={"React"}>React</MenuItem>
                                 <MenuItem value={"Next.js"}>Next.js</MenuItem>
+                                <MenuItem value={"AngularJs"}>AngularJs</MenuItem>
                                 <MenuItem value={"WordPress"}>WordPress</MenuItem>
                                 <MenuItem value={"Easol"}>Easol</MenuItem>
                                 <MenuItem value={"Shoptet"}>Shoptet</MenuItem>
@@ -147,7 +147,8 @@ export default function MyProjects({projects, lofichordPic, gravityPic, mindfuck
                             onChange={(e) => {setLanguage(e.target.value)}} 
                             >
                                 <MenuItem value={"All"}>All</MenuItem>
-                                <MenuItem value={"JavaScript"}>Javascript</MenuItem>
+                                <MenuItem value={"JavaScript"}>JavaScript</MenuItem>
+                                <MenuItem value={"TypeScript"}>TypeScript</MenuItem>
                                 <MenuItem value={"PHP"}>PHP</MenuItem>
                             </Select>
                         </FormControl>
