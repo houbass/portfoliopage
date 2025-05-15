@@ -153,7 +153,7 @@ const stacks = {
         {
             title: "Top 10 DnB",
             pic: top10dnbPic,
-            text: "I developed a full-stack application for Let It Roll. Utilizing the Spotify API, the app curated a comprehensive list of Drum and Bass tracks released in 2023 by various artists. Users could browse through the selection and cast their votes for their favorite tracks. This interactive platform provided an engaging way for fans to celebrate and recognize the best releases of the year.",
+            text: "I developed a full-stack application for Let It Roll. Utilizing the Spotify API, the app curated a comprehensive list of Drum and Bass tracks released in previous year by various artists. Users could browse through the selection and cast their votes for their favorite tracks. This interactive platform provided an engaging way for fans to celebrate and recognize the best releases of the year.",
             techStack: [stacks.react, stacks.javascript, stacks.spotifyApi, stacks.firebase],
             btnText: "Let's Vote",
             link: "https://www.top10dnb.com/en",
